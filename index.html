@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flying Dutchman</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="Beverages_eng.js"></script> <!--load the database-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+
+    <h1>Drag & Drop Beverages</h1>
+
+    <!-- MENU: Beverages that can be dragged -->
+    <h2>Menu</h2>
+    <div id="beverage-container"></div>
+
+    <!-- ORDER BOX: Drop beverages here -->
+    <h2>Your Order</h2>
+    <div id="order-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p>Drag beverages here to add them to your order.</p>
+        <ul id="order-list"></ul>
+    </div>
+
+    <!-- UNDO & REDO: -->
+    <div id="undo-redo-container">
+        <button id="undo-button">Undo</button>
+        <button id="redo-button">Redo</button>
+    </div>
+
+</body>
+</html>
