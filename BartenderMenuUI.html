@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartender Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            display: inline-block;
+            width: 150px;
+            margin: 10px;
+            padding: 15px;
+            background: #d4bfff;
+            border-radius: 10px;
+            cursor: grab;
+        }
+        .controls {
+            background: #ffafc9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .delete-bin {
+            width: 100px;
+            height: 100px;
+            background: #fcbf49;
+            border-radius: 50%;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .delete-bin.hover {
+            background: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bartender, Waiter and Waitress</h2>
+        <select id="tableSelect">
+            <option>Table 1</option>
+            <option>Table 2</option>
+        </select>
+        <p>Select the table ID and get the menu of that table</p>
+        
+        <div id="menu">
+            <div class="menu-item" draggable="true" ondragstart="drag(event)" id="beers">
+                <p>Beers</p>
+                <div class="controls">
+                    <button onclick="changeQuantity('beers', -1)">-</button>
+                    <span id="count-beers">3</span>
+                    <button onclick="changeQuantity('beers', 1)">+</button>
+                    <p>Price: 50</p>
+                </div>
+            </div>
+            <div class="menu-item" draggable="true" ondragstart="drag(event)" id="wine">
+                <p>Wine</p>
+                <div class="controls">
+                    <button onclick="changeQuantity('wine', -1)">-</button>
+                    <span id="count-wine">3</span>
+                    <button onclick="changeQuantity('wine', 1)">+</button>
+                    <p>Price: 50</p>
+                </div>
+            </div>
+            <div class="menu-item" draggable="true" ondragstart="drag(event)" id="drinks">
+                <p>Drinks</p>
+                <div class="controls">
+                    <button onclick="changeQuantity('drinks', -1)">-</button>
+                    <span id="count-drinks">3</span>
+                    <button onclick="changeQuantity('drinks', 1)">+</button>
+                    <p>Price: 50</p>
+                </div>
+            </div>
+            <div class="menu-item" draggable="true" ondragstart="drag(event)" id="food">
+                <p>Food</p>
+                <div class="controls">
+                    <button onclick="changeQuantity('food', -1)">-</button>
+                    <span id="count-food">3</span>
+                    <button onclick="changeQuantity('food', 1)">+</button>
+                    <p>Price: 50</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="delete-bin" ondrop="drop(event)" ondragover="allowDrop(event)">
+            Delete
+        </div>
+    </div>
+
+    <script>
+        function changeQuantity(item, change) {
+            let countElement = document.getElementById('count-' + item);
+            let count = parseInt(countElement.innerText);
+            count = Math.max(0, count + change);
+            countElement.innerText = count;
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            let itemId = event.dataTransfer.getData("text");
+            let item = document.getElementById(itemId);
+            if (item) {
+                item.remove();
+            }
+        }
+    </script>
+</body>
+</html>
