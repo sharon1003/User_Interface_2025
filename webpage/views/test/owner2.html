@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard - The Flying Dutchman</title>
+    <link rel="stylesheet" href="../public/css/owner2.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+
+    <!-- 📈 Header -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../public/images/logo.png" alt="Logo">
+            <span>Owner Dashboard</span>
+        </div>
+        <div class="lang-switch">
+            <button onclick="setLanguage('en')">🇺🇸 EN</button>
+            <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+            <button onclick="setLanguage('zh')">🇹🇼 繁體中文</button>
+        </div>
+    </header>
+
+    <!-- 📊 管理頁面 -->
+    <section class="owner-section">
+        <h2 data-translate="inventoryManagement">Inventory Management</h2>
+
+        <!-- 商品管理 -->
+        <div class="inventory-list" id="inventory-list">
+            <!-- 產品列表將由 JS 動態生成 -->
+        </div>
+
+        <!-- 📈 銷售報告 -->
+        <h3 data-translate="salesReport">Sales Report</h3>
+        <canvas id="salesChart"></canvas>
+    </section>
+
+    <!-- ⚓ Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 The Flying Dutchman Pub | 🍺 Drink responsibly.</p>
+    </footer>
+
+    <!-- 📊 Chart.js 圖表庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./owner2.js"></script>
+</body>
+</html>

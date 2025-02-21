@@ -1,0 +1,223 @@
+body {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header-top {
+    flex: 2 1 800px;
+}
+
+.header-top h1 {
+    margin-left: 10px;
+    font-size: 50px;
+}
+
+.header-top-right {
+    /* flex: 2 2 200px; */
+    margin-block: 33.5px;
+    margin-top: 40px;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.lang-switch button {
+    margin-left: 0.5rem;
+    background-color: #848383;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.lang-switch button:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+
+
+/* Billboard */
+.billboard {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    background-color: rgb(242, 225, 201);
+}
+
+.billboard-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.billboard-text h1{
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.explore-btn {
+    margin-left: 0.5rem;
+    background-color: #848383;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.explore-btn:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+
+
+/* User choose */
+.user-roles {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.role-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.role-card {
+    flex: 1 1 200px;
+    border: 2px solid #000;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.role-card:hover {
+    transform: translateY(-10px);
+}
+
+
+.dropbtn {
+    background-color:  rgb(237, 233, 227);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    font-size: 20px;
+    border: #1877d6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 20px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #a3a7a3;
+}
+
+
+nav ul{
+    background-color: rgb(237, 233, 227);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav li {
+    list-style-type: none;
+    justify-content: space-around;
+    margin: 1rem;
+    /* padding: 2rem 2rem 0rem; */
+}
+
+li a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.35rem;
+    transition: all 0.2 sec;
+    padding-bottom: 0.3rem;
+}
+
+a:hover {
+    color: #1877d6;
+    border-bottom: 2px solid  #1877d6;
+}
+
+
+footer {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+
+    .food-item img {
+        width: 45vw;
+        height: 45vw;
+        /* width: 70%; */
+    }
+
+}
+
+@media screen and (max-width:1050px) {
+    .header-top h1 {
+        text-align: center;
+    }  
+}
+
+@media screen and (max-width: 768px) {
+    .header-top h1 { 
+        text-align: center;
+    } 
+    .food-item img {
+        width: 45vw;
+        height: 45vw;
+    }
+}
+

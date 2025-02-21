@@ -1,0 +1,106 @@
+/* 🎯 篩選器設計 */
+.filter-section {
+    padding: 2rem;
+    background-color: #333;
+    border-bottom: 2px solid #d4af37;
+}
+.filter-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f3f3f3;
+}
+.filter-group label {
+    margin-bottom: 0.5rem;
+}
+
+/* 🍹 菜單區 */
+.menu-section {
+    padding: 2rem;
+}
+.menu-category h3 {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 0.5rem;
+}
+.menu-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.menu-item {
+    width: 200px;
+    background-color: #444;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.3s;
+}
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+.menu-item.low-stock {
+    border-color: red;
+    color: #ff4d4d;
+}
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.order-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #d4af37;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.order-btn:hover {
+    background-color: #e5c570;
+}
+
+/* 🛒 訂單區 */
+.order-section {
+    margin: 2rem;
+    border: 2px dashed #d4af37;
+    padding: 2rem;
+    text-align: center;
+}
+.order-cart {
+    min-height: 150px;
+    border: 2px dashed #d4af37;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.order-item {
+    background-color: #666;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 5px;
+}
+.submit-order {
+    margin-top: 1rem;
+    background-color: #d4af37;
+    color: #222;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-order:hover {
+    background-color: #f0d97a;
+}

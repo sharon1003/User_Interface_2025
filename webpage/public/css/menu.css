@@ -1,0 +1,178 @@
+main {
+    background-color: #f6e2c5;
+    display: flex;
+    margin: 0.5rem;
+}
+
+.vip-title{
+    text-align: center;
+    font-size: 50px;
+}
+
+
+.menu {
+    background-color: white;
+    padding: 2rem 1rem;
+}
+
+.menu h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.foods {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.food-item {
+    display: flex;
+    flex: 0 1 calc(100% / 3);
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.food-item img{
+    width: 60%;
+    /* border-radius: 80%; */
+    margin-bottom: 3rem;
+    transition: all 0.1s ease-in;
+    padding: 0.1rem;
+}
+
+.menu-section {
+    flex: 2 1;
+    background-color: bisque;
+    margin: 2rem 1rem;
+    border-radius: 10px;
+}
+
+.menu-section h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.food-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(192, 215, 215);
+    margin: 2rem 1rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+}
+
+
+
+.food-box {
+    background-color: rgb(195, 169, 134);
+    margin: 2rem 2rem;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.img-box {
+
+}
+
+.detail-box {
+    margin: 0.2rem;
+    padding: 0.1rem;
+    text-align: center;
+}
+
+
+.drinks-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(177, 228, 212);
+    margin: 2rem 1rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+}
+
+.drinks-box label {
+   font-weight: bold;
+   font-size: 15px;
+   color: #3e3834;
+}
+
+
+
+.drinks-box {
+    background-color: rgb(195, 169, 134);
+    margin: 2rem 2rem;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.drinks-box button {
+    background-color: #d4af37;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+}
+
+.drinks-box button:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.img-box {
+
+}
+
+.chart-section {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.chart-detail {
+    margin: 2rem 1rem;
+    padding: 1rem ;
+    background-color: #d4af37;
+    border-radius: 10px;
+}
+
+.chart-section h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+
+.check-info{
+    text-align: center;
+}
+
+.check-info p{
+    text-align: left;
+}
+
+.chart-detail button {
+    background-color: #086452;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+}
+
+.chart-detail button:hover {
+    background-color: #7d630f;
+    color: white;
+}

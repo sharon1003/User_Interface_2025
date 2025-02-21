@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/login.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Bar</h1>
+        </div> 
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('zh')">中文</button>    
+            </div>
+        </div>          
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="loginForm">
+            <!-- Username -->
+            <label for="username"><b>Username</b>:</label>
+            <input type="text" id="username" placeholder="Enter username" required>
+            <!-- Passcode -->
+             <label for="password"><b>Password</b>:</label>
+             <input type="password" id="password" placeholder="Enter password" required>
+             <button type="submit" class="login-btn"> Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+
+    <script src="./login.js"></script>
+</body>
+</html>

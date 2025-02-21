@@ -1,0 +1,49 @@
+.owner-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 2rem;
+    border: 3px solid #d4af37;
+    border-radius: 20px;
+    background-color: #1e1e1e;
+    color: #f3f3f3;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.owner-section h2, .owner-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px #d4af37;
+}
+
+.inventory-list {
+    margin-bottom: 3rem;
+}
+.inventory-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+}
+.inventory-item input {
+    width: 80px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+.update-btn {
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.update-btn:hover {
+    background-color: darkgrey;
+    color: white;
+}

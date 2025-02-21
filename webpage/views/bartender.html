@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/bartender.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">Bartender Dashboard</h1>
+        </div> 
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('zh')">中文</button>    
+            </div>
+        </div>          
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="#">Stock Management</a></li>
+            <li><a href="./login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Billboard  -->
+    <section class="bartender-section">
+        <h2>Current Order</h2>
+        <div class="order-list" id="order-list">
+            <div class="order-item">
+                <h3>Table 1: </h3>
+                <div class="item-info">IPA Beer - 2 pcs - pending</div>
+                <button class="item-btn">View</button>
+                <button class="item-btn">Edit</button>
+                <button class="item-btn">Check-Out</button>
+            </div>
+
+            <div class="order-item">
+                <h3>Table 2: </h3>
+                <div class="item-info">IPA Beer - 2 pcs - pending</div>
+                <button class="item-btn">View</button>
+                <button class="item-btn">Edit</button>
+                <button class="item-btn">Check-Out</button>
+            </div>
+
+            <div class="order-item">
+                <h3>Table 3</h3>
+                <div class="item-info">IPA Beer - 2 pcs - pending</div>
+                <button class="item-btn">View</button>
+                <button class="item-btn">Edit</button>
+                <button class="item-btn">Check-Out</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+</body>
+</html>
