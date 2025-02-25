@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/menu.css">
+
 </head>
 <body>
     <header class="header">
@@ -43,137 +44,38 @@
 
     <main>
         <section class="menu-section">
-            <h2>Foods</h2>
-            <div class="food-list">
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
+                <button class="tab-btn" onclick="switchCategory('food')">Food</button>
+                <button class="tab-btn" onclick="switchCategory('desserts')">Desserts</button>
             </div>
-    
-            <!-- Drinks -->
-            <h2>Drinks</h2>
-            <div class="drinks-list">
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                        <label>Quality: <input type="number" min="0" value="1" size="1"></label>
-                        <br>
-                        <button onclick="addToCart('Fries', 3, this)">Add to Cart</button>
-                
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-            </div>
+            <div id="beverage-container"></div>
+            <div id="food-container"></div>
+            <div id="desserts-container"></div>
         </section>
     
-        <section class="chart-section">
-            <div class="chart-detail">
-                <h2 class="cart-title">Shopping Cart</h2>
-                <div>
-                    <h3 class="cart-title">Items</h3>
-                    <ul id="cart-items"></ul>
+        <section class="cart-section">
+            <div class="cart-detail">
+                <h2 class="cart-title">Shopping Cart <br> <small>Drop items here to add them to your cart</small> </h2>
+                <div id="order-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <!-- <h3 class="cart-title">Items</h3> -->
+                    <div id="cart-list" class="cart-list"></div>
+                    <ul id="order-list"></ul>
                 </div>
+                <!-- <div> -->
+                    <!-- <h3 class="cart-title">Items</h3> -->
+                    <!-- <ul id="cart-items"></ul> -->
+                    <!-- <ul id="order-list"></ul> -->
+                <!-- </div> -->
         
                 <div class="check-info">
                     <p class="total"><strong>Total</strong> €<span id="cart-total">0</span></p>
                     <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
+                </div>
+                    <!-- UNDO & REDO: -->
+                <div id="undo-redo-container">
+                    <button id="undo-button">Undo</button>
+                    <button id="redo-button">Redo</button>
                 </div>
             </div>
         </section>
@@ -212,8 +114,10 @@
     <footer>
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
+    
+    <script src="../data/Beverages_eng.js"></script> <!--load the database-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../public/js/menu.js"></script>
 
-        <!-- 🌐 JavaScript -->
-        <script src="./menu.js"></script>
 </body>
 </html>
