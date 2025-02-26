@@ -1,32 +1,44 @@
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // 阻止默认提交
 
-    const username = document.getElementById('username').value.trim();
-    const role = document.getElementById('role').value;
-
-    if (username) {
-        // 模擬登入 (實務上應與後端驗證)
-        sessionStorage.setItem('username', username);
-        sessionStorage.setItem('role', role);
-
-        // 跳轉至對應頁面
-        switch (role) {
-            case 'customer':
-                window.location.href = 'menu.html';
-                break;
-            case 'vip':
-                window.location.href = 'vip.html';
-                break;
-            case 'staff':
-                window.location.href = 'bartender.html';
-                break;
-            case 'owner':
-                window.location.href = 'admin.html';
-                break;
-            default:
-                document.getElementById('loginMessage').innerText = "Invalid role!";
-        }
-    } else {
-        document.getElementById('loginMessage').innerText = "Please enter a username.";
-    }
-});
+      // const role = document.getElementById('role').value;
+      const userDatabase = {
+      "alice": { password: "123456", role: "customer" },
+      "bob": { password: "vip123", role: "vip" },
+      "charlie": { password: "staff456", role: "staff" },
+      "admin": { password: "admin789", role: "owner" }
+      };
+  
+      const username = document.getElementById('username').value.trim().toLowerCase(); // 统一小写
+      const password = document.getElementById('password').value.trim();
+      const loginMessage = document.getElementById('loginMessage');
+  
+      if (!username || !password) {
+          loginMessage.innerText = "Please enter both username and password.";
+          return;
+      }
+  
+      // 校验用户名是否存在
+      if (userDatabase.hasOwnProperty(username)) {
+          // 校验密码
+          if (userDatabase[username].password === password) {
+              const role = userDatabase[username].role;
+              sessionStorage.setItem('username', username);
+              sessionStorage.setItem('role', role);
+  
+              // 根据角色跳转
+              const rolePageMap = {
+                  "customer": "menu.html",
+                  "vip": "vip-menu.html",
+                  "staff": "bartender.html",
+                  "owner": "owner.html"
+              };
+  
+              window.location.href = rolePageMap[role];
+          } else {
+              loginMessage.innerText = "Incorrect password!";
+          }
+      } else {
+          loginMessage.innerText = "Username not found!";
+      }
+  });
