@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Ordering System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            display: inline-block;
+            width: 150px;
+            margin: 10px;
+            padding: 15px;
+            background: #d4bfff;
+            border-radius: 10px;
+        }
+        .controls {
+            background: #ffafc9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .order-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bar Ordering System</h2>
+        <select id="tableSelect">
+            <option>Table 1</option>
+            <option>Table 2</option>
+            <option>Table 3</option>
+        </select>
+        <p>Select a table to place an order</p>
+        
+        <div id="menu">
+            <div class="menu-item" id="beer">
+                <p>Beer</p>
+                <div class="controls">
+                    <button onclick="changeQuantity('beer', -1)">-</button>
+                    <span id="count-beer">0</span>
+                    <button onclick="changeQuantity('beer', 1)">+</button>
+                    <p>Price: $5</p>
+                </div>
+            </div>
+            <div class="menu-item" id="wine">
+                <p>Wine</p>
+                <div class="controls">
+                    <button onclick="changeQuantity('wine', -1)">-</button>
+                    <span id="count-wine">0</span>
+                    <button onclick="changeQuantity('wine', 1)">+</button>
+                    <p>Price: $8</p>
+                </div>
+            </div>
+            <div class="menu-item" id="cocktail">
+                <p>Cocktail</p>
+                <div class="controls">
+                    <button onclick="changeQuantity('cocktail', -1)">-</button>
+                    <span id="count-cocktail">0</span>
+                    <button onclick="changeQuantity('cocktail', 1)">+</button>
+                    <p>Price: $10</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <script>
+        function changeQuantity(item, change) {
+            let countElement = document.getElementById('count-' + item);
+            let count = parseInt(countElement.innerText);
+            count = Math.max(0, count + change);
+            countElement.innerText = count;
+        }
+
+        function placeOrder() {
+            let beerCount = document.getElementById('count-beer').innerText;
+            let wineCount = document.getElementById('count-wine').innerText;
+            let cocktailCount = document.getElementById('count-cocktail').innerText;
+            let table = document.getElementById('tableSelect').value;
+            
+            let orderSummary = `Order for ${table}: \n Beer: ${beerCount}\n Wine: ${wineCount}\n Cocktail: ${cocktailCount}`;
+            alert(orderSummary);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Menu container */
+#beverage-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Beverage cards */
+.beverage-card {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #fff;
+    cursor: grab;
+}
+
+/* Order box */
+#order-box {
+    width: 300px;
+    min-height: 150px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px dashed #333;
+    background-color: #fff;
+}
+
+/* Order list */
+#order-list {
+    list-style-type: none;
+    padding: 0;
+}
+#order-list li {
+    padding: 10px;
+    background-color: #ddd;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/*Undo Redo container */
+#undo-redo-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px; 
+
+}
+
+#undo-button, #redo-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #688f6e;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#undo-button:hover, #redo-button:hover {
+    background-color: #c7efd8;
+}
