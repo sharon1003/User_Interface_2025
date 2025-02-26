@@ -34,8 +34,8 @@
             <ul id="order-list">
 
             </ul>
-            <p>Total Amount: 100kr</p>
-            <span id="total-amount"></span>
+            <p>Total Amount:</p>
+            <p id="total-amount">100kr</p>
         </div>
 
         <div class="payment-method">
@@ -46,7 +46,8 @@
                 <option value="VIP">VIP Account</option>
             </select>
         </div>
-        <button class="payment-submit-btn" onclick="processPay()">Pay</button>
+        <button id="payButton" class="payment-submit-btn">Pay</button>
+        <script src="../public/js/payment.js"></script>
 
     </section>
 
