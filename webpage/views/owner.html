@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/owner.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Bar</h1>
+        </div> 
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('zh')">中文</button>    
+            </div>
+        </div>          
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="#">Stock Management</a></li>
+            <li><a href="./login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Billboard  -->
+    <section class="owner-section">
+        <h2>Stock Management</h2>
+        <div class="stock-list" id="stock-list">
+            <div class="stock-item">
+                <h3>Item Name</h3>
+                <label><input type="number" min="1" value="1" size="1"></label>
+                <button class="item-btn">Update</button>
+                <button class="item-btn">Delete</button>
+            </div>
+
+            <div class="stock-item">
+                <h3>Item Name</h3>
+                <label><input type="number" min="1" value="1" size="1"></label>
+                <button class="item-btn">Update</button>
+                <button class="item-btn">Delete</button>
+            </div>
+
+            <div class="stock-item">
+                <h3>Item Name</h3>
+                <label><input type="number" min="1" value="1" size="1"></label>
+                <button class="item-btn">Update</button>
+                <button class="item-btn">Delete</button>
+            </div>
+
+            <div class="add-item-section">
+                <h3><button>➕ Add Item</button></h3>
+                <!-- <input type="text" id="new-item-name" placeholder="Item Name"> -->
+                <!-- <input type="number" id="new-item-quantity" placeholder="Quality" min="1" value="1"> -->
+                <!-- <button onclick="addItem()">Add</button> -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+</body>
+</html>

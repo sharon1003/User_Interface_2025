@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/menu.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Bar</h1>
+        </div> 
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('zh')">中文</button>    
+            </div>
+            <!-- Drop down List  -->
+            <!-- <div class="dropdown">
+                <button class="dropbtn"> Language </button>
+                <div class="dropdown-content">
+                    <ul class="no-bullets">
+                        <li><a href="https://google.com">English</a></li>
+                        <li><a href="https://yahoo.com">Svenska</a></li>
+                        <li><a href="https://wenhsuanpeng.com">Mandarin</a></li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>          
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Billboard  -->
+    <section class="billboard">
+        <div class="billboard-text">
+            <h1>Welcome to The Bar</h1>
+            <button class="explore-btn" onclick="location.href='./menu.html'">Explore the Menu</button>
+        </div>
+    </section>
+
+    <!-- <section class="menu">
+        <h3>Menu</h3>
+        <div class="foods">
+            <div class="food-item">
+                <img src="../images/cupcake.png" alt="cupcake">
+            </div>
+            <div class="food-item">
+                <img src="../images/cupcake.png" alt="cupcake">
+            </div>
+            <div class="food-item">
+                <img src="../images/cupcake.png" alt="cupcake">
+            </div>
+            <div class="food-item">
+                <img src="../images/cupcake.png" alt="cupcake">
+            </div>
+            <div class="food-item">
+                <img src="../images/cupcake.png" alt="cupcake">
+            </div>
+            <div class="food-item">
+                <img src="../images/cupcake.png" alt="cupcake">
+            </div>
+        </div>
+        <a href=""></a>
+    </section> -->
+
+    <!-- User choose -->
+    <section class="user-roles" id="roles">
+        <h2 class="data-lang-key">Choose Your Role</h2>
+        <div class="role-container">
+            <div class="role-card" onclick="location.href='./vip-menu.html'">
+                <h3 class="data-lang-key">VIP Customer</h3>
+                <p class="data-lang-key">Order, drinks, food</p>
+            </div>
+
+            <div class="role-card" onclick="location.href='./bartender.html'">
+                <h3 class="data-lang-key">Bartender/Waiter</h3>
+                <p class="data-lang-key">Manage orders</p>
+            </div>
+
+            <div class="role-card" onclick="location.href='./owner.html'">
+                <h3 class="data-lang-key">Owner</h3>
+                <p class="data-lang-key">Business operator</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+
+        <!-- 🌐 JavaScript -->
+        <script src="./menu.js"></script>
+</body>
+</html>

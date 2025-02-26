@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/payment.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Bar</h1>
+        </div> 
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('zh')">中文</button>    
+            </div>
+        </div>          
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <section class="payment-section">
+        <h2>Payment</h2>
+        <div class="order-summary">
+            <ul id="order-list">
+
+            </ul>
+            <p>Total Amount: 100kr</p>
+            <span id="total-amount"></span>
+        </div>
+
+        <div class="payment-method">
+            <label for="payment-option" >Choose Payment Method:</label>
+            <select name="payment-option" id="payment-option" onchange="toggleCardDetails()">
+                <option value="cash">Cash</option>
+                <option value="credit">Credit</option>
+                <option value="VIP">VIP Account</option>
+            </select>
+        </div>
+        <button class="payment-submit-btn" onclick="processPay()">Pay</button>
+
+    </section>
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+
+</body>
+</html>

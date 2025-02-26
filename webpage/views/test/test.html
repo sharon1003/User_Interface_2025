@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flying Dutchman Pub</title>
+    <!-- 字型與 CSS -->
+    <link rel="stylesheet" href="../../public/css/test/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="icon" href="public/images/logo.png">
+</head>
+<body>
+
+    <!-- 🔵 Header 導覽列 -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="public/images/logo.png" alt="The Flying Dutchman Logo">
+            <span>The Flying Dutchman Pub</span>
+        </div>
+        <div class="lang-switch">
+            <button onclick="setLanguage('en')">🇺🇸 EN</button>
+            <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+            <button onclick="setLanguage('zh')">🇹🇼 繁體中文</button>
+        </div>
+    </header>
+
+    <!-- 🍺 英雄區塊 -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1 data-i18n="welcome">Welcome to The Flying Dutchman</h1>
+            <p data-i18n="slogan">"A voyage through taste and tradition."</p>
+            <button class="explore-btn" onclick="scrollToSection('roles')">
+                🌊 Explore the Menu
+            </button>
+        </div>
+    </section>
+
+    <!-- 👥 使用者角色選擇 -->
+    <section class="user-roles" id="roles">
+        <h2 data-i18n="chooseRole">Choose Your Role</h2>
+        <div class="role-container">
+            <div class="role-card" onclick="location.href='views/menu.html'">
+                <img src="public/images/icons/customer.png" alt="Customer Icon">
+                <h3 data-i18n="customer">Customer</h3>
+                <p data-i18n="customerDesc">Order drinks, food, and enjoy your time!</p>
+            </div>
+
+            <div class="role-card" onclick="location.href='views/vip.html'">
+                <img src="public/images/icons/vip.png" alt="VIP Icon">
+                <h3 data-i18n="vip">VIP Customer</h3>
+                <p data-i18n="vipDesc">Access exclusive drinks and VIP services!</p>
+            </div>
+
+            <div class="role-card" onclick="location.href='views/bartender.html'">
+                <img src="public/images/icons/bartender.png" alt="Bartender Icon">
+                <h3 data-i18n="staff">Bartender/Waiter</h3>
+                <p data-i18n="staffDesc">Manage orders and ensure great service!</p>
+            </div>
+
+            <div class="role-card" onclick="location.href='views/admin.html'">
+                <img src="public/images/icons/owner.png" alt="Owner Icon">
+                <h3 data-i18n="owner">Owner</h3>
+                <p data-i18n="ownerDesc">Oversee inventory and business operations!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🍻 今日特選 -->
+    <section class="specials">
+        <h2 data-i18n="specials">Today's Specials</h2>
+        <div class="special-list">
+            <div class="special-item">
+                <img src="public/images/drinks/ipa.png" alt="IPA Beer">
+                <p data-i18n="ipa">IPA Beer - Swedish Craft</p>
+            </div>
+            <div class="special-item">
+                <img src="public/images/drinks/wine.png" alt="Red Wine">
+                <p data-i18n="wine">Red Wine - 2019 Merlot</p>
+            </div>
+            <div class="special-item">
+                <img src="public/images/food/snacks.png" alt="Bar Snacks">
+                <p data-i18n="snacks">Signature Bar Snacks</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⚓ Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 The Flying Dutchman Pub | 🍺 Drink responsibly.</p>
+    </footer>
+
+    <!-- 🌐 JavaScript -->
+    <script src="../../public/js/app.js"></script>
+    <script>
+        // 滾動至角色區塊
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/menu.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Bar</h1>
+        </div> 
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('zh')">中文</button>    
+            </div>
+        </div>          
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./login.html">Log In</a></li>
+            <li><a href="./vip-account.html">Account</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="vip-title">MENU</h1>
+
+    <main>
+        <section class="menu-section">
+            <h2>Foods</h2>
+            <div class="food-list">
+                <div class="food-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="food-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="food-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="food-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="food-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="food-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Drinks -->
+            <h2>Drinks</h2>
+            <div class="drinks-list">
+                <div class="drinks-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="drinks-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="drinks-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                        <label>Quality: <input type="number" min="0" value="1" size="1"></label>
+                        <br>
+                        <button onclick="addToCart('Fries', 3, this)">Add to Cart</button>
+                
+                    </div>
+                </div>
+        
+                <div class="drinks-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="drinks-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+        
+                <div class="drinks-box">
+                    <div class="img-box"></div>
+                    <div class="detail-box">
+                        <h5>Item title</h5>
+                        <p>Description</p>
+                        <h6>Price</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="chart-section">
+            <div class="chart-detail">
+                <h2 class="cart-title">Shopping Cart</h2>
+                <div>
+                    <h3 class="cart-title">Items</h3>
+                    <ul id="cart-items"></ul>
+                </div>
+        
+                <div class="check-info">
+                    <p class="total"><strong>Total</strong> €<span id="cart-total">0</span></p>
+                    <button class="checkout-btn">Pay</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+
+        <!-- 🌐 JavaScript -->
+        <script src="./menu.js"></script>
+</body>
+</html>
