@@ -8,10 +8,52 @@ let undoStack = [];
 let redoStack = [];
 
 let categoryItems = {
-    Italien: [],
-    Slovenien: [],
-    Sverige: []
+    // Italien: [],
+    // Slovenien: [],
+    // Sverige: []
+    Wine: [],
+    Beer: [],
+    Spirit: [],
+    Cocktail: []
 }
+
+function classifyDrink(category) {
+    if (category.toLowerCase().includes("vin")) {
+        return "Wine";
+    } else if (category.toLowerCase().includes("\u00c3\u2013l") ||
+               category.toLowerCase().includes("lager") ||
+               category.toLowerCase().includes("ale") ||
+               category.toLowerCase().includes("stout") ||
+               category.toLowerCase().includes("porter") ) {
+        return "Beer";
+    } else if (category.toLowerCase().includes("Vodka") ||
+                category.toLowerCase().includes("sprit") ||
+                category.toLowerCase().includes("Tequila") ||
+                category.toLowerCase().includes("Rum") ||
+                category.toLowerCase().includes("Brandy") ||
+                category.toLowerCase().includes("Whisky") ) {
+        return "Spirit";
+    } else if (category.toLowerCase().includes("cocktail") ||
+                category.toLowerCase().includes("blanddryck")) {
+        return "Cocktail";
+    } else {
+        return "Unkown";
+    }
+}
+
+// 測試範例
+let categories = [
+    "Rött vin",
+    "Vitt vin, Sött",
+    "Rosévin",
+    "Vin av flera typer",
+    "Öl",
+    "Cocktail"
+];
+
+let results = categories.map(cat => ({ category: cat, type: classifyDrink(cat) }));
+
+console.log(results);
 
 function switchCategory(category) {
     document.querySelectorAll(".tab-content").forEach(c => c.style.display = 'none');
@@ -24,9 +66,17 @@ function updateView() {
     fetch('../data/Beverages_eng.js')
         .then(response => response.json())
         .then(data => {
-            categoryItems.Italien = data.filter(item => item.countryoforiginlandname === 'Italien');
-            categoryItems.Slovenien = data.filter(item => item.countryoforiginlandname === 'Slovenien');
-            categoryItems.Sverige = data.filter(item => item.countryoforiginlandname === 'Sverige');
+            // categoryItems.Italien = data.filter(item => item.countryoforiginlandname === 'Italien');
+            // categoryItems.Slovenien = data.filter(item => item.countryoforiginlandname === 'Slovenien');
+            // categoryItems.Sverige = data.filter(item => item.countryoforiginlandname === 'Sverige');
+            
+            data.forEach(item => {
+                item.drinkType = classifyDrink(item.catgegory);
+            });
+            categoryItems.Wine = data.filter(item => item.drinkType === 'Wine');
+            categoryItems.Beer = data.filter(item => item.drinkType === 'Beer');
+            categoryItems.Spirit = data.filter(item => item.drinkType === 'Spirit');
+            categoryItems.Cocktail = data.filter(item => item.drinkType === 'Cocktail');
             console.log(categoryItems);
             Object.keys(categoryItems).forEach(cat => renderCategory(cat, categoryItems[cat]));
         });
@@ -310,7 +360,7 @@ function renderCart() {
     const cartList = document.getElementById("cart-list");
     const totalDisplay = document.getElementById("cart-total");
     let total = 0;
-    // console.log(orderList.priceinclvat);
+    console.log(totalDisplay);
     cartList.innerHTML = orderList.slice().reverse().map(item => {
         console.log(item);
         const itemTotal = item.priceinclvat * item.quantity;
@@ -324,7 +374,15 @@ function renderCart() {
                     </div>
                 </div>`;
     }).join('');
-    totalDisplay.textContent = total.toFixed(2);
+    updateCartTotal(total); //Cause data-i18n will effect the appearance
+}
+
+function updateCartTotal(total) {
+    const totalElement = document.getElementById("cart-total");
+
+    if (totalElement) {
+        totalElement.textContent = total.toFixed(2);
+    }
 }
 
 function updateCartQuantity(name, change) {
@@ -404,7 +462,7 @@ function attachQuantityListeners() {
 
 // === INIT === set eventlisteners 
 document.addEventListener("DOMContentLoaded", () => {
-    switchCategory('Italien');
+    switchCategory('Beer');
     updateView();
 });
 // document.addEventListener("DOMContentLoaded", updateView);

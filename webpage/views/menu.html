@@ -46,9 +46,15 @@
     <main>
         <section class="menu-section">
             <div class="tabs">
-                <button class="tab-btn active" data-category="Italien">Italien</button>
+                <!-- <button class="tab-btn active" data-category="Italien">Italien</button>
                 <button class="tab-btn" data-category="Slovenien">Slovenien</button>
-                <button class="tab-btn" data-category="Sverige">Sverige</button>
+                <button class="tab-btn" data-category="Sverige">Sverige</button> -->
+
+                <button class="tab-btn active" data-category="Beer" data-i18n="beer">Beer</button>
+                <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
+                <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
+                <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
+
                 <!-- <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
                 <button class="tab-btn" onclick="switchCategory('food')">Food</button>
                 <button class="tab-btn" onclick="switchCategory('desserts')">Desserts</button> -->
@@ -58,9 +64,15 @@
                 <div id="Slovenien" class="tab-content"></div>
                 <div id="Sverige" class="tab-content"></div> -->
 
-                <div id="Italien" class="tab-content active-container"></div>
+                <div id="Spirit" class="tab-content active-container"></div>
+                <div id="Wine" class="tab-content"></div>
+                <div id="Cocktail" class="tab-content"></div>
+                <div id="Beer" class="tab-content"></div>
+
+
+                <!-- <div id="Italien" class="tab-content active-container"></div>
                 <div id="Slovenien" class="tab-content"></div>
-                <div id="Sverige" class="tab-content"></div>
+                <div id="Sverige" class="tab-content"></div> -->
             </div>
         </section>
     
@@ -70,7 +82,7 @@
                 <div id="order-box" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <!-- <h3 class="cart-title">Items</h3> -->
                     <div id="cart-list" class="cart-list"></div>
-                    <ul id="order-list"></ul>
+                    <!-- <ul id="order-list"></ul> -->
                 </div>
                 <!-- <div> -->
                     <!-- <h3 class="cart-title">Items</h3> -->
@@ -79,7 +91,7 @@
                 <!-- </div> -->
         
                 <div class="check-info">
-                    <p id="total-label"  class="total" data-i18n="total"><strong>Total</strong> €<span id="cart-total">0</span></p>
+                    <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
                     <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
                 </div>
                     <!-- UNDO & REDO: -->

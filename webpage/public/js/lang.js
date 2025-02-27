@@ -15,7 +15,11 @@ const translations = {
         menu: "MENU",
         shoppingCart: "Shopping Cart",
         addToCart: "Add to Cart",
-        total: "Total",
+        total: "Total:",
+        spirit: "Spirit",
+        wine: "Wine",
+        cocktail: "Cocktail",
+        beer: "Beer"
     },
     sv: {
         home: "Hem",
@@ -32,7 +36,11 @@ const translations = {
         menu: "MENY",
         shoppingCart: "Varukorg",
         addToCart: "Lägg till i kundvagnen",
-        total: "Totalt"
+        total: "Totalt:",
+        spirit: "Sprit",
+        wine: "Vin",
+        cocktail: "Cocktail",
+        beer: "Öl"
     },
     tw: {
         home: "首頁",
@@ -49,7 +57,11 @@ const translations = {
         menu: "菜單",
         shoppingCart: "購物車",
         addToCart: "加入購物車",
-        total: "總計",
+        total: "總計：",
+        spirit: "烈酒",
+        wine: "紅白酒",
+        cocktail: "雞尾酒",
+        beer: "啤酒"
     },
     ch: { 
         home: "首页",
@@ -66,7 +78,12 @@ const translations = {
         menu: "菜单",
         shoppingCart: "购物车",
         addToCart: "加入购物车",
+        total: "总计：",
         total: "总计",
+        spirit: "烈酒",
+        wine: "红酒",
+        cocktail: "鸡尾酒",
+        beer: "啤酒"
     }
 };
 
@@ -107,6 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const savedLang = localStorage.getItem("selectedLanguage") || "en"; // 預設英語
+    const savedLang = localStorage.getItem("selectedLanguage") || "en"; 
     changeLanguage(savedLang);
 });
