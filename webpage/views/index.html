@@ -14,81 +14,46 @@
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
-                <button onclick="setLanguage('zh')">中文</button>    
+                <button class="lang-btn" data-lang="en"">EN</button>
+                <button class="lang-btn" data-lang="sv"">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw"">繁中</button>  
+                <button class="lang-btn" data-lang="ch"">簡中</button>  
             </div>
-            <!-- Drop down List  -->
-            <!-- <div class="dropdown">
-                <button class="dropbtn"> Language </button>
-                <div class="dropdown-content">
-                    <ul class="no-bullets">
-                        <li><a href="https://google.com">English</a></li>
-                        <li><a href="https://yahoo.com">Svenska</a></li>
-                        <li><a href="https://wenhsuanpeng.com">Mandarin</a></li>
-                    </ul>
-                </div>
-            </div> -->
         </div>          
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./menu.html">Menu</a></li>
-            <li><a href="./login.html">Log In</a></li>
+            <li><a href="./index.html" data-i18n="home">Home</a></li>
+            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
 
     <!-- Billboard  -->
     <section class="billboard">
         <div class="billboard-text">
-            <h1>Welcome to The Bar</h1>
-            <button class="explore-btn" onclick="location.href='./menu.html'">Explore the Menu</button>
+            <h1 id="main-title" data-i18n="welcome">Welcome to The Bar</h1>
+            <button class="explore-btn" data-i18n="explore" onclick="location.href='./menu.html'">Explore the Menu</button>
         </div>
     </section>
 
-    <!-- <section class="menu">
-        <h3>Menu</h3>
-        <div class="foods">
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-        </div>
-        <a href=""></a>
-    </section> -->
-
     <!-- User choose -->
     <section class="user-roles" id="roles">
-        <h2 class="data-lang-key">Choose Your Role</h2>
+        <h2 data-i18n="chooseRole">Choose Your Role</h2>
         <div class="role-container">
             <div class="role-card" onclick="location.href='./vip-menu.html'">
-                <h3 class="data-lang-key">VIP Customer</h3>
-                <p class="data-lang-key">Order, drinks, food</p>
+                <h3 data-i18n="vip">VIP Customer</h3>
+                <p data-i18n="vipDesc">Order, drinks, food</p>
             </div>
 
             <div class="role-card" onclick="location.href='./bartender.html'">
-                <h3 class="data-lang-key">Bartender/Waiter</h3>
-                <p class="data-lang-key">Manage orders</p>
+                <h3 data-i18n="staff">Bartender/Waiter</h3>
+                <p data-i18n="staffDesc">Manage orders</p>
             </div>
 
             <div class="role-card" onclick="location.href='./owner.html'">
-                <h3 class="data-lang-key">Owner</h3>
-                <p class="data-lang-key">Business operator</p>
+                <h3 data-i18n="owner">Owner</h3>
+                <p data-i18n="ownerDesc">Business operator</p>
             </div>
         </div>
     </section>
@@ -97,7 +62,6 @@
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
 
-        <!-- 🌐 JavaScript -->
-        <script src="./menu.js"></script>
+    <script src="../public/js/lang.js"></script>
 </body>
 </html>
