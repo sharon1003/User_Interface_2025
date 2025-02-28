@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/menu.css">
 
@@ -11,14 +12,14 @@
 <body>
     <header class="header">
         <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">The Bar</h1>
+            <h1 class="title">The Flying Dutchman</h1>
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
-                <button class="lang-btn" data-lang="tw">繁中</button>  
-                <button class="lang-btn" data-lang="ch">简中</button>  
+                <button class="lang-btn" data-lang="en"">EN</button>
+                <button class="lang-btn" data-lang="sv"">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw"">繁中</button>  
+                <button class="lang-btn" data-lang="ch"">簡中</button>  
             </div>
         </div>        
     </header>
@@ -54,6 +55,7 @@
                 <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
                 <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
                 <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
+                <button class="tab-btn" data-category="Food" data-i18n="food">Food</button>
 
                 <!-- <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
                 <button class="tab-btn" onclick="switchCategory('food')">Food</button>
@@ -68,6 +70,7 @@
                 <div id="Wine" class="tab-content"></div>
                 <div id="Cocktail" class="tab-content"></div>
                 <div id="Beer" class="tab-content"></div>
+                <div id="Food" class="tab-content"></div>
 
 
                 <!-- <div id="Italien" class="tab-content active-container"></div>
@@ -92,12 +95,18 @@
         
                 <div class="check-info">
                     <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
-                    <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
+                    <button class="checkout-btn" onclick="location.href='./payment.html'">
+                        <i class="fas fa-money-bill-wave"></i> Pay
+                    </button>
                 </div>
                     <!-- UNDO & REDO: -->
                 <div id="undo-redo-container">
-                    <button id="undo-button">Undo</button>
-                    <button id="redo-button">Redo</button>
+                    <button id="undo-button">
+                        <i class="fas fa-undo"></i> Undo
+                    </button>
+                    <button id="redo-button">
+                        <i class="fas fa-redo"></i> Redo
+                    </button>
                 </div>
             </div>
         </section>
