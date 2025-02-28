@@ -31,51 +31,26 @@
         </ul>
     </nav>
 
-    <!-- <section class="menu-section">
-        <h2>MENU</h2>
-        <div class="menu-category" id="Food">
-            <h3>Food</h3>
-        </div>
-        
-        <div class="menu-category" id="drinks">
-            <h3>Drinks</h3>
-        </div>
-
-    </section> -->
     <h1 data-i18n="menu" class="vip-title">MENU</h1>
 
     <main>
         <section class="menu-section">
             <div class="tabs">
-                <!-- <button class="tab-btn active" data-category="Italien">Italien</button>
-                <button class="tab-btn" data-category="Slovenien">Slovenien</button>
-                <button class="tab-btn" data-category="Sverige">Sverige</button> -->
+
 
                 <button class="tab-btn active" data-category="Beer" data-i18n="beer">Beer</button>
                 <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
                 <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
                 <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
                 <button class="tab-btn" data-category="Food" data-i18n="food">Food</button>
-
-                <!-- <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
-                <button class="tab-btn" onclick="switchCategory('food')">Food</button>
-                <button class="tab-btn" onclick="switchCategory('desserts')">Desserts</button> -->
             </div>
             <div class="dropDown-content">
-                <!-- <div id="beverage-container" class="tab-content active-container"></div>
-                <div id="Slovenien" class="tab-content"></div>
-                <div id="Sverige" class="tab-content"></div> -->
 
                 <div id="Spirit" class="tab-content active-container"></div>
                 <div id="Wine" class="tab-content"></div>
                 <div id="Cocktail" class="tab-content"></div>
                 <div id="Beer" class="tab-content"></div>
                 <div id="Food" class="tab-content"></div>
-
-
-                <!-- <div id="Italien" class="tab-content active-container"></div>
-                <div id="Slovenien" class="tab-content"></div>
-                <div id="Sverige" class="tab-content"></div> -->
             </div>
         </section>
     
@@ -83,15 +58,9 @@
             <div class="cart-detail">
                 <h2 id="shopping-cart-title" class="cart-title" data-i18n="shoppingCart">Shopping Cart <br> <small>Drop items here to add them to your cart</small> </h2>
                 <div id="order-box" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <!-- <h3 class="cart-title">Items</h3> -->
                     <div id="cart-list" class="cart-list"></div>
-                    <!-- <ul id="order-list"></ul> -->
                 </div>
-                <!-- <div> -->
-                    <!-- <h3 class="cart-title">Items</h3> -->
-                    <!-- <ul id="cart-items"></ul> -->
-                    <!-- <ul id="order-list"></ul> -->
-                <!-- </div> -->
+
         
                 <div class="check-info">
                     <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
@@ -114,39 +83,13 @@
     </main>
     
 
-
-
-    <!-- <section class="menu">
-        <div class="foods">
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-                <p></p>
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../images/cupcake.png" alt="cupcake">
-            </div>
-        </div>
-        <a href=""></a>
-    </section> -->
-
-
     <footer>
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
     
-    <script src="../data/Beverages_eng.js"></script> <!--load the database-->
+    <script type="module" src="../data/Beverages_eng.js"></script>
+    <script type="module" src="../data/food.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../public/js/menu.js"></script>
     <script src="../public/js/lang.js"></script>

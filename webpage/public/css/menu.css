@@ -27,24 +27,6 @@ main {
 }
 
 
-/* #beverage-container {
-    background-color: #d4af37;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-#Italien-container {
-    background-color: #d4af37;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 10px;
-    flex-wrap: wrap;
-} */
-
 .tab-content {
     /* background-color: #d4af37; */
     display: flex;
@@ -54,14 +36,6 @@ main {
     flex-wrap: wrap; 
 }
 
-/* #beverage-container {
-    background-color: #d4af37;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 10px;
-    flex-wrap: wrap;
-} */
 
 .beverage-card {
     width: 150px;
@@ -227,51 +201,6 @@ main {
     text-align: center;
 }
 
-
-.drinks-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: rgb(177, 228, 212);
-    margin: 2rem 1rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 10px;
-}
-
-.drinks-box label {
-   font-weight: bold;
-   font-size: 15px;
-   color: #3e3834;
-}
-
-
-
-.drinks-box {
-    background-color: rgb(195, 169, 134);
-    margin: 2rem 2rem;
-    border-radius: 5px;
-    font-size: 25px;
-}
-
-.drinks-box button {
-    background-color: #d4af37;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 1rem;
-}
-
-.drinks-box button:hover {
-    background-color: darkgreen;
-    color: white;
-}
-
-.img-box {
-
-}
 
 .cart-section {
     flex: 1;
