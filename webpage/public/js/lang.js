@@ -3,6 +3,7 @@ const translations = {
     en: {
         home: "Home",
         login: "Log In",
+        logout: "Logout",
         welcome: "Welcome to The Bar",
         explore: "Explore the Menu",
         chooseRole: "Choose Your Role",
@@ -12,6 +13,7 @@ const translations = {
         staffDesc: "Manage orders and ensure great service!",
         owner: "Owner",
         ownerDesc: "Oversee inventory and business operations!",
+        manage: "Manage Inventory",
         menu: "MENU",
         shoppingCart: "Shopping Cart",
         addToCart: "Add to Cart",
@@ -19,11 +21,14 @@ const translations = {
         spirit: "Spirit",
         wine: "Wine",
         cocktail: "Cocktail",
-        beer: "Beer"
+        beer: "Beer",
+        info: "Info",
+        vipid: "My account"
     },
     sv: {
         home: "Hem",
         login: "Logga in",
+        logout: "Logga ut",
         welcome: "Välkommen till The Bar",
         explore: "Utforska menyn",
         chooseRole: "Välj din roll",
@@ -33,6 +38,7 @@ const translations = {
         staffDesc: "Hantera beställningar och ge bra service!",
         owner: "Ägare",
         ownerDesc: "Hantera lager och verksamhet!",
+        manage: "Hantera lager",
         menu: "MENY",
         shoppingCart: "Varukorg",
         addToCart: "Lägg till i kundvagnen",
@@ -40,11 +46,14 @@ const translations = {
         spirit: "Sprit",
         wine: "Vin",
         cocktail: "Cocktail",
-        beer: "Öl"
+        beer: "Öl",
+        info: "Info",
+        vipid: "Mitt konto"
     },
     tw: {
         home: "首頁",
         login: "登入",
+        logout: "登出",
         welcome: "歡迎來到 The Bar",
         explore: "探索菜單",
         chooseRole: "選擇你的角色",
@@ -54,6 +63,7 @@ const translations = {
         staffDesc: "管理訂單，提供卓越的服務！",
         owner: "老闆",
         ownerDesc: "管理庫存和營運！",
+        manage: "管理庫存",
         menu: "菜單",
         shoppingCart: "購物車",
         addToCart: "加入購物車",
@@ -61,11 +71,14 @@ const translations = {
         spirit: "烈酒",
         wine: "紅白酒",
         cocktail: "雞尾酒",
-        beer: "啤酒"
+        beer: "啤酒",
+        info: "個人中心",
+        vipid: "我的帳戶"
     },
     ch: { 
         home: "首页",
         login: "登录",
+        logout: "退出",
         welcome: "欢迎来到 The Bar",
         explore: "探索菜单",
         chooseRole: "选择你的角色",
@@ -75,6 +88,7 @@ const translations = {
         staffDesc: "管理订单，提供卓越的服务！",
         owner: "老板",
         ownerDesc: "管理库存和运营！",
+        manage: "管理库存",
         menu: "菜单",
         shoppingCart: "购物车",
         addToCart: "加入购物车",
@@ -83,7 +97,11 @@ const translations = {
         spirit: "烈酒",
         wine: "红酒",
         cocktail: "鸡尾酒",
-        beer: "啤酒"
+        beer: "啤酒",
+        register: "新顾客？联系工作人员注册！",
+        info: "个人中心",
+        vipid: "我的账号",
+        point: "积分"
     }
 };
 

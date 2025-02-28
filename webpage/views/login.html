@@ -15,16 +15,17 @@
         <div class="header-top-right">
             <div class="lang-switch">
                 <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
-                <button onclick="setLanguage('zh')">中文</button>    
+                <button onclick="setLanguage('sv')">SV</button>
+                <button onclick="setLanguage('tw')">繁中</button>
+                <button onclick="setLanguage('zh')">简中</button>
             </div>
         </div>          
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./menu.html">Menu</a></li>
-            <li><a href="./login.html">Log In</a></li>
+            <li><a href="./index.html" data-i18n="home">Home</a></li>
+            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
 
@@ -47,5 +48,7 @@
     </footer>
 
     <script src="./login.js"></script>
+    <script src="../public/js/lang.js"></script>
+
 </body>
 </html>

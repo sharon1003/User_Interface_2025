@@ -4,177 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/menu.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+
 </head>
 <body>
     <header class="header">
         <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">The Bar</h1>
+            <h1 class="title">VIP</h1>
+            <h3 class="vip-title">Welcome! xx</h3>
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
-                <button onclick="setLanguage('zh')">中文</button>    
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw">繁中</button>  
+                <button class="lang-btn" data-lang="ch">简中</button>  
             </div>
-        </div>          
+        </div>        
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./menu.html">Menu</a></li>
-            <li><a href="./login.html">Log In</a></li>
-            <li><a href="./vip-account.html">Account</a></li>
+            <li><a href="../index.html" data-i18n="home">Home</a></li>
+            <li><a href="../menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./vip-info.html" data-i18n="info">Info</a></li>
+            <li><a href="../index.html" data-i18n="logout">Logout</a></li>
         </ul>
     </nav>
 
-    <h1 class="vip-title">MENU</h1>
+    <!-- <section class="menu-section">
+        <h2>MENU</h2>
+        <div class="menu-category" id="Food">
+            <h3>Food</h3>
+        </div>
+        
+        <div class="menu-category" id="drinks">
+            <h3>Drinks</h3>
+        </div>
+
+    </section> -->
+    <h1 data-i18n="menu-vip" class="vip-title">VIP MENU</h1>
 
     <main>
         <section class="menu-section">
-            <h2>Foods</h2>
-            <div class="food-list">
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="food-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
+            <div class="tabs">
+                <!-- <button class="tab-btn active" data-category="Italien">Italien</button>
+                <button class="tab-btn" data-category="Slovenien">Slovenien</button>
+                <button class="tab-btn" data-category="Sverige">Sverige</button> -->
+
+                <button class="tab-btn active" data-category="Beer" data-i18n="beer">Beer</button>
+                <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
+                <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
+                <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
+
+                <!-- <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
+                <button class="tab-btn" onclick="switchCategory('food')">Food</button>
+                <button class="tab-btn" onclick="switchCategory('desserts')">Desserts</button> -->
             </div>
-    
-            <!-- Drinks -->
-            <h2>Drinks</h2>
-            <div class="drinks-list">
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                        <label>Quality: <input type="number" min="0" value="1" size="1"></label>
-                        <br>
-                        <button onclick="addToCart('Fries', 3, this)">Add to Cart</button>
-                
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
-        
-                <div class="drinks-box">
-                    <div class="img-box"></div>
-                    <div class="detail-box">
-                        <h5>Item title</h5>
-                        <p>Description</p>
-                        <h6>Price</h6>
-                    </div>
-                </div>
+            <div class="dropDown-content">
+                <!-- <div id="beverage-container" class="tab-content active-container"></div>
+                <div id="Slovenien" class="tab-content"></div>
+                <div id="Sverige" class="tab-content"></div> -->
+
+                <div id="Spirit" class="tab-content active-container"></div>
+                <div id="Wine" class="tab-content"></div>
+                <div id="Cocktail" class="tab-content"></div>
+                <div id="Beer" class="tab-content"></div>
+
+
+                <!-- <div id="Italien" class="tab-content active-container"></div>
+                <div id="Slovenien" class="tab-content"></div>
+                <div id="Sverige" class="tab-content"></div> -->
             </div>
         </section>
     
-        <section class="chart-section">
-            <div class="chart-detail">
-                <h2 class="cart-title">Shopping Cart</h2>
-                <div>
-                    <h3 class="cart-title">Items</h3>
-                    <ul id="cart-items"></ul>
+        <section class="cart-section">
+            <div class="cart-detail">
+                <h2 id="shopping-cart-title" class="cart-title" data-i18n="shoppingCart">Shopping Cart <br> <small>Drop items here to add them to your cart</small> </h2>
+                <div id="order-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <!-- <h3 class="cart-title">Items</h3> -->
+                    <div id="cart-list" class="cart-list"></div>
+                    <!-- <ul id="order-list"></ul> -->
                 </div>
+                <!-- <div> -->
+                    <!-- <h3 class="cart-title">Items</h3> -->
+                    <!-- <ul id="cart-items"></ul> -->
+                    <!-- <ul id="order-list"></ul> -->
+                <!-- </div> -->
         
                 <div class="check-info">
-                    <p class="total"><strong>Total</strong> €<span id="cart-total">0</span></p>
-                    <button class="checkout-btn">Pay</button>
+                    <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
+                    <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
+                </div>
+                    <!-- UNDO & REDO: -->
+                <div id="undo-redo-container">
+                    <button id="undo-button">Undo</button>
+                    <button id="redo-button">Redo</button>
                 </div>
             </div>
         </section>
+    
     </main>
     
+
 
     <footer>
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
+    
+    <script src="../../data/Beverages_eng.js"></script> <!--load the database-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../public/js/menu.js"></script>
+    <script src="../../public/js/lang.js"></script>
 
-        <!-- 🌐 JavaScript -->
-        <script src="./menu.js"></script>
 </body>
 </html>

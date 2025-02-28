@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-top" onclick="location.href='../index.html'">
+            <h1 class="title">VIP</h1>
+            <h3 class="vip-title">Welcome! xx</h3>
+        </div> 
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw">繁中</button>  
+                <button class="lang-btn" data-lang="ch">简中</button>  
+            </div>
+        </div>        
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html" data-i18n="home">Home</a></li>
+            <li><a href="../menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./vip-info.html" data-i18n="info">Info</a></li>
+            <li><a href="../index.html" data-i18n="logout">Logout</a></li>
+        </ul>
+    </nav>
+
+
+    </section>
+    <main>
+        <section class="info-section">
+            <div class="vip-data">
+                <div class="vipid" id="vipid">
+                    <h1>Costumer number: </h1>
+                </div>
+                <div class="point" id="point">
+                    <h1>Points: 0</h1>
+                </div>
+                <div class= "balance" id="balance">
+                    <h1>Balance: 0 SEK</h1>
+                </div>
+                <div class="records" id="records">
+                    <h1>History Orders:</h1>
+                </div>
+            </div>
+
+        </section>
+    
+    </main>
+
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+    
+    <script src="../../data/VipDB.js"></script> <!--load the database-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../public/js/lang.js"></script>
+
+</body>
+</html>
