@@ -50,7 +50,7 @@ const translations = {
         ipa: "IPA啤酒 - 瑞典手工啤酒",
         wine: "紅酒 - 2019年梅洛",
         snacks: "招牌下酒菜"
-    }
+    },
 };
 
 function setLanguage(lang) {

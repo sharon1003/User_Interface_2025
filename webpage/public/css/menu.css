@@ -9,43 +9,11 @@ main {
     font-size: 50px;
 }
 
-
-.menu {
-    background-color: white;
-    padding: 2rem 1rem;
-}
-
-.menu h3 {
-    text-align: center;
-    font-size: 2rem;
-}
-
-.foods {
-    margin-top: 3rem;
+.menu-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 100%;
-}
-
-.food-item {
-    display: flex;
-    flex: 0 1 calc(100% / 3);
-    flex-direction: column;
     align-items: center;
-}
-
-
-.food-item img{
-    width: 60%;
-    /* border-radius: 80%; */
-    margin-bottom: 3rem;
-    transition: all 0.1s ease-in;
-    padding: 0.1rem;
-}
-
-.menu-section {
-    flex: 2 1;
     background-color: bisque;
     margin: 2rem 1rem;
     border-radius: 10px;
@@ -56,7 +24,8 @@ main {
     text-align: center;
 }
 
-#beverage-container {
+
+/* #beverage-container {
     background-color: #d4af37;
     display: flex;
     justify-content: center;
@@ -64,6 +33,33 @@ main {
     gap: 10px;
     flex-wrap: wrap;
 }
+
+#Italien-container {
+    background-color: #d4af37;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    flex-wrap: wrap;
+} */
+
+.tab-content {
+    background-color: #d4af37;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+/* #beverage-container {
+    background-color: #d4af37;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    flex-wrap: wrap;
+} */
 
 .beverage-card {
     width: 150px;
@@ -149,12 +145,15 @@ main {
 }
 
 .tabs {
-    background-color: #7d630f;
     display: flex;
-    gap: 20px;
-    flex-direction: row;
     justify-content: center;
-    padding: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #2a4b3f;
+    border-radius: 10px;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .tab-btn {
@@ -171,31 +170,6 @@ main {
     color: black;
 }
 
-
-
-.food-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: rgb(192, 215, 215);
-    margin: 2rem 1rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 10px;
-}
-
-
-
-.food-box {
-    background-color: rgb(195, 169, 134);
-    margin: 2rem 2rem;
-    border-radius: 5px;
-    font-size: 25px;
-}
-
-.img-box {
-
-}
 
 .detail-box {
     margin: 0.2rem;
@@ -268,6 +242,12 @@ main {
 .cart-section h2 {
     font-size: 25px;
     text-align: center;
+}
+
+#order-box {
+    overflow-y: auto;
+    height: 30vh; /* 設定高度以便垂直滾動 */
+    width: 300px;
 }
 
 

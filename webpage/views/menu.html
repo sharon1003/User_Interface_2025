@@ -15,17 +15,18 @@
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
-                <button onclick="setLanguage('zh')">中文</button>    
+                <button class="lang-btn" data-lang="en"">EN</button>
+                <button class="lang-btn" data-lang="sv"">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw"">繁中</button>  
+                <button class="lang-btn" data-lang="ch"">簡中</button>  
             </div>
-        </div>          
+        </div>        
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./menu.html">Menu</a></li>
-            <li><a href="./login.html">Log In</a></li>
+            <li><a href="./index.html" data-i18n="home">Home</a></li>
+            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
 
@@ -40,27 +41,48 @@
         </div>
 
     </section> -->
-    <h1 class="vip-title">MENU</h1>
+    <h1 data-i18n="menu" class="vip-title">MENU</h1>
 
     <main>
         <section class="menu-section">
             <div class="tabs">
-                <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
+                <!-- <button class="tab-btn active" data-category="Italien">Italien</button>
+                <button class="tab-btn" data-category="Slovenien">Slovenien</button>
+                <button class="tab-btn" data-category="Sverige">Sverige</button> -->
+
+                <button class="tab-btn active" data-category="Beer" data-i18n="beer">Beer</button>
+                <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
+                <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
+                <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
+
+                <!-- <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
                 <button class="tab-btn" onclick="switchCategory('food')">Food</button>
-                <button class="tab-btn" onclick="switchCategory('desserts')">Desserts</button>
+                <button class="tab-btn" onclick="switchCategory('desserts')">Desserts</button> -->
             </div>
-            <div id="beverage-container"></div>
-            <div id="food-container"></div>
-            <div id="desserts-container"></div>
+            <div class="dropDown-content">
+                <!-- <div id="beverage-container" class="tab-content active-container"></div>
+                <div id="Slovenien" class="tab-content"></div>
+                <div id="Sverige" class="tab-content"></div> -->
+
+                <div id="Spirit" class="tab-content active-container"></div>
+                <div id="Wine" class="tab-content"></div>
+                <div id="Cocktail" class="tab-content"></div>
+                <div id="Beer" class="tab-content"></div>
+
+
+                <!-- <div id="Italien" class="tab-content active-container"></div>
+                <div id="Slovenien" class="tab-content"></div>
+                <div id="Sverige" class="tab-content"></div> -->
+            </div>
         </section>
     
         <section class="cart-section">
             <div class="cart-detail">
-                <h2 class="cart-title">Shopping Cart <br> <small>Drop items here to add them to your cart</small> </h2>
+                <h2 id="shopping-cart-title" class="cart-title" data-i18n="shoppingCart">Shopping Cart <br> <small>Drop items here to add them to your cart</small> </h2>
                 <div id="order-box" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <!-- <h3 class="cart-title">Items</h3> -->
                     <div id="cart-list" class="cart-list"></div>
-                    <ul id="order-list"></ul>
+                    <!-- <ul id="order-list"></ul> -->
                 </div>
                 <!-- <div> -->
                     <!-- <h3 class="cart-title">Items</h3> -->
@@ -69,7 +91,7 @@
                 <!-- </div> -->
         
                 <div class="check-info">
-                    <p class="total"><strong>Total</strong> €<span id="cart-total">0</span></p>
+                    <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
                     <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
                 </div>
                     <!-- UNDO & REDO: -->
@@ -118,6 +140,7 @@
     <script src="../data/Beverages_eng.js"></script> <!--load the database-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../public/js/menu.js"></script>
+    <script src="../public/js/lang.js"></script>
 
 </body>
 </html>
