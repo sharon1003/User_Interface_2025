@@ -3,67 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bartender Dashboard</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/bartender.css">
 </head>
 <body>
     <header class="header">
         <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">Bartender Dashboard</h1>
+            <h1 class="title">Bartender, Waiter and Waitress</h1>
         </div> 
         <div class="header-top-right">
-            <div class="lang-switch">
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">SV</button>
-                <button onclick="setLanguage('tw')">繁中</button>    
-                <button onclick="setLanguage('zh')">简中</button>    
-            </div>
+            <span class="staff-id">Staff ID : Hoho</span>
         </div>          
     </header>
-    <nav>
-        <ul>
-            <li><a href="./index.html" data-i18n="home">Home</a></li>
-            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
-            <li><a href="#" data-i18n="manage">Stock Management</a></li>
-            <li><a href="./index.html" data-i18n="logout">Logout</a></li>
-        </ul>
-    </nav>
-
-    <!-- Billboard  -->
-    <section class="bartender-section">
-        <h2>Current Order</h2>
-        <div class="order-list" id="order-list">
-            <div class="order-item">
-                <h3>Table 1: </h3>
-                <div class="item-info">IPA Beer - 2 pcs - pending</div>
-                <button class="item-btn">View</button>
-                <button class="item-btn">Edit</button>
-                <button class="item-btn">Check-Out</button>
+    
+    <section class="order-section">
+        <h2>Order List</h2>
+        <div class="order-container">
+            <div class="order-tabs">
+                <button class="order-tab active">#351</button>
+                <button class="order-tab">#350</button>
+                <button class="order-tab">#349</button>
+                <button class="order-tab">#318</button>
             </div>
+            
+            <div class="order-details">
+                <div class="order-card">
+                    <h3>#351</h3>
+                    <p>05 Feb 2023, 08:28 PM</p>
+                    <img src="../public/images/food/beef-taco.png" alt="Beef Taco">
+                    <p><strong>Beef Taco</strong></p>
+                    <p>Qty: 1 | SEK 100</p>
+                    <img src="../public/images/food/big-shared-meal.png" alt="Big Shared Meal">
+                    <p><strong>Big Shared Meal</strong></p>
+                    <p>Qty: 1 | SEK 100</p>
+                    <p><strong>In Total: SEK 200</strong></p>
+                    <button class="checkout-btn">Check Out</button>
+                </div>
 
-            <div class="order-item">
-                <h3>Table 2: </h3>
-                <div class="item-info">IPA Beer - 2 pcs - pending</div>
-                <button class="item-btn">View</button>
-                <button class="item-btn">Edit</button>
-                <button class="item-btn">Check-Out</button>
-            </div>
+                <div class="order-card">
+                    <h3>#350</h3>
+                    <p>05 Feb 2023, 08:28 PM</p>
+                    <img src="../public/images/food/burger.png" alt="Burger">
+                    <p><strong>Burger</strong></p>
+                    <p>Qty: 1 | SEK 100</p>
+                    <img src="../public/images/food/cheese-pizza.png" alt="Cheese Pizza">
+                    <p><strong>Cheese Pizza</strong></p>
+                    <p>Qty: 1 | SEK 100</p>
+                    <p><strong>In Total: SEK 200</strong></p>
+                    <button class="reject-btn">Rejected</button>
+                    <button class="confirm-btn">Confirm</button>
+                </div>
 
-            <div class="order-item">
-                <h3>Table 3</h3>
-                <div class="item-info">IPA Beer - 2 pcs - pending</div>
-                <button class="item-btn">View</button>
-                <button class="item-btn">Edit</button>
-                <button class="item-btn">Check-Out</button>
+                <div class="order-card">
+                    <h3>#349</h3>
+                    <p>05 Feb 2023, 08:28 PM</p>
+                    <img src="../public/images/food/fried-chicken-box.png" alt="Fried Chicken Box">
+                    <p><strong>Fried Chicken Box</strong></p>
+                    <p>Qty: 1 | SEK 100</p>
+                    <img src="../public/images/food/pasta.png" alt="Pasta">
+                    <p><strong>Pasta</strong></p>
+                    <p>Qty: 1 | SEK 100</p>
+                    <p><strong>In Total: SEK 200</strong></p>
+                    <button class="reject-btn">Rejected</button>
+                    <button class="confirm-btn">Confirm</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <h3>Copyright ©2025 All rights reserved</h3>
-    </footer>
     <script src="../public/js/lang.js"></script>
-
 </body>
 </html>
