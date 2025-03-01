@@ -1,10 +1,13 @@
 main {
-    background-color: #f6e2c5;
+    background-color: #A67C52;
     display: flex;
     margin: 0.5rem;
 }
 
+
+
 .vip-title{
+    color: white;
     text-align: center;
     font-size: 50px;
 }
@@ -14,7 +17,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: bisque;
     margin: 2rem 1rem;
     border-radius: 10px;
 }
@@ -44,7 +46,7 @@ main {
 } */
 
 .tab-content {
-    background-color: #d4af37;
+    /* background-color: #d4af37; */
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -67,15 +69,32 @@ main {
     margin-top: 1rem;
     border: 1px solid #333;
     border-radius: 5px;
-    background-color: #054739;
+    /* background-color: #054739; */
+    background-color: #356859;
     color: white;
     cursor: grab;
     text-align: center;
 
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.beverage-card h2 {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    word-wrap: break-word;
+}
+
+.beverage-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    max-height: 120px;
 }
 
 /* Order box */
@@ -106,11 +125,20 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+.quantity-selector span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 15px;
 }
 
 .quantity-btn {
-    background-color: #ff4d4d;
+    background-color: #D1495B;
     border: none;
     border-radius: 15px;
     width: 30px;
@@ -120,14 +148,37 @@ main {
     cursor: pointer;
 }
 
+.quantity-btn:hover {
+    background-color: #ffc400;
+    color: white;
+}
+
 .quantity-number {
     font-size: 18px;
     width: 30px;
+    margin-top: 13px;
     text-align: center;
 }
 
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.add-to-cart-btn button {
+.card-footer .add-to-cart-btn {
+    background-color: #92b1ab;
+    border: none;
+    border-radius: 5px;
+    /* padding: 0.5rem 1rem; */
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem; 
+    font-size: 15px;
+}
+
+.add-to-cart-btn{
     background-color: #92b1ab;
     border: none;
     border-radius: 5px;
@@ -135,11 +186,9 @@ main {
     cursor: pointer;
     transition: all 0.2s;
     margin-top: 1rem;
-    /* position: absolute; */
-    /* bottom: 20px; */
 }
 
-.add-to-cart-btn button:hover {
+.add-to-cart-btn:hover {
     background-color: #7d630f;
     color: white;
 }
@@ -149,7 +198,6 @@ main {
     justify-content: center;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #2a4b3f;
     border-radius: 10px;
     gap: 20px;
     justify-content: center;
@@ -159,10 +207,12 @@ main {
 .tab-btn {
     padding: 1rem 1rem;
     cursor: pointer;
-    background-color: #94a59d;
-    color: white;
+    background-color: #f6e2c5;
+    color: black;
     border-radius: 10px;
     border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .tab-btn.active {
@@ -230,46 +280,120 @@ main {
     position: sticky;
     top: 0.01rem;
     height: fit-content;
+    padding: 20px;
 }
 
 .cart-detail {
-    margin: 2rem 1rem;
+    margin-right: 2rem;
     padding: 1rem ;
     background-color: #d4af37;
+    /* background-color: #5A3E36; */
     border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .cart-section h2 {
+    color: white;
     font-size: 25px;
     text-align: center;
 }
 
 #order-box {
     overflow-y: auto;
-    height: 30vh; /* 設定高度以便垂直滾動 */
+    height: 30vh;
     width: 300px;
 }
 
 
 .check-info{
     text-align: center;
+    font-size: 2rem;
 }
 
 .check-info p{
     text-align: left;
 }
 
+.check-info strong {
+    font-size: 2rem;
+}
+
+.checkout-btn {
+    background-color: #004D40;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #00796B;
+}
+
+#undo-redo-container button{
+    background-color: #004D40;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#undo-redo-container button:hover {
+    background-color: #00796B;
+}
+
 .cart-detail button {
     background-color: #086452;
+    color: white;
+    font-size: 1rem;
     border: none;
     border-radius: 5px;
-    padding: 0.5rem 1rem;
     cursor: pointer;
     transition: all 0.2s;
     margin-top: 1rem;
 }
 
 .cart-detail button:hover {
-    background-color: #7d630f;
+    background-color: #3D9970;;
     color: white;
+}
+
+#cart-total {
+    color: #E63946;
+}
+
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 最後一項不加底線 */
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item span {
+    font-size: 20px;
+}
+
+
+.cart-item .quantity-number {
+    font-size: 18px;
+    width: 30px;
+    margin-top: 29px;
+    text-align: center;
 }

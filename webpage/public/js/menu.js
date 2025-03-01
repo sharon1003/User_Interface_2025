@@ -14,7 +14,8 @@ let categoryItems = {
     Wine: [],
     Beer: [],
     Spirit: [],
-    Cocktail: []
+    Cocktail: [],
+    Food: []
 }
 
 function classifyDrink(category) {
@@ -41,20 +42,6 @@ function classifyDrink(category) {
     }
 }
 
-// 測試範例
-let categories = [
-    "Rött vin",
-    "Vitt vin, Sött",
-    "Rosévin",
-    "Vin av flera typer",
-    "Öl",
-    "Cocktail"
-];
-
-let results = categories.map(cat => ({ category: cat, type: classifyDrink(cat) }));
-
-console.log(results);
-
 function switchCategory(category) {
     document.querySelectorAll(".tab-content").forEach(c => c.style.display = 'none');
     document.getElementById(category).style.display = 'flex';
@@ -63,30 +50,80 @@ function switchCategory(category) {
 }
 
 function updateView() {
-    fetch('../data/Beverages_eng.js')
-        .then(response => response.json())
-        .then(data => {
-            // categoryItems.Italien = data.filter(item => item.countryoforiginlandname === 'Italien');
-            // categoryItems.Slovenien = data.filter(item => item.countryoforiginlandname === 'Slovenien');
-            // categoryItems.Sverige = data.filter(item => item.countryoforiginlandname === 'Sverige');
-            
-            data.forEach(item => {
-                item.drinkType = classifyDrink(item.catgegory);
-            });
-            categoryItems.Wine = data.filter(item => item.drinkType === 'Wine');
-            categoryItems.Beer = data.filter(item => item.drinkType === 'Beer');
-            categoryItems.Spirit = data.filter(item => item.drinkType === 'Spirit');
-            categoryItems.Cocktail = data.filter(item => item.drinkType === 'Cocktail');
-            console.log(categoryItems);
-            Object.keys(categoryItems).forEach(cat => renderCategory(cat, categoryItems[cat]));
+    Promise.all([
+        fetch('../data/Beverages_eng.js').then(res => res.json()),
+        fetch('../data/food.js').then(res => res.json())
+    ])
+    .then(([drinks, foods]) => {
+
+        drinks.forEach(item => {
+            item.drinkType = classifyDrink(item.catgegory);
         });
+
+        categoryItems.Wine = drinks.filter(item => item.drinkType === 'Wine'),
+        categoryItems.Beer = drinks.filter(item => item.drinkType === 'Beer'),
+        categoryItems.Spirit = drinks.filter(item => item.drinkType === 'Spirit'),
+        categoryItems.Cocktail = drinks.filter(item => item.drinkType === 'Cocktail'),
+        categoryItems.Food = foods
+
+        console.log(categoryItems);
+
+        Object.keys(categoryItems).forEach(cat => renderCategory(cat, categoryItems[cat]));
+    });
+    // fetch('../data/Beverages_eng.js')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // categoryItems.Italien = data.filter(item => item.countryoforiginlandname === 'Italien');
+    //         // categoryItems.Slovenien = data.filter(item => item.countryoforiginlandname === 'Slovenien');
+    //         // categoryItems.Sverige = data.filter(item => item.countryoforiginlandname === 'Sverige');
+            
+    //         data.forEach(item => {
+    //             item.drinkType = classifyDrink(item.catgegory);
+    //         });
+    //         categoryItems.Wine = data.filter(item => item.drinkType === 'Wine');
+    //         categoryItems.Beer = data.filter(item => item.drinkType === 'Beer');
+    //         categoryItems.Spirit = data.filter(item => item.drinkType === 'Spirit');
+    //         categoryItems.Cocktail = data.filter(item => item.drinkType === 'Cocktail');
+    //         console.log(categoryItems);
+    //         Object.keys(categoryItems).forEach(cat => renderCategory(cat, categoryItems[cat]));
+    //     });
 }
 
 function renderCategory(category, items) {
     const container = document.getElementById(category);
+
+    // items.forEach(item => {
+    //     const menuCard = document.createElement("div");
+        
+    //     menuCard.classList.add("menu-card");
+
+    //     const image_path = item.image ? `../public/images/food/${item.image}`
+    //                                   : `../public/images/food/defaults`;
+
+    //     container.innerHTML = items.map((item, index) =>
+    //         `<div id="${category}-${index}" class="beverage-card" draggable="true"
+    //                 data-name="${item.name}" ondragstart="drag(event)" data-price="${item.priceinclvat}">
+    //             <img src="${item.image}" alt="${item.name}">
+    //             <h2>${item.name}</h2>
+    //             <p><strong>Price:</strong> ${item.priceinclvat} SEK</p>
+    //                 <div class="quantity-selector">
+    //                     <button class="quantity-btn decrement">-</button>
+    //                     <span class="quantity-number">1</span>
+    //                     <button class="quantity-btn increment">+</button>
+    //                 </div>
+    //                 <div class="card-footer">
+    //                     <button class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.priceinclvat}, this)">
+    //                         <i class="fas fa-cart-plus"></i> Add to Cart
+    //                     </button>
+    //                 </div>
+    //         </div>`
+    //     ).join('');
+    // })
+    
     container.innerHTML = items.map((item, index) =>
         `<div id="${category}-${index}" class="beverage-card" draggable="true"
              data-name="${item.name}" ondragstart="drag(event)" data-price="${item.priceinclvat}">
+            <img src="${item.image || '../public/images/drinks/corona.png'}" alt="${item.name}">
             <h2>${item.name}</h2>
             <p><strong>Price:</strong> ${item.priceinclvat} SEK</p>
                 <div class="quantity-selector">
@@ -94,7 +131,11 @@ function renderCategory(category, items) {
                     <span class="quantity-number">1</span>
                     <button class="quantity-btn increment">+</button>
                 </div>
-            <button class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.priceinclvat}, this)">Add to Cart</button>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.priceinclvat}, this)">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
         </div>`
     ).join('');
     attachQuantityListeners();
@@ -374,7 +415,7 @@ function renderCart() {
                     </div>
                 </div>`;
     }).join('');
-    updateCartTotal(total); //Cause data-i18n will effect the appearance
+    updateCartTotal(total); //Cause data-i18n will effect the appear
 }
 
 function updateCartTotal(total) {

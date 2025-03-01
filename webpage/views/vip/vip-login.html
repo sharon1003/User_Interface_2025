@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/login.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/login.css">
 </head>
 <body>
-    <form id="loginForm">
-
     <header class="header">
         <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">The Bar</h1>
+            <h1 class="title">VIP</h1>
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
                 <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">SV</button>
-                <button onclick="setLanguage('tw')">繁中</button>
-                <button onclick="setLanguage('zh')">简中</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('zh')">中文</button>    
             </div>
         </div>          
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html" data-i18n="home">Home</a></li>
-            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
-            <li><a href="./login.html" data-i18n="login">Log In</a></li>
+            <li><a href="../index.html" data-i18n="home">Home</a></li>
+            <li><a href="../menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./vip-info.html" data-i18n="info">Info</a></li>
+            <li><a href="../index.html" data-i18n="logout">Logout</a></li>
         </ul>
     </nav>
 
@@ -41,6 +39,7 @@
              <label for="password"><b>Password</b>:</label>
              <input type="password" id="password" placeholder="Enter password" required>
              <button type="submit" class="login-btn"> Login</button>
+             <label type="register"><b>New custermer? Contact staff to register!</b></label>
         </form>
         <p id="loginMessage"></p>
     </div>
@@ -49,12 +48,9 @@
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
 
-<<<<<<< HEAD
-    <script src="../public/js/login.js"></script>
-=======
-    <script src="./login.js"></script>
-    <script src="../public/js/lang.js"></script>
-
->>>>>>> ce2ab9a67ca5579fff3905088509117a12fec0a9
+    <script src="../login.js"></script>
+    <script src="../data/Beverages_eng.js"></script> <!--load the database-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../public/js/lang.js"></script>
 </body>
 </html>

@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/menu.css">
-    
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+
 </head>
 <body>
     <header class="header">
         <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">The Flying Dutchman</h1>
+            <h1 class="title">VIP</h1>
+            <h3 class="vip-title">Welcome! xx</h3>
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
                 <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
                 <button class="lang-btn" data-lang="tw">繁中</button>  
-                <button class="lang-btn" data-lang="ch">簡中</button>  
+                <button class="lang-btn" data-lang="ch">简中</button>  
             </div>
         </div>        
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html" data-i18n="home">Home</a></li>
-            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
-            <li><a href="./login.html" data-i18n="login">Log In</a></li>
+            <li><a href="../index.html" data-i18n="home">Home</a></li>
+            <li><a href="../menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./vip-info.html" data-i18n="info">Info</a></li>
+            <li><a href="../index.html" data-i18n="logout">Logout</a></li>
         </ul>
     </nav>
 
@@ -42,7 +43,7 @@
         </div>
 
     </section> -->
-    <h1 data-i18n="menu" class="vip-title">MENU</h1>
+    <h1 data-i18n="menu-vip" class="vip-title">VIP MENU</h1>
 
     <main>
         <section class="menu-section">
@@ -55,7 +56,6 @@
                 <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
                 <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
                 <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
-                <button class="tab-btn" data-category="Food" data-i18n="food">Food</button>
 
                 <!-- <button class="tab-btn active" onclick="switchCategory('baverages')">Beverage</button>
                 <button class="tab-btn" onclick="switchCategory('food')">Food</button>
@@ -70,7 +70,6 @@
                 <div id="Wine" class="tab-content"></div>
                 <div id="Cocktail" class="tab-content"></div>
                 <div id="Beer" class="tab-content"></div>
-                <div id="Food" class="tab-content"></div>
 
 
                 <!-- <div id="Italien" class="tab-content active-container"></div>
@@ -95,18 +94,12 @@
         
                 <div class="check-info">
                     <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
-                    <button class="checkout-btn" onclick="location.href='./payment.html'">
-                        <i class="fas fa-money-bill-wave"></i> Pay
-                    </button>
+                    <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
                 </div>
                     <!-- UNDO & REDO: -->
                 <div id="undo-redo-container">
-                    <button id="undo-button">
-                        <i class="fas fa-undo"></i> Undo
-                    </button>
-                    <button id="redo-button">
-                        <i class="fas fa-redo"></i> Redo
-                    </button>
+                    <button id="undo-button">Undo</button>
+                    <button id="redo-button">Redo</button>
                 </div>
             </div>
         </section>
@@ -115,41 +108,14 @@
     
 
 
-
-    <section class="menu">
-        <div class="foods">
-            <div class="food-item">
-                <img src="../public/images/cupcake.png" alt="cupcake">
-                <p></p>
-            </div>
-            <div class="food-item">
-                <img src="../public/images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../public/images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../public/images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../public/images/cupcake.png" alt="cupcake">
-            </div>
-            <div class="food-item">
-                <img src="../public/images/cupcake.png" alt="cupcake">
-            </div>
-        </div>
-        <a href=""></a>
-    </section>
-
-
     <footer>
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
     
-    <script src="../data/Beverages_eng.js"></script> <!--load the database-->
+    <script src="../../data/Beverages_eng.js"></script> <!--load the database-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../public/js/menu.js"></script>
-    <script src="../public/js/lang.js"></script>
+    <script src="../../public/js/menu.js"></script>
+    <script src="../../public/js/lang.js"></script>
 
 </body>
 </html>
