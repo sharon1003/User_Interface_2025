@@ -1,3 +1,7 @@
+import drinks from '../data/Beverages_eng.js';
+console.log(drinks);
+
+
 // === MODEL: Data Storage ===
 
 let availableBeverages = [] 
@@ -8,9 +12,6 @@ let undoStack = [];
 let redoStack = [];
 
 let categoryItems = {
-    // Italien: [],
-    // Slovenien: [],
-    // Sverige: []
     Wine: [],
     Beer: [],
     Spirit: [],
@@ -49,6 +50,8 @@ function switchCategory(category) {
     document.querySelector(`.tab-btn[data-category="${category}"]`).classList.add("active");
 }
 
+
+
 function updateView() {
     Promise.all([
         fetch('../data/Beverages_eng.js').then(res => res.json()),
@@ -70,56 +73,11 @@ function updateView() {
 
         Object.keys(categoryItems).forEach(cat => renderCategory(cat, categoryItems[cat]));
     });
-    // fetch('../data/Beverages_eng.js')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // categoryItems.Italien = data.filter(item => item.countryoforiginlandname === 'Italien');
-    //         // categoryItems.Slovenien = data.filter(item => item.countryoforiginlandname === 'Slovenien');
-    //         // categoryItems.Sverige = data.filter(item => item.countryoforiginlandname === 'Sverige');
-            
-    //         data.forEach(item => {
-    //             item.drinkType = classifyDrink(item.catgegory);
-    //         });
-    //         categoryItems.Wine = data.filter(item => item.drinkType === 'Wine');
-    //         categoryItems.Beer = data.filter(item => item.drinkType === 'Beer');
-    //         categoryItems.Spirit = data.filter(item => item.drinkType === 'Spirit');
-    //         categoryItems.Cocktail = data.filter(item => item.drinkType === 'Cocktail');
-    //         console.log(categoryItems);
-    //         Object.keys(categoryItems).forEach(cat => renderCategory(cat, categoryItems[cat]));
-    //     });
 }
 
 function renderCategory(category, items) {
     const container = document.getElementById(category);
 
-    // items.forEach(item => {
-    //     const menuCard = document.createElement("div");
-        
-    //     menuCard.classList.add("menu-card");
-
-    //     const image_path = item.image ? `../public/images/food/${item.image}`
-    //                                   : `../public/images/food/defaults`;
-
-    //     container.innerHTML = items.map((item, index) =>
-    //         `<div id="${category}-${index}" class="beverage-card" draggable="true"
-    //                 data-name="${item.name}" ondragstart="drag(event)" data-price="${item.priceinclvat}">
-    //             <img src="${item.image}" alt="${item.name}">
-    //             <h2>${item.name}</h2>
-    //             <p><strong>Price:</strong> ${item.priceinclvat} SEK</p>
-    //                 <div class="quantity-selector">
-    //                     <button class="quantity-btn decrement">-</button>
-    //                     <span class="quantity-number">1</span>
-    //                     <button class="quantity-btn increment">+</button>
-    //                 </div>
-    //                 <div class="card-footer">
-    //                     <button class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.priceinclvat}, this)">
-    //                         <i class="fas fa-cart-plus"></i> Add to Cart
-    //                     </button>
-    //                 </div>
-    //         </div>`
-    //     ).join('');
-    // })
-    
     container.innerHTML = items.map((item, index) =>
         `<div id="${category}-${index}" class="beverage-card" draggable="true"
              data-name="${item.name}" ondragstart="drag(event)" data-price="${item.priceinclvat}">
@@ -148,40 +106,6 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
 });
 
 
-
-
-// === VIEW: Update UI ===
-// function updateView() {
-//     console.log("Updating view");
-//     let beverageContainer = document.getElementById("beverage-container"); // Get the beverage container and turn it into a div with the class beverage card and id beverage-(index)
-    
-//     fetch('../data/Beverages_eng.js')
-//         .then((response) => response.json())
-//         .then((data => {
-//         availableBeverages = data.slice(0, 100);
-        
-//         // Display available beverages
-//         beverageContainer.innerHTML = availableBeverages.map((beverage, index) =>
-//             `<div id="beverage-${index}" class="beverage-card" draggable="true"
-//                   data-name="${beverage.name}" data-price="${beverage.priceinclvat}"
-//                   ondragstart="drag(event)">
-//                 <h2>${beverage.name}</h2>
-//                 <p><strong>Price:</strong> ${beverage.priceinclvat} SEK</p>
-//                 <div class="quantity-selector">
-//                     <button class="quantity-btn decrement">-</button>
-//                     <span class="quantity-number">1</span>
-//                     <button class="quantity-btn increment">+</button>
-//                 </div>
-//                 <div class="add-to-cart-btn">
-//                     <button class="add-to-cart-btn" onclick="addToCart('${beverage.name}', ${beverage.priceinclvat}, this)">Add to Cart</button>
-//                 </div>
-//             </div>`
-//         ).join('');
-
-//         attachQuantityListeners();
-//     }));
-// }
-
 // === CONTROLLER ===
 
 // Handle Undo & Redo 
@@ -208,21 +132,6 @@ function allowDrop(ev) {
     ev.preventDefault(); //Stop drop from working so we can implement it ourselves
 }
 
-// function drag(ev) {
-//     console.log(ev)
-//     const card = ev.target.closest(".beverage-card");
-//     const quantity = parseInt(card.querySelector(".quantity-number").textContent);
-//     const category = card.closest(".tab-content").id; // 取得當前 tab (Italien, Slovenien, Sverige)
-
-//     ev.dataTransfer.setData("text/plain", JSON.stringify({
-//         name: card.getAttribute("data-name"),
-//         price: parseFloat(card.getAttribute("data-price")),
-//         quantity: quantity,
-//         category: category
-//     }));
-//     console.log("Dragging:", card.getAttribute("data-name"), "Qty:", quantity, "Category:", category);
-// }
-
 
 function drag(ev) {
     // console.log(ev)
@@ -241,10 +150,6 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault(); // prevents default drop from working
     
-    // let beverageId = ev.dataTransfer.getData("text"); //
-    // let category = beverageId.split('-')[0];
-    // let beverageIndex = beverageId.split('-')[1]; // Extract index from id
-
     let data = JSON.parse(ev.dataTransfer.getData("text/plain")); // 解析 JSON
     console.log("Dropped:", data);
 
