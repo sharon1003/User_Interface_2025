@@ -13,6 +13,11 @@
   color: #f1c40f;
 }
 
+.order-section h2 {
+  font-size: 26px;
+  color: #f1c40f;
+}
+
 /* Staff ID Styling */
 .staff-id {
   color: #f1c40f;
@@ -74,6 +79,32 @@
   border-radius: 8px;
   border: 2px solid #f1c40f;
 }
+
+.order-item {
+  display: flex;
+  align-items: center; /* 让图片和文本垂直居中 */
+  margin-bottom: 10px;
+}
+
+.order-item img {
+  width: 80px;  /* 适当缩小图片 */
+  height: 80px;
+  margin-right: 15px; /* 让文本和图片保持适当间距 */
+  border-radius: 8px;
+  border: 2px solid #f1c40f;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-info p {
+  margin: 5px 0;
+  color: white; /* 保持文字颜色统一 */
+}
+
+
 
 /* Buttons */
 .checkout-btn, .reject-btn, .confirm-btn {
