@@ -310,7 +310,6 @@ main {
     border-bottom: 1px solid #ddd;
 }
 
-/* 最後一項不加底線 */
 .cart-item:last-child {
     border-bottom: none;
 }
