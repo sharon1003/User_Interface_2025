@@ -1,0 +1,83 @@
+[
+    {
+    "orderId": "1",
+    "date": "2025-02-22",
+    "vip": "Alice",
+    "status": "Done",
+    "items": [
+        {
+        "type": "food",
+        "name": "Burger",
+        "quantity": 1,
+        "price": 100,
+        "image": "../public/images/food/burger.png"
+        }
+    ]
+    },
+    {
+    "orderId": "2",
+    "date": "2025-02-22",
+    "vip": "Alice",
+    "status": "Pending",
+    "items": [
+        {
+        "type": "drink",
+        "name": "Beer 1",
+        "quantity": 2,
+        "price": 100,
+        "image": "../public/images/drinks/corona.png"
+        },
+        {
+        "type": "f",
+        "name": "Burger",
+        "quantity": 1,
+        "price": 100,
+        "image": "../public/images/food/burger.png"
+        }
+    ]
+    },
+    {
+    "orderId": "3",
+    "date": "2025-02-22",
+    "vip": "Alice",
+    "status": "Taken",
+    "items": [
+        {
+        "type": "drink",
+        "name": "Beer 1",
+        "quantity": 3,
+        "price": 150,
+        "image": "../public/images/drinks/corona.png"
+        },
+        {
+        "type": "f",
+        "name": "Chicken Wrap",
+        "quantity": 1,
+        "price": 100,
+        "image": "../public/images/food/chicken-wrap.png"
+        }
+    ]
+    },
+    {
+    "orderId": "4",
+    "date": "2025-02-22",
+    "vip": "Alice",
+    "status": "Closed",
+    "items": [
+        {
+        "type": "drink",
+        "name": "Beer 1",
+        "quantity": 3,
+        "price": 150,
+        "image": "../public/images/drinks/corona.png"
+        },
+        {
+        "type": "f",
+        "name": "Chicken Wrap",
+        "quantity": 1,
+        "price": 100,
+        "image": "../public/images/food/chicken-wrap.png"
+        }
+    ]
+    }
+]
