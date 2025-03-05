@@ -1,0 +1,30 @@
+{
+    "owner": [
+    {
+        "uid": "qida",
+        "psw": "qida"
+    }
+    ],
+    "bartender": [
+    {
+        "uid": "wen-hsuan",
+        "psw": "wen-huan"
+    },
+    {
+        "uid": "astrid",
+        "psw": "astrid"
+    }
+    ],
+    "vip": [
+        {
+            "uid": "danning",
+            "psw": "danning",
+            "balance": 100
+        },
+        {
+            "uid": "yu-hua",
+            "psw": "yu-hua",
+            "balance": 10000
+        }
+    ]
+}
