@@ -1,7 +1,3 @@
-import drinks from '../data/Beverages_eng.js';
-console.log(drinks);
-
-
 // === MODEL: Data Storage ===
 
 let availableBeverages = [] 
