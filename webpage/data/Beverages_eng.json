@@ -1,362 +1,266 @@
 [
-        {
-            "name": "Beer 1",
-            "category": "Beer",
-            "priceinclvat": 50,
-            "image": "../public/images/drinks/beer-0.png"
-        },
-        {
-            "name": "Beer 2",
-            "category": "Beer",
-            "priceinclvat": 60,
-            "image": "../public/images/drinks/beer-1.png"
-        },
-        {
-            "name": "Beer 3",
-            "category": "Beer",
-            "priceinclvat": 70,
-            "image": "../public/images/drinks/beer-2.png"
-        },
-        {
-            "name": "Beer 4",
-            "category": "Beer",
-            "priceinclvat": 80,
-            "image": "../public/images/drinks/beer-3.png"
-        },
-        {
-            "name": "Beer 5",
-            "category": "Beer",
-            "priceinclvat": 90,
-            "image": "../public/images/drinks/beer-4.png"
-        },
-        {
-            "name": "Beer 6",
-            "category": "Beer",
-            "priceinclvat": 100,
-            "image": "../public/images/drinks/beer-5.png"
-        },
-        {
-            "name": "Beer 7",
-            "category": "Beer",
-            "priceinclvat": 110,
-            "image": "../public/images/drinks/beer-6.png"
-        },
-        {
-            "name": "Beer 8",
-            "category": "Beer",
-            "priceinclvat": 120,
-            "image": "../public/images/drinks/beer-7.png"
-        },
-        {
-            "name": "Beer 9",
-            "category": "Beer",
-            "priceinclvat": 130,
-            "image": "../public/images/drinks/beer-8.png"
-        },
-        {
-            "name": "Beer 10",
-            "category": "Beer",
-            "priceinclvat": 140,
-            "image": "../public/images/drinks/beer-9.png"
-        },
-        {
-            "name": "Beer 11",
-            "category": "Beer",
-            "priceinclvat": 150,
-            "image": "../public/images/drinks/beer-10.png"
-        },
-        {
-            "name": "Beer 12",
-            "category": "Beer",
-            "priceinclvat": 160,
-            "image": "../public/images/drinks/beer-11.png"
-        },
-        {
-            "name": "Beer 13",
-            "category": "Beer",
-            "priceinclvat": 170,
-            "image": "../public/images/drinks/beer-12.png"
-        },
-        {
-            "name": "Beer 14",
-            "category": "Beer",
-            "priceinclvat": 180,
-            "image": "../public/images/drinks/beer-13.png"
-        },
-        {
-            "name": "Beer 15",
-            "category": "Beer",
-            "priceinclvat": 190,
-            "image": "../public/images/drinks/beer-14.png"
-        },
-        {
-            "name": "Wine 1",
-            "category": "Wine",
-            "priceinclvat": 50,
-            "image": "../public/images/drinks/wine-0.png"
-        },
-        {
-            "name": "Wine 2",
-            "category": "Wine",
-            "priceinclvat": 60,
-            "image": "../public/images/drinks/wine-1.png"
-        },
-        {
-            "name": "Wine 3",
-            "category": "Wine",
-            "priceinclvat": 70,
-            "image": "../public/images/drinks/wine-2.png"
-        },
-        {
-            "name": "Wine 4",
-            "category": "Wine",
-            "priceinclvat": 80,
-            "image": "../public/images/drinks/wine-3.png"
-        },
-        {
-            "name": "Wine 5",
-            "category": "Wine",
-            "priceinclvat": 90,
-            "image": "../public/images/drinks/wine-4.png"
-        },
-        {
-            "name": "Wine 6",
-            "category": "Wine",
-            "priceinclvat": 100,
-            "image": "../public/images/drinks/wine-5.png"
-        },
-        {
-            "name": "Wine 7",
-            "category": "Wine",
-            "priceinclvat": 110,
-            "image": "../public/images/drinks/wine-6.png"
-        },
-        {
-            "name": "Wine 8",
-            "category": "Wine",
-            "priceinclvat": 120,
-            "image": "../public/images/drinks/wine-7.png"
-        },
-        {
-            "name": "Wine 9",
-            "category": "Wine",
-            "priceinclvat": 130,
-            "image": "../public/images/drinks/wine-8.png"
-        },
-        {
-            "name": "Wine 10",
-            "category": "Wine",
-            "priceinclvat": 140,
-            "image": "../public/images/drinks/wine-9.png"
-        },
-        {
-            "name": "Wine 11",
-            "category": "Wine",
-            "priceinclvat": 150,
-            "image": "../public/images/drinks/wine-10.png"
-        },
-        {
-            "name": "Wine 12",
-            "category": "Wine",
-            "priceinclvat": 160,
-            "image": "../public/images/drinks/wine-11.png"
-        },
-        {
-            "name": "Wine 13",
-            "category": "Wine",
-            "priceinclvat": 170,
-            "image": "../public/images/drinks/wine-12.png"
-        },
-        {
-            "name": "Wine 14",
-            "category": "Wine",
-            "priceinclvat": 180,
-            "image": "../public/images/drinks/wine-13.png"
-        },
-        {
-            "name": "Wine 15",
-            "category": "Wine",
-            "priceinclvat": 190,
-            "image": "../public/images/drinks/wine-14.png"
-        },
-        {
-            "name": "Cocktail 1",
-            "category": "Cocktail",
-            "priceinclvat": 50,
-            "image": "../public/images/drinks/cocktail-0.png"
-        },
-        {
-            "name": "Cocktail 2",
-            "category": "Cocktail",
-            "priceinclvat": 60,
-            "image": "../public/images/drinks/cocktail-1.png"
-        },
-        {
-            "name": "Cocktail 3",
-            "category": "Cocktail",
-            "priceinclvat": 70,
-            "image": "../public/images/drinks/cocktail-2.png"
-        },
-        {
-            "name": "Cocktail 4",
-            "category": "Cocktail",
-            "priceinclvat": 80,
-            "image": "../public/images/drinks/cocktail-3.png"
-        },
-        {
-            "name": "Cocktail 5",
-            "category": "Cocktail",
-            "priceinclvat": 90,
-            "image": "../public/images/drinks/cocktail-4.png"
-        },
-        {
-            "name": "Cocktail 6",
-            "category": "Cocktail",
-            "priceinclvat": 100,
-            "image": "../public/images/drinks/cocktail-5.png"
-        },
-        {
-            "name": "Cocktail 7",
-            "category": "Cocktail",
-            "priceinclvat": 110,
-            "image": "../public/images/drinks/cocktail-6.png"
-        },
-        {
-            "name": "Cocktail 8",
-            "category": "Cocktail",
-            "priceinclvat": 120,
-            "image": "../public/images/drinks/cocktail-7.png"
-        },
-        {
-            "name": "Cocktail 9",
-            "category": "Cocktail",
-            "priceinclvat": 130,
-            "image": "../public/images/drinks/cocktail-8.png"
-        },
-        {
-            "name": "Cocktail 10",
-            "category": "Cocktail",
-            "priceinclvat": 140,
-            "image": "../public/images/drinks/cocktail-9.png"
-        },
-        {
-            "name": "Cocktail 11",
-            "category": "Cocktail",
-            "priceinclvat": 150,
-            "image": "../public/images/drinks/cocktail-10.png"
-        },
-        {
-            "name": "Cocktail 12",
-            "category": "Cocktail",
-            "priceinclvat": 160,
-            "image": "../public/images/drinks/cocktail-11.png"
-        },
-        {
-            "name": "Cocktail 13",
-            "category": "Cocktail",
-            "priceinclvat": 170,
-            "image": "../public/images/drinks/cocktail-12.png"
-        },
-        {
-            "name": "Cocktail 14",
-            "category": "Cocktail",
-            "priceinclvat": 180,
-            "image": "../public/images/drinks/cocktail-13.png"
-        },
-        {
-            "name": "Cocktail 15",
-            "category": "Cocktail",
-            "priceinclvat": 190,
-            "image": "../public/images/drinks/cocktail-14.png"
-        },
-        {
-            "name": "Spirit 1",
-            "category": "Spirit",
-            "priceinclvat": 50,
-            "image": "../public/images/drinks/spirit-0.png"
-        },
-        {
-            "name": "Spirit 2",
-            "category": "Spirit",
-            "priceinclvat": 60,
-            "image": "../public/images/drinks/spirit-1.png"
-        },
-        {
-            "name": "Spirit 3",
-            "category": "Spirit",
-            "priceinclvat": 70,
-            "image": "../public/images/drinks/spirit-2.png"
-        },
-        {
-            "name": "Spirit 4",
-            "category": "Spirit",
-            "priceinclvat": 80,
-            "image": "../public/images/drinks/spirit-3.png"
-        },
-        {
-            "name": "Spirit 5",
-            "category": "Spirit",
-            "priceinclvat": 90,
-            "image": "../public/images/drinks/spirit-4.png"
-        },
-        {
-            "name": "Spirit 6",
-            "category": "Spirit",
-            "priceinclvat": 100,
-            "image": "../public/images/drinks/spirit-5.png"
-        },
-        {
-            "name": "Spirit 7",
-            "category": "Spirit",
-            "priceinclvat": 110,
-            "image": "../public/images/drinks/spirit-6.png"
-        },
-        {
-            "name": "Spirit 8",
-            "category": "Spirit",
-            "priceinclvat": 120,
-            "image": "../public/images/drinks/spirit-7.png"
-        },
-        {
-            "name": "Spirit 9",
-            "category": "Spirit",
-            "priceinclvat": 130,
-            "image": "../public/images/drinks/spirit-8.png"
-        },
-        {
-            "name": "Spirit 10",
-            "category": "Spirit",
-            "priceinclvat": 140,
-            "image": "../public/images/drinks/spirit-9.png"
-        },
-        {
-            "name": "Spirit 11",
-            "category": "Spirit",
-            "priceinclvat": 150,
-            "image": "../public/images/drinks/spirit-10.png"
-        },
-        {
-            "name": "Spirit 12",
-            "category": "Spirit",
-            "priceinclvat": 160,
-            "image": "../public/images/drinks/spirit-11.png"
-        },
-        {
-            "name": "Spirit 13",
-            "category": "Spirit",
-            "priceinclvat": 170,
-            "image": "../public/images/drinks/spirit-12.png"
-        },
-        {
-            "name": "Spirit 14",
-            "category": "Spirit",
-            "priceinclvat": 180,
-            "image": "../public/images/drinks/spirit-13.png"
-        },
-        {
-            "name": "Spirit 15",
-            "category": "Spirit",
-            "priceinclvat": 190,
-            "image": "../public/images/drinks/spirit-14.png"
-        }
+    {
+        "name": "Cabernet Sauvignon",
+        "category": "Wine",
+        "priceinclvat": 1500,
+        "image": "../public/images/drinks/wine/cabernet_sauvignon.png"
+    },
+    {
+        "name": "Lindemans Chardonnay",
+        "category": "Wine",
+        "priceinclvat": 1200,
+        "image": "../public/images/drinks/wine/LindemansChardonnay.png"
+    },
+    {
+        "name": "Pinot Blanc",
+        "category": "Wine",
+        "priceinclvat": 1800,
+        "image": "../public/images/drinks/wine/PinotBlanc.png"
+    },
+    {
+        "name": "Chardonnay",
+        "category": "Wine",
+        "priceinclvat": 1300,
+        "image": "../public/images/drinks/wine/chardonnay.png"
+    },
+    {
+        "name": "Sauvignon Blanc",
+        "category": "Wine",
+        "priceinclvat": 1400,
+        "image": "../public/images/drinks/wine/sauvignon_blanc.png"
+    },
+    {
+        "name": "Scarecrow",
+        "category": "Wine",
+        "priceinclvat": 1100,
+        "image": "../public/images/drinks/wine/Scarecrow.png"
+    },
+    {
+        "name": "Syrah",
+        "category": "Wine",
+        "priceinclvat": 1700,
+        "image": "../public/images/drinks/wine/syrah.png"
+    },
+    {
+        "name": "Zinfandel",
+        "category": "Wine",
+        "priceinclvat": 1600,
+        "image": "../public/images/drinks/wine/zinfandel.png"
+    },
+    {
+        "name": "Malbec",
+        "category": "Wine",
+        "priceinclvat": 1550,
+        "image": "../public/images/drinks/wine/malbec.png"
+    },
+    {
+        "name": "Grenache",
+        "category": "Wine",
+        "priceinclvat": 1350,
+        "image": "../public/images/drinks/wine/grenache.png"
+    },
+    {
+        "name": "Tempranillo",
+        "category": "Wine",
+        "priceinclvat": 1450,
+        "image": "../public/images/drinks/wine/tempranillo.png"
+    },
+    {
+        "name": "Nebbiolo",
+        "category": "Wine",
+        "priceinclvat": 1950,
+        "image": "../public/images/drinks/wine/nebbiolo.png"
+    },
+    {
+        "name": "Barbera",
+        "category": "Wine",
+        "priceinclvat": 1250,
+        "image": "../public/images/drinks/wine/barbera.png"
+    },
+    {
+        "name": "Moscato",
+        "category": "Wine",
+        "priceinclvat": 1000,
+        "image": "../public/images/drinks/wine/moscato.png"
+    },
+    {
+        "name": "Viognier",
+        "category": "Wine",
+        "priceinclvat": 1150,
+        "image": "../public/images/drinks/wine/viognier.png"
+    },
+    {
+        "name": "Heineken",
+        "category": "Beer",
+        "priceinclvat": 120,
+        "image": "../public/images/drinks/beer/Heineken.png"
+    },
+    {
+        "name": "Budweiser",
+        "category": "Beer",
+        "priceinclvat": 100,
+        "image": "../public/images/drinks/beer/budweiser.png"
+    },
+    {
+        "name": "Corona",
+        "category": "Beer",
+        "priceinclvat": 130,
+        "image": "../public/images/drinks/beer/corona.png"
+    },
+    {
+        "name": "Guinness",
+        "category": "Beer",
+        "priceinclvat": 17,
+        "image": "../public/images/drinks/beer/Guinness.png"
+    },
+    {
+        "name": "Carlsberg",
+        "category": "Beer",
+        "priceinclvat": 110,
+        "image": "../public/images/drinks/beer/Carlsberg.png"
+    },
+    {
+        "name": "Stella Artois",
+        "category": "Beer",
+        "priceinclvat": 140,
+        "image": "../public/images/drinks/beer/stella_artois.webp"
+    },
+    {
+        "name": "Asahi",
+        "category": "Beer",
+        "priceinclvat": 125,
+        "image": "../public/images/drinks/beer/asahi.png"
+    },
+    {
+        "name": "Oppigårds",
+        "category": "Beer",
+        "priceinclvat": 130,
+        "image": "../public/images/drinks/beer/oppigards.png"
+    },
+    {
+        "name": "Taiwan Beer",
+        "category": "Beer",
+        "priceinclvat": 110,
+        "image": "../public/images/drinks/beer/taiwan_beer.png"
+    },
+    {
+        "name": "Duvel",
+        "category": "Beer",
+        "priceinclvat": 135,
+        "image": "../public/images/drinks/beer/duvel.png"
+    },
+    {
+        "name": "Jack Daniel's",
+        "category": "Spirit",
+        "priceinclvat": 1800,
+        "image": "../public/images/drinks/spirit/jack_daniels.png"
+    },
+    {
+        "name": "Absolut Pears",
+        "category": "Spirit",
+        "priceinclvat": 1800,
+        "image": "../public/images/drinks/spirit/AbsolutPears.png"
+    },
+    {
+        "name": "Rum Plantation",
+        "category": "Spirit",
+        "priceinclvat": 1800,
+        "image": "../public/images/drinks/spirit/RumPlantation.png"
+    },
+    {
+        "name": "Tanqueray",
+        "category": "Spirit",
+        "priceinclvat": 1800,
+        "image": "../public/images/drinks/spirit/Tanqueray.png"
+    },
+    {
+        "name": "Johnnie Walker Black Label",
+        "category": "Spirit",
+        "priceinclvat": 2000,
+        "image": "../public/images/drinks/spirit/johnnie_walker.png"
+    },
+    {
+        "name": "Roku Gin",
+        "category": "Spirit",
+        "priceinclvat": 1900,
+        "image": "../public/images/drinks/spirit/roku_gin.webp"
+    },
+    {
+        "name": "Hennessy VS",
+        "category": "Spirit",
+        "priceinclvat": 2200,
+        "image": "../public/images/drinks/spirit/hennessy_vs.png"
+    },
+    {
+        "name": "Bacardi",
+        "category": "Spirit",
+        "priceinclvat": 1500,
+        "image": "../public/images/drinks/spirit/bacardi.png"
+    },
+    {
+        "name": "Tequila Patron",
+        "category": "Spirit",
+        "priceinclvat": 2500,
+        "image": "../public/images/drinks/spirit/tequila_patron.png"
+    },
+    {
+        "name": "Mojito",
+        "category": "Cocktail",
+        "priceinclvat": 300,
+        "image": "../public/images/drinks/cocktail/mojito.png"
+    },
+    {
+        "name": "Martini",
+        "category": "Cocktail",
+        "priceinclvat": 320,
+        "image": "../public/images/drinks/cocktail/martini.png"
+    },
+    {
+        "name": "Margarita",
+        "category": "Cocktail",
+        "priceinclvat": 350,
+        "image": "../public/images/drinks/cocktail/margarita.png"
+    },
+    {
+        "name": "Pina Colada",
+        "category": "Cocktail",
+        "priceinclvat": 330,
+        "image": "../public/images/drinks/cocktail/pina_colada.png"
+    },
+    {
+        "name": "Old Fashioned",
+        "category": "Cocktail",
+        "priceinclvat": 400,
+        "image": "../public/images/drinks/cocktail/old_fashioned.png"
+    },
+    {
+        "name": "Daiquiri",
+        "category": "Cocktail",
+        "priceinclvat": 320,
+        "image": "../public/images/drinks/cocktail/daiquiri.png"
+    },
+    {
+        "name": "Negroni",
+        "category": "Cocktail",
+        "priceinclvat": 350,
+        "image": "../public/images/drinks/cocktail/negroni.png"
+    },
+    {
+        "name": "Cosmopolitan",
+        "category": "Cocktail",
+        "priceinclvat": 340,
+        "image": "../public/images/drinks/cocktail/cosmopolitan.png"
+    },
+    {
+        "name": "Whiskey Sour",
+        "category": "Cocktail",
+        "priceinclvat": 360,
+        "image": "../public/images/drinks/cocktail/whiskey_sour.png"
+    },
+    {
+        "name": "Long Island Iced Tea",
+        "category": "Cocktail",
+        "priceinclvat": 380,
+        "image": "../public/images/drinks/cocktail/long_island_iced_tea.png"
+    }
 ]

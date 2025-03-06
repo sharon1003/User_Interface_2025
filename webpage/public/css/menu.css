@@ -310,6 +310,7 @@ main {
     border-bottom: 1px solid #ddd;
 }
 
+/* 最後一項不加底線 */
 .cart-item:last-child {
     border-bottom: none;
 }
@@ -324,4 +325,12 @@ main {
     width: 30px;
     margin-top: 29px;
     text-align: center;
+}
+
+.cart-item img {
+    width: 25%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    max-height: 120px;
 }
