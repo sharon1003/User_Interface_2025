@@ -32,11 +32,8 @@
     <section class="payment-section">
         <h2>Payment</h2>
         <div class="order-summary">
-            <ul id="order-list">
-
-            </ul>
-            <p>Total Amount:</p>
-            <p id="total-amount">100kr</p>
+            <ul id="order-list"></ul>
+            <p><strong>Total Amount:</strong> <span id="total-amount">0kr</span></p>
         </div>
 
         <div class="payment-method">
@@ -47,8 +44,7 @@
                 <option value="VIP">VIP Account</option>
             </select>
         </div>
-        <button id="payButton" class="payment-submit-btn">Pay</button>
-        <script src="../public/js/payment.js"></script>
+        <button class="payment-submit-btn">Pay</button>
 
     </section>
 
@@ -56,6 +52,6 @@
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
     <script src="../public/js/lang.js"></script>
-
+    <script type="module" src="../public/js/pay_contorller.js"></script>
 </body>
 </html>
