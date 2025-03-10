@@ -10,16 +10,16 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">VIP</h1>
-            <h3 class="vip-title">Welcome! xx</h3>
+        <div class="header-top" onclick="location.href='../index.html'">
+            <h1 class="title">The Flying Dutchman</h1>
+            <h3 class="vip-title">Welcome to Flying Dutchman!</h3>
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
-                <button class="lang-btn" data-lang="tw">繁中</button>  
-                <button class="lang-btn" data-lang="ch">简中</button>  
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('tw')">繁中</button>
+                <button onclick="setLanguage('zh')">简中</button>
             </div>
         </div>        
     </header>
@@ -28,7 +28,7 @@
             <li><a href="../index.html" data-i18n="home">Home</a></li>
             <li><a href="../menu.html" data-i18n="menu">Menu</a></li>
             <li><a href="./vip-info.html" data-i18n="info">Info</a></li>
-            <li><a href="../index.html" data-i18n="logout">Logout</a></li>
+            <li><a href="../index.html" data-i18n="logout">Log Out</a></li>
         </ul>
     </nav>
 
