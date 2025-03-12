@@ -1,5 +1,5 @@
 import Model from './menu_model.js';
-import ViewMenu from './view_menu.js';
+import ViewMenu from './menu_view.js';
 
 class Controller {
     constructor() {
