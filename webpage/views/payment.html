@@ -14,18 +14,18 @@
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
-                <button onclick="setLanguage('tw')">繁中</button> 
-                <button onclick="setLanguage('zh')">简中</button>    
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw">繁中</button>  
+                <button class="lang-btn" data-lang="ch">简中</button>  
             </div>
-        </div>          
+        </div>         
     </header>
     <nav>
         <ul>
             <li><a href="./index.html" data-i18n="home">Home</a></li>
             <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
-            <li><a href="./login.html" data-i18n="login">Log In</a></li>
+            <li id="auth-link"><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
 
@@ -52,6 +52,7 @@
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
     <script src="../public/js/lang.js"></script>
+    <script type="module" src="../public/js/user_controller.js"></script>
     <script type="module" src="../public/js/pay_contorller.js"></script>
 </body>
 </html>
