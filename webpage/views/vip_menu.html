@@ -15,6 +15,7 @@
             <h1 class="title">The Flying Dutchman</h1>
         </div> 
         <div class="header-top-right">
+            <div data-i18n="vip-welcome" class="vip-welcome" id="vipWelcomeMessage"></div>
             <div class="lang-switch">
                 <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
@@ -26,12 +27,12 @@
     <nav>
         <ul>
             <li><a href="./index.html" data-i18n="home">Home</a></li>
-            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
+            <!-- <li><a href="./menu.html" data-i18n="menu">Menu</a></li> -->
             <li id="auth-link"><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
 
-    <h1 data-i18n="menu" class="vip-title">MENU</h1>
+    <h1 data-i18n="vipMenu" class="vip-title">Welcome to the VIP Menu</h1>
 
     <main>
         <section class="menu-section">
@@ -40,7 +41,7 @@
                 <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
                 <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
                 <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
-                <!-- <button class="tab-btn" data-category="Food" data-i18n="food">Food</button> -->
+                <button class="tab-btn" data-category="Food" data-i18n="food">Food</button>
             </div>
             <div class="dropDown-content">
                 <div id="Spirit" class="tab-content active-container"></div>
