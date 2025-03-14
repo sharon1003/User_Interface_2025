@@ -1,8 +1,0 @@
-{
-    "users": [
-      { "username": "owner1", "password": "1234", "role": "owner" },
-      { "username": "bartender1", "password": "1234", "role": "bartender" },
-      { "username": "vipcustomer1", "password": "1234", "role": "vip-customer" }
-    ]
-  }
-  

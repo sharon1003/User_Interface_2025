@@ -1,7 +1,7 @@
 [
     {
     "orderId": "1",
-    "date": "2025-02-22",
+    "date": "2025-03-01",
     "vip": "Alice",
     "status": "Done",
     "items": [
@@ -16,7 +16,7 @@
     },
     {
     "orderId": "2",
-    "date": "2025-02-22",
+    "date": "2025-03-05",
     "vip": "Alice",
     "status": "Pending",
     "items": [
@@ -28,7 +28,7 @@
         "image": "../public/images/drinks/corona.png"
         },
         {
-        "type": "f",
+        "type": "food",
         "name": "Burger",
         "quantity": 1,
         "price": 100,
@@ -38,7 +38,7 @@
     },
     {
     "orderId": "3",
-    "date": "2025-02-22",
+    "date": "2025-03-05",
     "vip": "Alice",
     "status": "Taken",
     "items": [
@@ -50,7 +50,7 @@
         "image": "../public/images/drinks/corona.png"
         },
         {
-        "type": "f",
+        "type": "food",
         "name": "Chicken Wrap",
         "quantity": 1,
         "price": 100,
@@ -60,7 +60,7 @@
     },
     {
     "orderId": "4",
-    "date": "2025-02-22",
+    "date": "2025-03-05",
     "vip": "Alice",
     "status": "Pending",
     "items": [
@@ -72,7 +72,7 @@
         "image": "../public/images/drinks/corona.png"
         },
         {
-        "type": "f",
+        "type": "food",
         "name": "Chicken Wrap",
         "quantity": 1,
         "price": 100,
