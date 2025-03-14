@@ -1,65 +1,29 @@
-import { loadOrders } from './ordersLoader.js'; //connects to loader
+import { loadOrders } from './ordersLoader.js';
+import OrdersView from './ordersView.js';
 
 class OrdersController {
     constructor() {
-        this.orderContainer = document.querySelector('.order-details'); // Select where to display orders
+        this.orders = [];
+        this.view = new OrdersView(this); // Initialize OrdersView
     }
 
     async init() {
-        const orders = await loadOrders(); // Fetch orders from JSON
-        this.displayOrders(orders); // Pass orders to the View
-        this.setupEventListeners(); // Add event listeners
+        const allOrders = await loadOrders(); // Load all orders
+        this.orders = allOrders.filter(order => order.status === "Pending" || order.status === "Taken"); // Filter orders
+        this.view.renderOrderTabs(this.orders); // Render only filtered orders
+        this.view.renderOrders(this.orders);
+        this.setupEventListeners();
     }
 
-    displayOrders(orders) {
-        this.orderContainer.innerHTML = ""; // Clear existing orders
-
-        orders
-            .filter(order => order.status === "Pending" || order.status === "Taken") // Show Pending & Taken orders // Only show Pending orders
-            .forEach(order => {
-                const orderCard = document.createElement('div');
-                orderCard.classList.add('order-card');
-
-                // Calculate total price
-                const totalPrice = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-                orderCard.innerHTML = `
-                    <h3>#${order.orderId}</h3>
-                    <p>${order.date}</p>
-                    ${order.items.map(item => `
-                        <div class="order-item">
-                            <img src="${item.image}" alt="${item.name}">
-                            <div class="order-info">
-                                <p><strong>${item.name}</strong></p>
-                                <p>Qty: ${item.quantity} | SEK ${item.price}</p>
-                            </div>
-                        </div>
-                    `).join('')}
-                    <p><strong>In Total: SEK ${totalPrice}</strong></p>
-                    ${this.getOrderButtons(order)}
-                `;
-
-                this.orderContainer.appendChild(orderCard); // Add new order card
-            });
-    }
-    getOrderButtons(order) {
-        if (order.status === "Pending") {
-            return `
-                <button class="reject-btn" data-id="${order.orderId}">Reject</button>
-                <button class="confirm-btn" data-id="${order.orderId}">Confirm</button>
-            `;
-        } else if (order.status === "Taken") {
-            return `<button class="checkout-btn" data-id="${order.orderId}">Check Out</button>`;
-        }
-        return "";
-    }
     setupEventListeners() {
-        this.orderContainer.addEventListener("click", (event) => {
+        this.view.orderContainer.addEventListener("click", (event) => {
             const orderId = event.target.dataset.id;
             if (!orderId) return;
 
             if (event.target.classList.contains("confirm-btn")) {
                 this.confirmOrder(orderId);
+            } else if (event.target.classList.contains("reject-btn")) {
+                this.rejectOrder(orderId);
             }
         });
     }
@@ -68,7 +32,21 @@ class OrdersController {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order && order.status === "Pending") {
             order.status = "Taken"; // Change status
-            this.displayOrders(this.orders); // Refresh UI
+            this.view.renderOrders(this.orders); // Refresh UI
+        }
+    }
+
+    rejectOrder(orderId) {
+        const order = this.orders.find(order => order.orderId === orderId);
+        if (order) {
+            order.status = "Rejected"; // Change status instead of removing
+
+            // Re-filter the orders to exclude rejected ones
+            const filteredOrders = this.orders.filter(order => order.status === "Pending" || order.status === "Taken");
+
+            // Update the UI with only non-rejected orders
+            this.view.renderOrderTabs(filteredOrders);
+            this.view.renderOrders(filteredOrders);
         }
     }
 }

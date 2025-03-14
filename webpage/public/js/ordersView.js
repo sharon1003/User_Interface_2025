@@ -1,13 +1,36 @@
 class OrdersView {
     constructor(controller) {
         this.controller = controller;
-        this.orderContainer = document.querySelector('.order-details'); // Select the orders container
+        this.orderContainer = document.querySelector('.order-details');
+        this.orderTabsContainer = document.querySelector('.order-tabs');
+    }
+
+    renderOrderTabs(orders) {
+        this.orderTabsContainer.innerHTML = ""; // Clear existing tabs
+
+        orders
+            .forEach((order, index) => {
+                const tabButton = document.createElement("button");
+                tabButton.classList.add("order-tab");
+                if (index === 0) tabButton.classList.add("active"); // First tab active
+                tabButton.textContent = `#${order.orderId}`;
+                tabButton.dataset.id = order.orderId;
+
+                tabButton.addEventListener("click", () => {
+                    document.querySelectorAll(".order-tab").forEach(tab => tab.classList.remove("active"));
+                    tabButton.classList.add("active");
+                    this.renderOrders([order]); // Show only the selected order
+                });
+
+                this.orderTabsContainer.appendChild(tabButton);
+            });
     }
 
     renderOrders(orders) {
         this.orderContainer.innerHTML = ""; // Clear previous content
 
-        orders.forEach(order => {
+        orders
+            .forEach(order => {
             const orderCard = document.createElement('div');
             orderCard.classList.add('order-card');
 
@@ -26,7 +49,7 @@ class OrdersView {
                     </div>
                 `).join('')}
                 <p><strong>In Total: SEK ${totalPrice}</strong></p>
-                ${this.getOrderButtons(order)}
+                <div class="order-actions">${this.getOrderButtons(order)}</div>
             `;
 
             this.orderContainer.appendChild(orderCard);
@@ -39,9 +62,10 @@ class OrdersView {
                 <button class="reject-btn" data-id="${order.orderId}">Reject</button>
                 <button class="confirm-btn" data-id="${order.orderId}">Confirm</button>
             `;
-        } else {
+        } else if (order.status === "Taken") {
             return `<button class="checkout-btn" data-id="${order.orderId}">Check Out</button>`;
         }
+        return "";
     }
 }
 
