@@ -32,7 +32,10 @@ class OrdersController {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order && order.status === "Pending") {
             order.status = "Taken"; // Change status
-            this.view.renderOrders(this.orders); // Refresh UI
+
+            // Update UI
+            this.view.renderOrderTabs(this.orders);
+            this.view.renderOrders(this.orders);
         }
     }
 
@@ -42,11 +45,11 @@ class OrdersController {
             order.status = "Rejected"; // Change status instead of removing
 
             // Re-filter the orders to exclude rejected ones
-            const filteredOrders = this.orders.filter(order => order.status === "Pending" || order.status === "Taken");
+            this.orders = this.orders.filter(order => order.status === "Pending" || order.status === "Taken");
 
             // Update the UI with only non-rejected orders
-            this.view.renderOrderTabs(filteredOrders);
-            this.view.renderOrders(filteredOrders);
+            this.view.renderOrderTabs(this.orders);
+            this.view.renderOrders(this.orders);
         }
     }
 }
