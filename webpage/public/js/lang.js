@@ -127,28 +127,26 @@ function getCurrentPage() {
 }
 
 function updateAuthLink(lang) {
-    const authLink = document.querySelector("#auth-link a"); // 取得 Log In / Log Out 的 <a>
-    if (!authLink) return; // 確保 authLink 存在
+    const authLink = document.querySelector("#auth-link a"); 
+    if (!authLink) return; 
 
-    const user = JSON.parse(localStorage.getItem("loggedInUser")); // 取得使用者登入資訊
+    const user = JSON.parse(localStorage.getItem("loggedInUser")); 
 
     if (user) {
-        // 如果使用者已登入
         authLink.textContent = translations[lang]["logout"];
         authLink.setAttribute("data-i18n", "logout");
-        authLink.href = "#"; // 防止導向登入頁面
+        authLink.href = "#";
         authLink.onclick = function (event) {
             event.preventDefault();
-            localStorage.removeItem("loggedInUser"); // 清除登入狀態
-            updateAuthButton(lang); // 重新更新按鈕
-            location.reload(); // 重新整理頁面
+            localStorage.removeItem("loggedInUser");
+            updateAuthButton(lang);
+            location.reload();
         };
     } else {
-        // 如果使用者未登入
         authLink.textContent = translations[lang]["login"];
         authLink.setAttribute("data-i18n", "login");
-        authLink.href = "./login.html"; // 指向登入頁面
-        authLink.onclick = null; // 移除 onclick 事件，確保點擊會導向登入頁面
+        authLink.href = "./login.html";
+        authLink.onclick = null; 
     }
 }
 
@@ -174,7 +172,6 @@ function changeLanguage(lang) {
     }
     localStorage.setItem("selectedLanguage", lang);
 
-    // **通知 `user_controller.js` 更新 `Log In` / `Log Out`**
     if (typeof UserController !== "undefined" && UserController.updateAuthLink) {
         UserController.updateAuthLink();  
     }
