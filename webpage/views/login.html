@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="../public/css/login.css">
 </head>
 <body>
-
     <header class="header">
         <div class="header-top" onclick="location.href='index.html'">
             <h1 class="title">The Flying Dutchman</h1>
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">SV</button>
-                <button onclick="setLanguage('tw')">繁中</button>
-                <button onclick="setLanguage('zh')">简中</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw">繁中</button>  
+                <button class="lang-btn" data-lang="ch">简中</button>  
             </div>
         </div>          
     </header>
@@ -26,22 +25,20 @@
         <ul>
             <li><a href="./index.html" data-i18n="home">Home</a></li>
             <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
-            <li><a href="./login.html" data-i18n="login">Log In</a></li>
+            <li id="auth-link"><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
-    
-    <form id="loginForm">
 
     <div class="login-container">
-        <h2>Login</h2>
-        <form action="loginForm">
+        <h2 data-i18n="login">Login</h2>
+        <form id="loginForm" action="loginForm">
             <!-- Username -->
-            <label for="username"><b>Username</b>:</label>
+            <label data-i18n="username" for="username"><b>Username</b>:</label>
             <input type="text" id="username" placeholder="Enter username" required>
             <!-- Passcode -->
-             <label for="password"><b>Password</b>:</label>
+             <label data-i18n="password" for="password"><b>Password</b>:</label>
              <input type="password" id="password" placeholder="Enter password" required>
-             <button type="submit" class="login-btn"> Login</button>
+             <button data-i18n="submit" type="submit" class="login-btn"> Login</button>
         </form>
         <p id="loginMessage"></p>
     </div>
@@ -50,7 +47,7 @@
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
 
-    <script src="./login.js"></script>
+    <script type="module" src="../public/js/user_controller.js"></script>
     <script src="../public/js/lang.js"></script>
 
 </body>
