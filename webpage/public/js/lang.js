@@ -1,10 +1,9 @@
-// 定義翻譯內容
 const translations = {
     en: {
         home: "Home",
         login: "Log In",
-        logout: "Log Out",
-        welcome: "Welcome to The Bar",
+        logout: "Logout",
+        welcome: "Welcome to The Flying Dutchman",
         explore: "Explore the Menu",
         chooseRole: "Choose Your Role",
         vip: "VIP Customer",
@@ -17,19 +16,23 @@ const translations = {
         menu: "MENU",
         shoppingCart: "Shopping Cart",
         addToCart: "Add to Cart",
-        total: "Total:",
+        total: "Total: ",
         spirit: "Spirit",
         wine: "Wine",
         cocktail: "Cocktail",
         beer: "Beer",
         info: "Info",
-        vipid: "My account"
+        vipid: "My account",
+        username: "Username",
+        password: "Password",
+        submit: "Submit",
+        vipMenu: "Welcome to the VIP special Menu"
     },
     sv: {
         home: "Hem",
         login: "Logga in",
         logout: "Logga ut",
-        welcome: "Välkommen till The Bar",
+        welcome: "Välkommen till The Flying Dutchman",
         explore: "Utforska menyn",
         chooseRole: "Välj din roll",
         vip: "VIP Kund",
@@ -42,22 +45,26 @@ const translations = {
         menu: "MENY",
         shoppingCart: "Varukorg",
         addToCart: "Lägg till i kundvagnen",
-        total: "Totalt:",
+        total: "Totalt: ",
         spirit: "Sprit",
         wine: "Vin",
         cocktail: "Cocktail",
         beer: "Öl",
         info: "Info",
-        vipid: "Mitt konto"
+        vipid: "Mitt konto",
+        username: "Användarnamn",
+        password: "Lösenord",
+        submit: "Skicka",
+        vipMenu: "Välkommen till VIP-specialmenyn"
     },
     tw: {
         home: "首頁",
         login: "登入",
         logout: "登出",
-        welcome: "歡迎來到 The Bar",
+        welcome: "歡迎來到 飛行荷蘭人",
         explore: "探索菜單",
         chooseRole: "選擇你的角色",
-        vip: "貴賓",
+        vip: "VIP顧客",
         vipDesc: "點飲品、簡餐，盡情享受時光！",
         staff: "吧檯/服務生",
         staffDesc: "管理訂單，提供卓越的服務！",
@@ -73,16 +80,20 @@ const translations = {
         cocktail: "雞尾酒",
         beer: "啤酒",
         info: "個人中心",
-        vipid: "我的帳戶"
+        vipid: "我的帳戶",
+        username: "使用者名稱",
+        password: "密碼",
+        submit: "提交",
+        vipMenu: "歡迎來到VIP專屬菜單"
     },
     ch: { 
         home: "首页",
         login: "登录",
         logout: "退出",
-        welcome: "欢迎来到 The Bar",
+        welcome: "欢迎来到 飞翔荷兰人",
         explore: "探索菜单",
         chooseRole: "选择你的角色",
-        vip: "贵宾",
+        vip: "VIP顾客",
         vipDesc: "点饮品、简餐，尽情享受时光！",
         staff: "吧台/服务生",
         staffDesc: "管理订单，提供卓越的服务！",
@@ -93,15 +104,18 @@ const translations = {
         shoppingCart: "购物车",
         addToCart: "加入购物车",
         total: "总计：",
-        total: "总计",
         spirit: "烈酒",
-        wine: "红酒",
+        wine: "红白酒",
         cocktail: "鸡尾酒",
         beer: "啤酒",
         register: "新顾客？联系工作人员注册！",
         info: "个人中心",
         vipid: "我的账号",
-        point: "积分"
+        point: "积分",
+        username: "用户名",
+        password: "密码",
+        submit: "提交",
+        vipMenu: "欢迎来到VIP专属菜单"
     }
 };
 
@@ -112,6 +126,30 @@ function getCurrentPage() {
     return "other";
 }
 
+function updateAuthLink(lang) {
+    const authLink = document.querySelector("#auth-link a"); 
+    if (!authLink) return; 
+
+    const user = JSON.parse(localStorage.getItem("loggedInUser")); 
+
+    if (user) {
+        authLink.textContent = translations[lang]["logout"];
+        authLink.setAttribute("data-i18n", "logout");
+        authLink.href = "#";
+        authLink.onclick = function (event) {
+            event.preventDefault();
+            localStorage.removeItem("loggedInUser");
+            updateAuthButton(lang);
+            location.reload();
+        };
+    } else {
+        authLink.textContent = translations[lang]["login"];
+        authLink.setAttribute("data-i18n", "login");
+        authLink.href = "./login.html";
+        authLink.onclick = null; 
+    }
+}
+
 // change language
 function changeLanguage(lang) {
     if (!translations[lang]) return;
@@ -119,8 +157,10 @@ function changeLanguage(lang) {
     // index.html
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
+        console.log(key)
         if (translations[lang][key]) {
             el.textContent = translations[lang][key];
+            console.log(el.textContent);
         }
     });
 
@@ -130,8 +170,11 @@ function changeLanguage(lang) {
             btn.innerText = translations[lang].addToCart;
         });
     }
-
     localStorage.setItem("selectedLanguage", lang);
+
+    if (typeof UserController !== "undefined" && UserController.updateAuthLink) {
+        UserController.updateAuthLink();  
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

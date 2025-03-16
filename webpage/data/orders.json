@@ -62,7 +62,7 @@
     "orderId": "4",
     "date": "2025-03-05",
     "vip": "Alice",
-    "status": "Closed",
+    "status": "Pending",
     "items": [
         {
         "type": "drink",
