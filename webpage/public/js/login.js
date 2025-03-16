@@ -33,7 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             // redirect to role pages
             const rolePageMap = {
                 "customer": "menu.html",
-                "vip": "vip/vip-menu.html",
+                "vip": "vip-menu.html",
                 "staff": "bartender.html",
                 "owner": "owner.html"
             };

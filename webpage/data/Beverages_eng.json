@@ -1,266 +1,357 @@
 [
     {
-        "name": "Cabernet Sauvignon",
-        "category": "Wine",
-        "priceinclvat": 1500,
-        "image": "../public/images/drinks/wine/cabernet_sauvignon.png"
-    },
-    {
         "name": "Lindemans Chardonnay",
         "category": "Wine",
         "priceinclvat": 1200,
-        "image": "../public/images/drinks/wine/LindemansChardonnay.png"
+        "image": "../public/images/drinks/wine/LindemansChardonnay.png",
+        "year": 2024,
+        "producer": "Lindemans",
+        "grape": "Chardonnay",
+        "size": 375,
+        "alcohol": 13.5,
+        "tannins": 6
     },
     {
-        "name": "Pinot Blanc",
+        "name": "Seeberg Pinot Blanc",
         "category": "Wine",
         "priceinclvat": 1800,
-        "image": "../public/images/drinks/wine/PinotBlanc.png"
+        "image": "../public/images/drinks/wine/PinotBlanc.png",
+        "year": 2022,
+        "producer": "Weingut Familie Prieler",
+        "grape": "Pinot blanc",
+        "size": 750,
+        "tannins": 4
     },
     {
-        "name": "Chardonnay",
-        "category": "Wine",
-        "priceinclvat": 1300,
-        "image": "../public/images/drinks/wine/chardonnay.png"
-    },
-    {
-        "name": "Sauvignon Blanc",
+        "name": "Saints & Sinners",
         "category": "Wine",
         "priceinclvat": 1400,
-        "image": "../public/images/drinks/wine/sauvignon_blanc.png"
+        "image": "../public/images/drinks/wine/SaintsnSinners.png",
+        "year": 2023,
+        "producer": "Weingut Strehn",
+        "grape": "Blaufränkisch",
+        "size": 750,
+        "alcohol": 12.5,
+        "tannins": 5
     },
     {
-        "name": "Scarecrow",
+        "name": "Stark-Condé",
         "category": "Wine",
-        "priceinclvat": 1100,
-        "image": "../public/images/drinks/wine/Scarecrow.png"
+        "priceinclvat": 1400,
+        "image": "../public/images/drinks/wine/Stark-Condé.webp",
+        "year": 2023,
+        "producer": "Stark-Condé Wines",
+        "grape": "Sauvignon blanc",
+        "size": 750,
+        "alcohol": 13,
+        "tannins": 6
     },
     {
-        "name": "Syrah",
+        "name": "Gabrielskloof",
         "category": "Wine",
         "priceinclvat": 1700,
-        "image": "../public/images/drinks/wine/syrah.png"
+        "image": "../public/images/drinks/wine/Gabrielskloof.webp",
+        "year": 2023,
+        "producer": "Gabrielskloof",
+        "grape": "Syrah",
+        "size": 750,
+        "alcohol": 13.5,
+        "tannins": 9
     },
     {
-        "name": "Zinfandel",
+        "name": "Frog's Leap",
         "category": "Wine",
         "priceinclvat": 1600,
-        "image": "../public/images/drinks/wine/zinfandel.png"
+        "image": "../public/images/drinks/wine/FrogsLeap.webp",
+        "year": 2021,
+        "producer": "Frog's Leap",
+        "grape": "Zinfandel",
+        "size": 750,
+        "alcohol": 13.5,
+        "tannins": 9
     },
     {
-        "name": "Malbec",
+        "name": "Zolo Black",
         "category": "Wine",
         "priceinclvat": 1550,
-        "image": "../public/images/drinks/wine/malbec.png"
+        "image": "../public/images/drinks/wine/ZoloBlack.webp",
+        "year": 2018,
+        "producer": "Fincas Patagonicas",
+        "grape": "Malbec",
+        "size": 750,
+        "alcohol": 14.5,
+        "tannins": 10
     },
     {
-        "name": "Grenache",
+        "name": "Grenache Blanc",
         "category": "Wine",
-        "priceinclvat": 1350,
-        "image": "../public/images/drinks/wine/grenache.png"
+        "priceinclvat": 2350,
+        "image": "../public/images/drinks/wine/GrenacheBlanc.webp",
+        "year": 2022,
+        "producer": "A Tribute To Grace Wine Company",
+        "grape": "Grenache",
+        "size": 750,
+        "alcohol": 13,
+        "tannins": 5
     },
     {
-        "name": "Tempranillo",
+        "name": "Marta Maté",
         "category": "Wine",
-        "priceinclvat": 1450,
-        "image": "../public/images/drinks/wine/tempranillo.png"
+        "priceinclvat": 2450,
+        "image": "../public/images/drinks/wine/MartaMate.webp",
+        "year": 2021,
+        "producer": "Marta Maté",
+        "grape": "Tempranillo",
+        "alcohol": 14,
+        "size": 750,
+        "tannins": 10
     },
     {
-        "name": "Nebbiolo",
+        "name": "Longview",
         "category": "Wine",
         "priceinclvat": 1950,
-        "image": "../public/images/drinks/wine/nebbiolo.png"
-    },
-    {
-        "name": "Barbera",
-        "category": "Wine",
-        "priceinclvat": 1250,
-        "image": "../public/images/drinks/wine/barbera.png"
-    },
-    {
-        "name": "Moscato",
-        "category": "Wine",
-        "priceinclvat": 1000,
-        "image": "../public/images/drinks/wine/moscato.png"
-    },
-    {
-        "name": "Viognier",
-        "category": "Wine",
-        "priceinclvat": 1150,
-        "image": "../public/images/drinks/wine/viognier.png"
+        "image": "../public/images/drinks/wine/Longview.png",
+        "year": 2023,
+        "producer": "Longview Vineyards",
+        "grape": "Nebbiolo",
+        "alcohol": 12.5,
+        "size": 750,
+        "tannins": 5
     },
     {
         "name": "Heineken",
         "category": "Beer",
         "priceinclvat": 120,
-        "image": "../public/images/drinks/beer/Heineken.png"
+        "image": "../public/images/drinks/beer/Heineken.png",
+        "producer": "Spendrups",
+        "type": "Lager",
+        "alcohol": 5,
+        "size": 330,
+        "allergens": ["barley-malt"]
     },
     {
         "name": "Budweiser",
         "category": "Beer",
         "priceinclvat": 100,
-        "image": "../public/images/drinks/beer/budweiser.png"
+        "image": "../public/images/drinks/beer/budweiser.png",
+        "producer": "Anheuser-Busch",
+        "type": "Lager",
+        "alcohol": 5,
+        "size": 330,
+        "allergens": ["barley-malt"]
     },
     {
         "name": "Corona",
         "category": "Beer",
         "priceinclvat": 130,
-        "image": "../public/images/drinks/beer/corona.png"
+        "image": "../public/images/drinks/beer/corona.png",
+        "producer": "AB Inbev Belgium",
+        "type": "Lager",
+        "alcohol": 4.5,
+        "size": 330,
+        "allergens": ["barley-malt", "corn", "rice", "hops"]
     },
     {
         "name": "Guinness",
         "category": "Beer",
-        "priceinclvat": 17,
-        "image": "../public/images/drinks/beer/Guinness.png"
+        "priceinclvat": 170,
+        "image": "../public/images/drinks/beer/Guinness.webp",
+        "producer": "Guinness",
+        "type": "Stout",
+        "alcohol": 5,
+        "size": 330,
+        "allergens": ["barley-malt"]
     },
     {
         "name": "Carlsberg",
         "category": "Beer",
         "priceinclvat": 110,
-        "image": "../public/images/drinks/beer/Carlsberg.png"
+        "image": "../public/images/drinks/beer/Carlsberg.png",
+        "producer": "Carlsberg Sverige AB",
+        "type": "Lager",
+        "alcohol": 5,
+        "size": 500,
+        "allergens": ["barley-malt", "hops"]
     },
     {
         "name": "Stella Artois",
         "category": "Beer",
         "priceinclvat": 140,
-        "image": "../public/images/drinks/beer/stella_artois.webp"
+        "image": "../public/images/drinks/beer/stella_artois.webp",
+        "producer": "InBev",
+        "type": "Lager",
+        "alcohol": 5,
+        "size": 330,
+        "allergens": ["barley-malt"]
     },
     {
         "name": "Asahi",
         "category": "Beer",
         "priceinclvat": 125,
-        "image": "../public/images/drinks/beer/asahi.png"
+        "image": "../public/images/drinks/beer/asahi.png",
+        "producer": "Asahi Beer",
+        "type": "Lager",
+        "alcohol": 5,
+        "size": 330,
+        "allergens": ["barley-malt"]
     },
     {
         "name": "Oppigårds",
         "category": "Beer",
         "priceinclvat": 130,
-        "image": "../public/images/drinks/beer/oppigards.png"
-    },
-    {
-        "name": "Taiwan Beer",
-        "category": "Beer",
-        "priceinclvat": 110,
-        "image": "../public/images/drinks/beer/taiwan_beer.png"
+        "image": "../public/images/drinks/beer/oppigards.png",
+        "producer": "",
+        "type": "IPA",
+        "alcohol": 6.2,
+        "size": 330,
+        "allergens": ["barley-malt", "wheat-malt", "oats"]
     },
     {
         "name": "Duvel",
         "category": "Beer",
         "priceinclvat": 135,
-        "image": "../public/images/drinks/beer/duvel.png"
+        "image": "../public/images/drinks/beer/duvel.png",
+        "producer": "Duvel Moortgat",
+        "type": "Trippel",
+        "alcohol": 8.5,
+        "size": 330,
+        "allergens": ["barley-malt"]
     },
     {
         "name": "Jack Daniel's",
         "category": "Spirit",
         "priceinclvat": 1800,
-        "image": "../public/images/drinks/spirit/jack_daniels.png"
+        "image": "../public/images/drinks/spirit/JackDaniels.png",
+        "alcohol": 40,
+        "producer": "Jack Daniel",
+        "size": 700
     },
     {
         "name": "Absolut Pears",
         "category": "Spirit",
         "priceinclvat": 1800,
-        "image": "../public/images/drinks/spirit/AbsolutPears.png"
+        "image": "../public/images/drinks/spirit/AbsolutPears.png",
+        "alcohol": 38,
+        "producer": "The Absolut Company",
+        "size": 700
     },
     {
         "name": "Rum Plantation",
         "category": "Spirit",
         "priceinclvat": 1800,
-        "image": "../public/images/drinks/spirit/RumPlantation.png"
+        "image": "../public/images/drinks/spirit/RumPlantation.png",
+        "alcohol": 40,
+        "producer": "Plantation",
+        "size": 700
     },
     {
         "name": "Tanqueray",
         "category": "Spirit",
         "priceinclvat": 1800,
-        "image": "../public/images/drinks/spirit/Tanqueray.png"
+        "image": "../public/images/drinks/spirit/Tanqueray.png",
+        "alcohol": 43.1,
+        "producer": "Tanqueray Gordon",
+        "size": 700
     },
     {
         "name": "Johnnie Walker Black Label",
         "category": "Spirit",
         "priceinclvat": 2000,
-        "image": "../public/images/drinks/spirit/johnnie_walker.png"
+        "image": "../public/images/drinks/spirit/johnnie_walker.png",
+        "alcohol": 40,
+        "producer": "John Walker",
+        "size": 700
     },
     {
         "name": "Roku Gin",
         "category": "Spirit",
         "priceinclvat": 1900,
-        "image": "../public/images/drinks/spirit/roku_gin.webp"
+        "image": "../public/images/drinks/spirit/roku_gin.webp",
+        "alcohol": 43,
+        "producer": "Suntory Global Spirits",
+        "size": 700
     },
     {
         "name": "Hennessy VS",
         "category": "Spirit",
         "priceinclvat": 2200,
-        "image": "../public/images/drinks/spirit/hennessy_vs.png"
+        "image": "../public/images/drinks/spirit/hennessy_vs.png",
+        "alcohol": 40,
+        "producer": "Hennessy",
+        "size": 350
     },
     {
         "name": "Bacardi",
         "category": "Spirit",
         "priceinclvat": 1500,
-        "image": "../public/images/drinks/spirit/bacardi.png"
+        "image": "../public/images/drinks/spirit/bacardi.png",
+        "alcohol": 37.5,
+        "producer": "Bacardi",
+        "size": 700
     },
     {
         "name": "Tequila Patron",
         "category": "Spirit",
         "priceinclvat": 2500,
-        "image": "../public/images/drinks/spirit/tequila_patron.png"
+        "image": "../public/images/drinks/spirit/tequila_patron.png",
+        "alcohol": 40,
+        "producer": "Patron Spirits",
+        "size": 700
     },
     {
-        "name": "Mojito",
-        "category": "Cocktail",
-        "priceinclvat": 300,
-        "image": "../public/images/drinks/cocktail/mojito.png"
-    },
-    {
-        "name": "Martini",
+        "name": "Cuba Libre",
         "category": "Cocktail",
         "priceinclvat": 320,
-        "image": "../public/images/drinks/cocktail/martini.png"
+        "image": "../public/images/drinks/cocktail/cuba_libre.webp",
+        "size": 180,
+        "contents": ["White Rum", "Cola", "Fresh Lime Juice"]
     },
     {
         "name": "Margarita",
         "category": "Cocktail",
         "priceinclvat": 350,
-        "image": "../public/images/drinks/cocktail/margarita.png"
+        "image": "../public/images/drinks/cocktail/margarita.webp",
+        "size": 95,
+        "contents": ["Tequila", "Triple Sec", "Freshly Lime Juice"]
     },
     {
         "name": "Pina Colada",
         "category": "Cocktail",
         "priceinclvat": 330,
-        "image": "../public/images/drinks/cocktail/pina_colada.png"
-    },
-    {
-        "name": "Old Fashioned",
-        "category": "Cocktail",
-        "priceinclvat": 400,
-        "image": "../public/images/drinks/cocktail/old_fashioned.png"
-    },
-    {
-        "name": "Daiquiri",
-        "category": "Cocktail",
-        "priceinclvat": 320,
-        "image": "../public/images/drinks/cocktail/daiquiri.png"
+        "image": "../public/images/drinks/cocktail/pina_colada.webp",
+        "size": 130,
+        "contents": ["White Rum", "Coconut Cream", "Fresh Pineapple Juice"]
     },
     {
         "name": "Negroni",
         "category": "Cocktail",
         "priceinclvat": 350,
-        "image": "../public/images/drinks/cocktail/negroni.png"
+        "image": "../public/images/drinks/cocktail/negroni.webp",
+        "size": 90,
+        "contents": ["Gin", "Bitter Campari", "Sweet Red Vermouth"]
     },
     {
         "name": "Cosmopolitan",
         "category": "Cocktail",
         "priceinclvat": 340,
-        "image": "../public/images/drinks/cocktail/cosmopolitan.png"
+        "image": "../public/images/drinks/cocktail/cosmopolitan.webp",
+        "size": 130,
+        "contents": ["Vodka Citron", "Cointreau", "Fresh Lime Juice", "Cranberry Juice"]
     },
     {
         "name": "Whiskey Sour",
         "category": "Cocktail",
         "priceinclvat": 360,
-        "image": "../public/images/drinks/cocktail/whiskey_sour.png"
+        "image": "../public/images/drinks/cocktail/whiskey_sour.webp",
+        "size": 90,
+        "contents": ["Bourbon Whiskey", "Fresh Lemon Juice", "Sugar Syrup", "Egg White"]
     },
     {
-        "name": "Long Island Iced Tea",
+        "name": "Tequila Sunrise",
         "category": "Cocktail",
         "priceinclvat": 380,
-        "image": "../public/images/drinks/cocktail/long_island_iced_tea.png"
+        "image": "../public/images/drinks/cocktail/Tequila_Sunrise.webp",
+        "size": 150,
+        "contents": ["Tequila", "Fresh Orange Juice", "Grenadine Syrup"]
     }
 ]
