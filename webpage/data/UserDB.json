@@ -1,30 +1,25 @@
 {
-    "owner": [
-    {
-        "uid": "qida",
-        "psw": "qida"
-    }
-    ],
-    "bartender": [
-    {
-        "uid": "wen-hsuan",
-        "psw": "wen-huan"
+    "qida": {
+        "psw": "qida",
+        "role": "owner"
     },
-    {
-        "uid": "astrid",
-        "psw": "astrid"
+    "wen-hsuan": {
+        "psw": "wen-hsuan",
+        "role": "bartender"
+        
+    },
+    "astrid":{
+        "psw": "astrid",
+        "role": "bartender"
+    },
+    "danning": {
+        "psw": "danning",
+        "role": "vip",
+        "balance": 100
+    },
+    "yu-hua": {
+        "psw": "yu-hua",
+        "role": "vip",
+        "balance": 10000
     }
-    ],
-    "vip": [
-        {
-            "uid": "danning",
-            "psw": "danning",
-            "balance": 100
-        },
-        {
-            "uid": "yu-hua",
-            "psw": "yu-hua",
-            "balance": 10000
-        }
-    ]
 }
