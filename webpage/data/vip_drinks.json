@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Cosmopolitan (VIP)",
+        "category": "Cocktail",
+        "priceinclvat": 340,
+        "image": "../public/images/drinks/cocktail/cosmopolitan.webp",
+        "size": 130,
+        "contents": ["Vodka Citron", "Cointreau", "Fresh Lime Juice", "Cranberry Juice"]
+    },
+    {
+        "name": "Whiskey Sour (VIP)",
+        "category": "Cocktail",
+        "priceinclvat": 360,
+        "image": "../public/images/drinks/cocktail/whiskey_sour.webp",
+        "size": 90,
+        "contents": ["Bourbon Whiskey", "Fresh Lemon Juice", "Sugar Syrup", "Egg White"]
+    },
+    {
+        "name": "Tequila Sunrise (VIP)",
+        "category": "Cocktail",
+        "priceinclvat": 380,
+        "image": "../public/images/drinks/cocktail/Tequila_Sunrise.webp",
+        "size": 150,
+        "contents": ["Tequila", "Fresh Orange Juice", "Grenadine Syrup"]
+    },
+    {
+        "name": "Johnnie Walker Black Label (VIP)",
+        "category": "Spirit",
+        "priceinclvat": 2000,
+        "image": "../public/images/drinks/spirit/johnnie_walker.png",
+        "alcohol": 40,
+        "producer": "John Walker",
+        "size": 700
+    },
+    {
+        "name": "Roku Gin (VIP)",
+        "category": "Spirit",
+        "priceinclvat": 1900,
+        "image": "../public/images/drinks/spirit/roku_gin.webp",
+        "alcohol": 43,
+        "producer": "Suntory Global Spirits",
+        "size": 700
+    },
+    {
+        "name": "Duvel (VIP)",
+        "category": "Beer",
+        "priceinclvat": 135,
+        "image": "../public/images/drinks/beer/duvel.png",
+        "producer": "Duvel Moortgat",
+        "type": "Trippel",
+        "alcohol": 8.5,
+        "size": 330,
+        "allergens": ["barley-malt"]
+    },
+    {
+        "name": "Saints & Sinners (VIP)",
+        "category": "Wine",
+        "priceinclvat": 1400,
+        "image": "../public/images/drinks/wine/SaintsnSinners.png",
+        "year": 2023,
+        "producer": "Weingut Strehn",
+        "grape": "Blaufränkisch",
+        "size": 750,
+        "alcohol": 12.5,
+        "tannins": 5
+    },
+    {
+        "name": "Stark-Condé (VIP)",
+        "category": "Wine",
+        "priceinclvat": 1400,
+        "image": "../public/images/drinks/wine/Stark-Condé.webp",
+        "year": 2023,
+        "producer": "Stark-Condé Wines",
+        "grape": "Sauvignon blanc",
+        "size": 750,
+        "alcohol": 13,
+        "tannins": 6
+    }
+
+]

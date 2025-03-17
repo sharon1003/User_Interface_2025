@@ -9,7 +9,8 @@
         "grape": "Chardonnay",
         "size": 375,
         "alcohol": 13.5,
-        "tannins": 6
+        "tannins": 6,
+        "amount": 10
     },
     {
         "name": "Seeberg Pinot Blanc",
@@ -20,31 +21,8 @@
         "producer": "Weingut Familie Prieler",
         "grape": "Pinot blanc",
         "size": 750,
-        "tannins": 4
-    },
-    {
-        "name": "Saints & Sinners",
-        "category": "Wine",
-        "priceinclvat": 1400,
-        "image": "../public/images/drinks/wine/SaintsnSinners.png",
-        "year": 2023,
-        "producer": "Weingut Strehn",
-        "grape": "Blaufränkisch",
-        "size": 750,
-        "alcohol": 12.5,
-        "tannins": 5
-    },
-    {
-        "name": "Stark-Condé",
-        "category": "Wine",
-        "priceinclvat": 1400,
-        "image": "../public/images/drinks/wine/Stark-Condé.webp",
-        "year": 2023,
-        "producer": "Stark-Condé Wines",
-        "grape": "Sauvignon blanc",
-        "size": 750,
-        "alcohol": 13,
-        "tannins": 6
+        "tannins": 4,
+        "amount": 10
     },
     {
         "name": "Gabrielskloof",
@@ -56,7 +34,8 @@
         "grape": "Syrah",
         "size": 750,
         "alcohol": 13.5,
-        "tannins": 9
+        "tannins": 9,
+        "amount": 10
     },
     {
         "name": "Frog's Leap",
@@ -68,7 +47,8 @@
         "grape": "Zinfandel",
         "size": 750,
         "alcohol": 13.5,
-        "tannins": 9
+        "tannins": 9,
+        "amount": 10
     },
     {
         "name": "Zolo Black",
@@ -80,7 +60,8 @@
         "grape": "Malbec",
         "size": 750,
         "alcohol": 14.5,
-        "tannins": 10
+        "tannins": 10,
+        "amount": 10
     },
     {
         "name": "Grenache Blanc",
@@ -92,7 +73,8 @@
         "grape": "Grenache",
         "size": 750,
         "alcohol": 13,
-        "tannins": 5
+        "tannins": 5,
+        "amount": 10
     },
     {
         "name": "Marta Maté",
@@ -104,7 +86,8 @@
         "grape": "Tempranillo",
         "alcohol": 14,
         "size": 750,
-        "tannins": 10
+        "tannins": 10,
+        "amount": 10
     },
     {
         "name": "Longview",
@@ -116,7 +99,8 @@
         "grape": "Nebbiolo",
         "alcohol": 12.5,
         "size": 750,
-        "tannins": 5
+        "tannins": 5,
+        "amount": 10
     },
     {
         "name": "Heineken",
@@ -127,7 +111,8 @@
         "type": "Lager",
         "alcohol": 5,
         "size": 330,
-        "allergens": ["barley-malt"]
+        "allergens": ["barley-malt"],
+        "amount": 10
     },
     {
         "name": "Budweiser",
@@ -138,7 +123,8 @@
         "type": "Lager",
         "alcohol": 5,
         "size": 330,
-        "allergens": ["barley-malt"]
+        "allergens": ["barley-malt"],
+        "amount": 10
     },
     {
         "name": "Corona",
@@ -149,7 +135,8 @@
         "type": "Lager",
         "alcohol": 4.5,
         "size": 330,
-        "allergens": ["barley-malt", "corn", "rice", "hops"]
+        "allergens": ["barley-malt", "corn", "rice", "hops"],
+        "amount": 10
     },
     {
         "name": "Guinness",
@@ -160,7 +147,8 @@
         "type": "Stout",
         "alcohol": 5,
         "size": 330,
-        "allergens": ["barley-malt"]
+        "allergens": ["barley-malt"],
+        "amount": 10
     },
     {
         "name": "Carlsberg",
@@ -171,7 +159,8 @@
         "type": "Lager",
         "alcohol": 5,
         "size": 500,
-        "allergens": ["barley-malt", "hops"]
+        "allergens": ["barley-malt", "hops"],
+        "amount": 10
     },
     {
         "name": "Stella Artois",
@@ -182,7 +171,8 @@
         "type": "Lager",
         "alcohol": 5,
         "size": 330,
-        "allergens": ["barley-malt"]
+        "allergens": ["barley-malt"],
+        "amount": 10
     },
     {
         "name": "Asahi",
@@ -193,29 +183,20 @@
         "type": "Lager",
         "alcohol": 5,
         "size": 330,
-        "allergens": ["barley-malt"]
+        "allergens": ["barley-malt"],
+        "amount": 10
     },
     {
         "name": "Oppigårds",
         "category": "Beer",
         "priceinclvat": 130,
         "image": "../public/images/drinks/beer/oppigards.png",
-        "producer": "",
+        "producer": "Oppigårds Bryggeri",
         "type": "IPA",
         "alcohol": 6.2,
         "size": 330,
-        "allergens": ["barley-malt", "wheat-malt", "oats"]
-    },
-    {
-        "name": "Duvel",
-        "category": "Beer",
-        "priceinclvat": 135,
-        "image": "../public/images/drinks/beer/duvel.png",
-        "producer": "Duvel Moortgat",
-        "type": "Trippel",
-        "alcohol": 8.5,
-        "size": 330,
-        "allergens": ["barley-malt"]
+        "allergens": ["barley-malt", "wheat-malt", "oats"],
+        "amount": 10
     },
     {
         "name": "Jack Daniel's",
@@ -224,7 +205,8 @@
         "image": "../public/images/drinks/spirit/JackDaniels.png",
         "alcohol": 40,
         "producer": "Jack Daniel",
-        "size": 700
+        "size": 700,
+        "amount": 10
     },
     {
         "name": "Absolut Pears",
@@ -233,7 +215,8 @@
         "image": "../public/images/drinks/spirit/AbsolutPears.png",
         "alcohol": 38,
         "producer": "The Absolut Company",
-        "size": 700
+        "size": 700,
+        "amount": 10
     },
     {
         "name": "Rum Plantation",
@@ -242,7 +225,8 @@
         "image": "../public/images/drinks/spirit/RumPlantation.png",
         "alcohol": 40,
         "producer": "Plantation",
-        "size": 700
+        "size": 700,
+        "amount": 10
     },
     {
         "name": "Tanqueray",
@@ -251,25 +235,8 @@
         "image": "../public/images/drinks/spirit/Tanqueray.png",
         "alcohol": 43.1,
         "producer": "Tanqueray Gordon",
-        "size": 700
-    },
-    {
-        "name": "Johnnie Walker Black Label",
-        "category": "Spirit",
-        "priceinclvat": 2000,
-        "image": "../public/images/drinks/spirit/johnnie_walker.png",
-        "alcohol": 40,
-        "producer": "John Walker",
-        "size": 700
-    },
-    {
-        "name": "Roku Gin",
-        "category": "Spirit",
-        "priceinclvat": 1900,
-        "image": "../public/images/drinks/spirit/roku_gin.webp",
-        "alcohol": 43,
-        "producer": "Suntory Global Spirits",
-        "size": 700
+        "size": 700,
+        "amount": 10
     },
     {
         "name": "Hennessy VS",
@@ -278,7 +245,8 @@
         "image": "../public/images/drinks/spirit/hennessy_vs.png",
         "alcohol": 40,
         "producer": "Hennessy",
-        "size": 350
+        "size": 350,
+        "amount": 10
     },
     {
         "name": "Bacardi",
@@ -287,7 +255,8 @@
         "image": "../public/images/drinks/spirit/bacardi.png",
         "alcohol": 37.5,
         "producer": "Bacardi",
-        "size": 700
+        "size": 700,
+        "amount": 10
     },
     {
         "name": "Tequila Patron",
@@ -296,7 +265,8 @@
         "image": "../public/images/drinks/spirit/tequila_patron.png",
         "alcohol": 40,
         "producer": "Patron Spirits",
-        "size": 700
+        "size": 700,
+        "amount": 10
     },
     {
         "name": "Cuba Libre",
@@ -304,7 +274,8 @@
         "priceinclvat": 320,
         "image": "../public/images/drinks/cocktail/cuba_libre.webp",
         "size": 180,
-        "contents": ["White Rum", "Cola", "Fresh Lime Juice"]
+        "contents": ["White Rum", "Cola", "Fresh Lime Juice"],
+        "amount": 10
     },
     {
         "name": "Margarita",
@@ -312,7 +283,8 @@
         "priceinclvat": 350,
         "image": "../public/images/drinks/cocktail/margarita.webp",
         "size": 95,
-        "contents": ["Tequila", "Triple Sec", "Freshly Lime Juice"]
+        "contents": ["Tequila", "Triple Sec", "Freshly Lime Juice"],
+        "amount": 10
     },
     {
         "name": "Pina Colada",
@@ -320,7 +292,8 @@
         "priceinclvat": 330,
         "image": "../public/images/drinks/cocktail/pina_colada.webp",
         "size": 130,
-        "contents": ["White Rum", "Coconut Cream", "Fresh Pineapple Juice"]
+        "contents": ["White Rum", "Coconut Cream", "Fresh Pineapple Juice"],
+        "amount": 10
     },
     {
         "name": "Negroni",
@@ -328,30 +301,7 @@
         "priceinclvat": 350,
         "image": "../public/images/drinks/cocktail/negroni.webp",
         "size": 90,
-        "contents": ["Gin", "Bitter Campari", "Sweet Red Vermouth"]
-    },
-    {
-        "name": "Cosmopolitan",
-        "category": "Cocktail",
-        "priceinclvat": 340,
-        "image": "../public/images/drinks/cocktail/cosmopolitan.webp",
-        "size": 130,
-        "contents": ["Vodka Citron", "Cointreau", "Fresh Lime Juice", "Cranberry Juice"]
-    },
-    {
-        "name": "Whiskey Sour",
-        "category": "Cocktail",
-        "priceinclvat": 360,
-        "image": "../public/images/drinks/cocktail/whiskey_sour.webp",
-        "size": 90,
-        "contents": ["Bourbon Whiskey", "Fresh Lemon Juice", "Sugar Syrup", "Egg White"]
-    },
-    {
-        "name": "Tequila Sunrise",
-        "category": "Cocktail",
-        "priceinclvat": 380,
-        "image": "../public/images/drinks/cocktail/Tequila_Sunrise.webp",
-        "size": 150,
-        "contents": ["Tequila", "Fresh Orange Juice", "Grenadine Syrup"]
+        "contents": ["Gin", "Bitter Campari", "Sweet Red Vermouth"],
+        "amount": 10
     }
 ]

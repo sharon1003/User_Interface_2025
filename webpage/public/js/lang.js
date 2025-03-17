@@ -1,5 +1,6 @@
 const translations = {
     en: {
+        food: "Food",
         home: "Home",
         login: "Log In",
         logout: "Logout",
@@ -29,6 +30,7 @@ const translations = {
         vipMenu: "Welcome to the VIP special Menu"
     },
     sv: {
+        food: "Mat",
         home: "Hem",
         login: "Logga in",
         logout: "Logga ut",
@@ -58,6 +60,7 @@ const translations = {
         vipMenu: "Välkommen till VIP-specialmenyn"
     },
     tw: {
+        food: "小吃",
         home: "首頁",
         login: "登入",
         logout: "登出",
@@ -87,6 +90,7 @@ const translations = {
         vipMenu: "歡迎來到VIP專屬菜單"
     },
     ch: { 
+        food: "小吃",
         home: "首页",
         login: "登录",
         logout: "退出",

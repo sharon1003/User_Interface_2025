@@ -1,5 +1,5 @@
 // === MODEL: Data Storage ===
-/*
+
 let availableBeverages = [] 
 let orderList = [];
 
@@ -409,4 +409,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // document.addEventListener("DOMContentLoaded", updateView);
 document.getElementById("undo-button").addEventListener("click", undoit);
-document.getElementById("redo-button").addEventListener("click", redoit);*/
+document.getElementById("redo-button").addEventListener("click", redoit);

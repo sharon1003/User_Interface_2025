@@ -39,7 +39,7 @@ class UserController {
         UserModel.logout();
         UserView.updateAuthLink(null);
         console.log("log out");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 
     
