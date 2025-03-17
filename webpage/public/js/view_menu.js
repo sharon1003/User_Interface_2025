@@ -30,13 +30,15 @@ export default class ViewMenu {
 
     renderCategory(category, items) {
         const container = document.getElementById(category);
+        console.log(category);
+        console.log(items);
     
         container.innerHTML = items.map((item, index) =>
             `<div id="${category}-${index}" class="beverage-card" draggable="true"
                  data-name="${item.name}" data-price="${item.priceinclvat}">
-                <img src="${item.image || '../public/images/drinks/corona.png'}" alt="${item.name}" draggable="true">
+                <img src="${item.image || '../public/images/drinks/default.png'}" alt="${item.name}" draggable="true">
                 <h2>${item.name}</h2>
-                <p><strong>Price:</strong> ${item.priceinclvat} SEK</p>
+                <p>${item.priceinclvat} SEK</p>
                     <div class="quantity-selector">
                         <button class="quantity-btn decrement">-</button>
                         <span class="quantity-number">1</span>

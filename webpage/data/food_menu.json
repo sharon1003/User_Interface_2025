@@ -27,16 +27,19 @@
     {
         "name": "Chicken Wrap",
         "priceinclvat": 100,
-        "image": "../public/images/food/chicken-wrap.png"
+        "image": "../public/images/food/chicken-wrap.png",
+        "amount": 10
     },
     {
         "name": "Fried Chicken Box",
         "priceinclvat": 100,
-        "image": "../public/images/food/fried-chicken-box.png"
+        "image": "../public/images/food/fried-chicken-box.png",
+        "amount": 10
     },
     {
         "name": "Pasta",
         "priceinclvat": 100,
-        "image": "../public/images/food/pasta.png"
+        "image": "../public/images/food/pasta.png",
+        "amount": 10
     }
 ]

@@ -1,8 +1,0 @@
-[
-    {
-        "name": "Grilled Chicken (VIP)",
-        "priceinclvat": 189,
-        "image": "../public/images/food/grilled-chicken.png",
-        "contents": ["Chicken", "Pepper"]
-    }
-]

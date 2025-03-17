@@ -5,7 +5,8 @@ export default class Model {
             Beer: [],
             Spirit: [],
             Cocktail: [],
-            Food: []
+            Food: [],
+            Special: []
         };
         this.orders = JSON.parse(sessionStorage.getItem("orders")) || [];
         // this.stock
@@ -15,9 +16,10 @@ export default class Model {
 
     async loadData() {
         try {
-            const [drinksData, foods] = await Promise.all([
+            const [drinksData, foods, vip_menu] = await Promise.all([
                 fetch('../data/Beverages_eng.json').then(res => res.json()),
-                fetch('../data/food_menu.json').then(res => res.json())
+                fetch('../data/food_menu.json').then(res => res.json()),
+                fetch('../data/vip_menu.json').then(res => res.json())
             ]);
 
             this.categoryItems.Wine = drinksData.filter(item => item.category === 'Wine');
@@ -25,6 +27,7 @@ export default class Model {
             this.categoryItems.Spirit = drinksData.filter(item => item.category === 'Spirit');
             this.categoryItems.Cocktail = drinksData.filter(item => item.category === 'Cocktail');
             this.categoryItems.Food = foods;
+            this.categoryItems.Special = vip_menu;
         } catch (error) {
             console.error("Error loading: ", error);
         }

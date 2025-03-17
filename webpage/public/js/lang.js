@@ -1,5 +1,6 @@
 const translations = {
     en: {
+        special: "Special",
         food: "Food",
         home: "Home",
         login: "Log In",
@@ -30,6 +31,7 @@ const translations = {
         vipMenu: "Welcome to the VIP special Menu"
     },
     sv: {
+        special: "Särskild",
         food: "Mat",
         home: "Hem",
         login: "Logga in",
@@ -60,6 +62,7 @@ const translations = {
         vipMenu: "Välkommen till VIP-specialmenyn"
     },
     tw: {
+        special: "特別菜單",
         food: "小吃",
         home: "首頁",
         login: "登入",
@@ -90,6 +93,7 @@ const translations = {
         vipMenu: "歡迎來到VIP專屬菜單"
     },
     ch: { 
+        special: "特别菜单",
         food: "小吃",
         home: "首页",
         login: "登录",
@@ -171,7 +175,8 @@ function changeLanguage(lang) {
     const currentPage = getCurrentPage();
     if (currentPage === "menu") {
         document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
-            btn.innerText = translations[lang].addToCart;
+            //btn.innerText = translations[lang].addToCart;
+            btn.innerHTML = '<i class="fas fa-cart-plus"></i> ' + translations[lang].addToCart;
         });
     }
     localStorage.setItem("selectedLanguage", lang);
