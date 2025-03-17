@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Dutchman</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/menu.css">
+</head>
+<body>
+    <header class="header">
+        <!--#1M<div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Flying Dutchman</h1>
+        </div>-->
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('sv')">🇸🇪 SV</button>
+                <button onclick="setLanguage('tw')">繁中</button>
+                <button onclick="setLanguage('zh')">简中</button>
+            </div>
+        </div>
+    </header>
+    <!--#2M<nav>
+        <ul>
+            <li><a href="./index.html" data-i18n="home">Home</a></li>
+            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./login.html" data-i18n="login">Log In</a></li>
+        </ul>
+    </nav>-->
+
+    <!-- Billboard  -->
+    <section class="billboard">
+        <div class="billboard-text">
+            <h1 id="main-title" data-i18n="welcome">Welcome to The Bar</h1>
+            <button class="explore-btn" data-i18n="explore" onclick="location.href='./menu.html'">Explore the Menu</button>
+        </div>
+    </section>
+
+    <!-- User choose -->
+    <!-- <section class="user-roles" id="roles">
+        <h2 data-i18n="chooseRole">Choose Your Role</h2>
+        <div class="role-container">
+            <div class="role-card" onclick="location.href='./vip/vip-menu.html'">
+                <h3 data-i18n="vip">VIP Customer</h3>
+                <p data-i18n="vipDesc">Order, drinks, food</p>
+            </div>
+
+            <div class="role-card" onclick="location.href='./bartender.html'">
+                <h3 data-i18n="staff">Bartender/Waiter</h3>
+                <p data-i18n="staffDesc">Manage orders</p>
+            </div>
+
+            <div class="role-card" onclick="location.href='./owner.html'">
+                <h3 data-i18n="owner">Owner</h3>
+                <p data-i18n="ownerDesc">Business operator</p>
+            </div>
+        </div>
+    </section> -->
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+    <script type="module" src="../data/Beverages_eng.js"></script>
+    <script type="module" src="../data/food.js"></script>
+    <script src="../public/js/lang.js"></script>
+</body>
+</html>
