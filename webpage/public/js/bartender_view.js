@@ -7,23 +7,36 @@ class Bartender_view {
 
     renderOrderTabs(orders) {
         this.orderTabsContainer.innerHTML = ""; // Clear existing tabs
-
-        orders
-            .forEach((order, index) => {
-                const tabButton = document.createElement("button");
-                tabButton.classList.add("order-tab");
-                if (index === 0) tabButton.classList.add("active"); // First tab active
-                tabButton.textContent = `#${order.orderId}`;
-                tabButton.dataset.id = order.orderId;
-
-                tabButton.addEventListener("click", () => {
-                    document.querySelectorAll(".order-tab").forEach(tab => tab.classList.remove("active"));
-                    tabButton.classList.add("active");
-                    this.renderOrders([order]); // Show only the selected order
-                });
-
-                this.orderTabsContainer.appendChild(tabButton);
+    
+        // Create "All" tab
+        const allTab = document.createElement("button");
+        allTab.classList.add("order-tab", "active"); // Default active
+        allTab.textContent = "All";
+        allTab.dataset.id = "all";
+    
+        allTab.addEventListener("click", () => {
+            document.querySelectorAll(".order-tab").forEach(tab => tab.classList.remove("active"));
+            allTab.classList.add("active");
+            this.renderOrders(orders); // Show all orders
+        });
+    
+        this.orderTabsContainer.appendChild(allTab);
+    
+        // Create individual order tabs
+        orders.forEach(order => {
+            const tabButton = document.createElement("button");
+            tabButton.classList.add("order-tab");
+            tabButton.textContent = `#${order.orderId}`;
+            tabButton.dataset.id = order.orderId;
+    
+            tabButton.addEventListener("click", () => {
+                document.querySelectorAll(".order-tab").forEach(tab => tab.classList.remove("active"));
+                tabButton.classList.add("active");
+                this.renderOrders([order]); // Show only the selected order
             });
+    
+            this.orderTabsContainer.appendChild(tabButton);
+        });
     }
 
     renderOrders(orders) {

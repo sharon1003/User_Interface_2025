@@ -1,5 +1,7 @@
 
-
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
 /* Bartender Section Styling */
 .bartender-section {
   background-color: #2c2f33;
@@ -59,19 +61,23 @@
 }
 
 .order-tab {
-  background: #444;
-  color: white;
-  border: none;
+  background: #aaa38b;
+  color: black;
+  font-weight: bold;
+  border: 3px solid #f1c40f; 
   padding: 10px 20px;
-  margin: 5px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
+  border-radius: 25px;
+  transition: 0.3s;
+  font-size: 16px; 
+  
 }
 
-.order-tab.active, .order-tab:hover {
-  background: #f1c40f;
-  color: #222;
+/* Active Tab - Solid Yellow Background */
+.order-tab.active {
+  background: #f1c40f; 
+  color: rgb(81, 75, 75);
+  border: 3px solid #f1c40f;
 }
 
 /* Order Details */
@@ -85,8 +91,7 @@
 }
 
 .order-card {
-  background-color: #333;
-  color: white;
+  background-color: whitesmoke;
   padding: 20px;
   margin: 15px;
   border-radius: 10px;
@@ -102,7 +107,7 @@
 }
 
 .order-card h3 {
-  color: #f1c40f;
+  color: #F3274C;
   font-size: 22px;
   text-align: left;
 }
@@ -112,7 +117,7 @@
   height: 100px;
   margin: 10px 0;
   border-radius: 8px;
-  border: 2px solid #f1c40f;
+  /*border: 2px solid hsl(44, 80%, 47%); */
 }
 
 .order-item {
@@ -126,7 +131,7 @@
   height: 80px;
   margin-right: 15px; /* 让文本和图片保持适当间距 */
   border-radius: 8px;
-  border: 2px solid #f1c40f;
+  object-fit: contain;
 }
 
 .order-info {
@@ -136,7 +141,7 @@
 
 .order-info p {
   margin: 5px 0;
-  color: white; /* 保持文字颜色统一 */
+  color: rgb(0, 0, 0); /* 保持文字颜色统一 */
 }
 
 
@@ -170,9 +175,15 @@
   opacity: 0.8;
 }
 
+
+
 @media screen and (max-width: 1024px) {
   .order-card {
       width: 45%; /* Makes it 2 per row on smaller screens */
+  }
+  .order-tab {
+    font-size: 18px; /* Increase text size */
+    padding: 15px 25px; /* Increase padding for a larger look */
   }
 }
 
@@ -181,3 +192,4 @@
       width: 100%; /* Stacks in one column on really small screen */
   }
 }
+
