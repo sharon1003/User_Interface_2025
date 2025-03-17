@@ -1,4 +1,4 @@
-class OrdersView {
+class Bartender_view {
     constructor(controller) {
         this.controller = controller;
         this.orderContainer = document.querySelector('.order-details');
@@ -69,4 +69,4 @@ class OrdersView {
     }
 }
 
-export default OrdersView;
+export default Bartender_view;
