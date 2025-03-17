@@ -26,6 +26,7 @@ class Controller {
             });
         });
 
+        document.getElementById("pay-button").addEventListener("click", () => this.handlePayment());
         document.getElementById("undo-button").addEventListener("click", () => this.undo());
         document.getElementById("redo-button").addEventListener("click", () => this.redo());
     }
@@ -69,6 +70,17 @@ class Controller {
         console.log(this.orders);
         return this.orders.reduce((total, item) => total + item.priceinclvat * item.quantity, 0);
     }
+
+    handlePayment() {
+      if (this.model.orders.length < 5) {
+          const confirmPayment = confirm("It is less than 5 items in the Cart, do you want to continue to pay?");
+          if (!confirmPayment) {
+              return; // Stay on the cart page if the user cancels
+          }
+      }
+      window.location.href = "./payment.html"; // Redirect to payment page
+    }
+  
 
     saveOrders() {
         sessionStorage.setItem("orders", JSON.stringify(this.orders));
