@@ -48,6 +48,7 @@ class Bartender_view {
             orderCard.classList.add('order-card');
 
             const totalPrice = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const totalQuantity = order.items.reduce((sum, item) => sum + item.quantity, 0);
 
             orderCard.innerHTML = `
                 <h3>#${order.orderId}</h3>
@@ -57,26 +58,44 @@ class Bartender_view {
                         <img src="${item.image}" alt="${item.name}">
                         <div class="order-info">
                             <p><strong>${item.name}</strong></p>
-                            <p>Qty: ${item.quantity} | SEK ${item.price}</p>
+                            <p>Qty: ${item.quantity}</p>
                         </div>
+                        <p class="order-price">${item.price} kr</p>
                     </div>
                 `).join('')}
-                <p><strong>In Total: SEK ${totalPrice}</strong></p>
+                <div class ="order-total">
+                    <span class="total-label"><strong>In Total:</strong></span>
+                    <span class="total-qty"><strong>Qty: ${totalQuantity}</strong></span>
+                    <span class="total-price">SEK ${totalPrice}</span>
+                </div>
                 <div class="order-actions">${this.getOrderButtons(order)}</div>
             `;
 
             this.orderContainer.appendChild(orderCard);
+        });
+        // remove css border form last order item 
+        document.querySelectorAll(".order-card").forEach(card => {
+            let items = card.querySelectorAll(".order-item");
+            if (items.length > 0) {
+                items[items.length - 1].style.borderBottom = "none"; 
+            }
         });
     }
 
     getOrderButtons(order) {
         if (order.status === "Pending") {
             return `
-                <button class="reject-btn" data-id="${order.orderId}">Reject</button>
-                <button class="confirm-btn" data-id="${order.orderId}">Confirm</button>
+                <div class="order-actions">
+                    <button class="reject-btn" data-id="${order.orderId}">Reject</button>
+                    <button class="confirm-btn" data-id="${order.orderId}">Confirm</button>
+                </div>
             `;
         } else if (order.status === "Taken") {
-            return `<button class="checkout-btn" data-id="${order.orderId}">Check Out</button>`;
+            return `
+            <div class="order-actions">
+                <button class="checkout-btn" data-id="${order.orderId}">Check Out</button>
+            </div>
+            `;
         }
         return "";
     }
