@@ -1,23 +1,28 @@
 [
     {
         "name": "Beef Taco",
-        "priceinclvat": 100,
-        "image": "../public/images/food/beef-taco.png"
+        "priceinclvat": 189,
+        "image": "../public/images/food/beef-taco.png",
+        "contents": ["beef", "taco seasoning", "corn tortillas", "lettuce", "tomatoes", "onions", "cheese", "sour cream", "avocado", "cilantro", "lime", "salsa", "jalapeños", "garlic", "cumin", "salt", "pepper", "olive oil", "chili powder"],
+        "amount": 10
     },
     {
         "name": "Big Shared Meal",
-        "priceinclvat": 100,
-        "image": "../public/images/food/big-shared-meal.png"
+        "priceinclvat": 399,
+        "image": "../public/images/food/big-shared-meal.png",
+        "amount": 10
     },
     {
         "name": "Burger",
         "priceinclvat": 100,
-        "image": "../public/images/food/burger.png"
+        "image": "../public/images/food/burger.png",
+        "amount": 10
     },
     {
         "name": "Cheese Pizza",
         "priceinclvat": 100,
-        "image": "../public/images/food/cheese-pizza.png"
+        "image": "../public/images/food/cheese-pizza.png",
+        "amount": 10
     },
     {
         "name": "Chicken Wrap",
@@ -28,11 +33,6 @@
         "name": "Fried Chicken Box",
         "priceinclvat": 100,
         "image": "../public/images/food/fried-chicken-box.png"
-    },
-    {
-        "name": "Grilled Chicken",
-        "priceinclvat": 100,
-        "image": "../public/images/food/grilled-chicken.png"
     },
     {
         "name": "Pasta",

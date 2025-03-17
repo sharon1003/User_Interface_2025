@@ -19,7 +19,7 @@ class UserController {
             setTimeout(() => {
                 if (user.role === "vip-customer") {
                     console.log(user.role);
-                    window.location.href = "vip_menu.html";
+                    window.location.href = "vip-menu.html";
                 } else if (user.role === "owner") {
                     window.location.href = "owner.html";
                 } else if (user.role === "bartender") {
@@ -39,7 +39,7 @@ class UserController {
         UserModel.logout();
         UserView.updateAuthLink(null);
         console.log("log out");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 
     
