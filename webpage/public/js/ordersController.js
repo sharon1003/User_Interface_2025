@@ -24,6 +24,8 @@ class OrdersController {
                 this.confirmOrder(orderId);
             } else if (event.target.classList.contains("reject-btn")) {
                 this.rejectOrder(orderId);
+            } else if (event.target.classList.contains("checkout-btn")) {
+                this.checkoutOrder(orderId); // New function
             }
         });
     }
@@ -51,6 +53,10 @@ class OrdersController {
             this.view.renderOrderTabs(this.orders);
             this.view.renderOrders(this.orders);
         }
+    }
+
+    checkoutOrder(orderId){
+        window.location.href = "payment.html?orderId="+orderId;
     }
 }
 
