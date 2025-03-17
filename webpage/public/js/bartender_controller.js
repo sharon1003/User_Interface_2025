@@ -1,10 +1,10 @@
-import { loadOrders } from './ordersLoader.js';
-import OrdersView from './ordersView.js';
+import { loadOrders } from './orders_model.js';
+import Bartender_view from './bartender_view.js';
 
-class OrdersController {
+class Bartender_controller {
     constructor() {
         this.orders = [];
-        this.view = new OrdersView(this); // Initialize OrdersView
+        this.view = new Bartender_view(this); // Initialize OrdersView
     }
 
     async init() {
@@ -24,6 +24,8 @@ class OrdersController {
                 this.confirmOrder(orderId);
             } else if (event.target.classList.contains("reject-btn")) {
                 this.rejectOrder(orderId);
+            } else if (event.target.classList.contains("checkout-btn")) {
+                this.checkoutOrder(orderId); // New function
             }
         });
     }
@@ -52,10 +54,14 @@ class OrdersController {
             this.view.renderOrders(this.orders);
         }
     }
+
+    checkoutOrder(orderId){
+        window.location.href = "payment.html?orderId="+orderId;
+    }
 }
 
 // Initialize controller when page loads
 document.addEventListener("DOMContentLoaded", () => {
-    const controller = new OrdersController();
+    const controller = new Bartender_controller();
     controller.init();
 });
