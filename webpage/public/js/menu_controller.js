@@ -35,8 +35,18 @@ class Controller {
         console.log("Adding");
         this.model.saveUndoState();
         const order = {id: Date.now(), name, priceinclvat: parseFloat(price), quantity, img_path};
+
+        const initialCount = this.model.orders.length;
         this.model.addOrder(order);
-        this.view.renderCart(this.model.orders);
+
+        // If no new item was added, assume cart limit was reached
+        if (this.model.orders.length === initialCount) {
+          alert("It is already 10 items in the Cart");
+        } else {
+          this.view.renderCart(this.model.orders);
+        }
+        // this.model.addOrder(order);
+        // this.view.renderCart(this.model.orders);
     }
     // update cart
     updateCartQuantity(name, change) {
