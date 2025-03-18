@@ -13,6 +13,14 @@
   margin-bottom: 20px;
 }
 
+/* Staff ID Styling */
+.staff-id {
+  color: #f1c40f;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
 .stock-list {
   display: flex;
   flex-direction: column;
