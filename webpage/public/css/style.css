@@ -8,7 +8,7 @@ body {
     flex-direction: column;
 }
 header {
-    background-color: #222;
+    /*#3M background-color: #222;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -19,7 +19,7 @@ header {
 }
 
 .header-top h1 {
-    color: #d4af37;
+    color: #FFD40D;
     margin-left: 10px;
     font-size: 50px;
 }
@@ -34,7 +34,7 @@ header {
 
 .lang-switch button {
     margin-left: 0.5rem;
-    background-color: #444444;
+    background-color: #332C06;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -43,7 +43,7 @@ header {
     font-size: 18px;
 }
 .lang-switch button:hover {
-    background-color: #d4af37;
+    background-color: #FFD40D;
     color: #000;
 }
 
@@ -64,9 +64,10 @@ header {
 }
 
 .billboard-text {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(51, 44, 6, 0.6);
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 40px;
+    border: 1px solid #FFD40D;
 }
 
 .billboard-text h1{
@@ -77,18 +78,18 @@ header {
 
 .explore-btn {
     margin-left: 0.5rem;
-    background-color: #848383;
-    color: #fff;
+    background-color: #FFD40D;
+    color: #000;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .explore-btn:hover {
-    background-color: #d4af37;
-    color: #000;
+    background-color: #332C06;
+    color: #fff;
 }
 
 
@@ -109,7 +110,7 @@ header {
 
 .role-card {
     flex: 1 1 200px;
-    border: 2px solid #d4af37;
+    border: 2px solid #FFD40D;
     margin: 1rem;
     padding: 1rem;
     border-radius: 15px;
@@ -189,8 +190,8 @@ li a{
 }
 
 a:hover {
-    color: #d4af37;
-    border-bottom: 2px solid  #d4af37;
+    color: #FFD40D;
+    border-bottom: 2px solid  #FFD40D;
 }
 
 
@@ -204,7 +205,7 @@ footer {
     flex-direction: column;
     align-items: center;
     color: white;
-    background-color: #222;
+    background-color: #332C06;
 }
 
 @media screen and (max-width: 768px) {
@@ -214,7 +215,6 @@ footer {
         height: 45vw;
         /* width: 70%; */
     }
-
 }
 
 @media screen and (max-width:1050px) {
@@ -223,7 +223,7 @@ footer {
     }  
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {
     .header-top h1 { 
         text-align: center;
     } 
@@ -232,4 +232,3 @@ footer {
         height: 45vw;
     }
 }
-

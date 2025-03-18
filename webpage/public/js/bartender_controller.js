@@ -1,27 +1,43 @@
 import { loadOrders } from './orders_model.js';
-import Bartender_view from './bartender_view.js';
+import BartenderView from './bartender_view.js';
 
-class Bartender_controller {
+class BartenderController {
     constructor() {
         this.orders = [];
-        this.view = new Bartender_view(this); // Initialize OrdersView
+        this.view = new BartenderView(this);
+
+        this.undoStack = [];
+        this.redoStack = [];
     }
 
+    // Init
     async init() {
-        const allOrders = await loadOrders(); // Load all orders
+        const allOrders = await loadOrders();
+        this.loadOrdersFromLocalStorage(allOrders);
+        this.view.renderOrderTabs(this.getActiveOrders());
+        this.view.renderOrders(this.getActiveOrders());
+        this.setupEventListeners();
+    }
 
+    loadOrdersFromLocalStorage(allOrders) {
         const localOrders = JSON.parse(localStorage.getItem("orders")) || [];
         localOrders.forEach(localOrder => {
             if (!allOrders.some(order => order.orderId === localOrder.orderId)) {
                 allOrders.push(localOrder);
             }
         });
-        this.orders = allOrders.filter(order => order.status === "Pending" || order.status === "Taken"); // Filter orders
-        this.view.renderOrderTabs(this.orders); // Render only filtered orders
-        this.view.renderOrders(this.orders);
-        this.setupEventListeners();
+        this.orders = allOrders;
     }
 
+    updateLocalStorage() {
+        localStorage.setItem('orders', JSON.stringify(this.orders));
+    }
+
+    getActiveOrders() {
+        return this.orders.filter(order => order.status === "Pending" || order.status === "Taken");
+    }
+
+    // Event listeners
     setupEventListeners() {
         this.view.orderContainer.addEventListener("click", (event) => {
             const orderId = event.target.dataset.id;
@@ -32,56 +48,77 @@ class Bartender_controller {
             } else if (event.target.classList.contains("reject-btn")) {
                 this.rejectOrder(orderId);
             } else if (event.target.classList.contains("checkout-btn")) {
-                this.checkoutOrder(orderId); // Goes to payment
+                this.showPaymentModal(orderId);
             }
         });
+
+        document.getElementById("close-modal").addEventListener("click", () => this.view.hidePaymentModal());
+        window.addEventListener("click", (event) => {
+            if (event.target.classList.contains("modal")) {
+                this.view.hidePaymentModal();
+            }
+        });
+
+        document.getElementById("undo-btn").addEventListener("click", () => this.undo());
+        document.getElementById("redo-btn").addEventListener("click", () => this.redo());
     }
 
+    // Order Actions (Confirm, reject, pay)
     confirmOrder(orderId) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order && order.status === "Pending") {
-            order.status = "Taken"; // Change status
-
-            // Update UI
-            this.view.renderOrderTabs(this.orders);
-            this.view.renderOrders(this.orders);
-
-            this.updateLocalStorage();
+            order.status = "Taken";
+            this.updateUI();
         }
     }
 
     rejectOrder(orderId) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order) {
-            order.status = "Rejected"; // Change status instead of removing
-
-            // Re-filter the orders to exclude rejected ones
-            this.orders = this.orders.filter(order => order.status === "Pending" || order.status === "Taken");
-
-            // Update the UI with only non-rejected orders
-            this.view.renderOrderTabs(this.orders);
-            this.view.renderOrders(this.orders);
-            //Update Local Storage
-            this.updateLocalStorage();
+            order.status = "Rejected";
+            this.updateUI();
         }
     }
-     //add orders to localstorage
-     updateLocalStorage() {
-        localStorage.setItem('orders', JSON.stringify(this.orders));
-    }
 
-    checkoutOrder(orderId){
+    completePayment(orderId, method) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order) {
-            order.status = "Completed"; // Change status
-            this.updateLocalStorage();
-            window.location.href = "payment.html?orderId="+orderId;
+            order.status = "Done";
+            this.updateUI();
+            this.view.hidePaymentModal();
+            alert(`Order #${orderId} paid with ${method}`);
         }
     }
 
+    updateUI() {
+        this.updateLocalStorage();
+        this.view.renderOrderTabs(this.getActiveOrders());
+        this.view.renderOrders(this.getActiveOrders());
+    }
+
+    // Order Display Functions
+    displayAllOrders() {
+        this.view.renderOrders(this.getActiveOrders());
+    }
+
+    displaySingleOrder(orderId) {
+        const order = this.orders.find(order => order.orderId === orderId);
+        if (order) {
+            this.view.renderOrders([order]);
+        }
+    }
+
+    // Payment Pop-up
+    showPaymentModal(orderId) {
+        const order = this.orders.find(order => order.orderId === orderId);
+        if (order) {
+            this.view.showPaymentModal(order);
+        }
+    }
 }
-// Initialize controller when page loads
+
+// Init controller on pageload
 document.addEventListener("DOMContentLoaded", () => {
-    const controller = new Bartender_controller();
+    const controller = new BartenderController();
     controller.init();
 });
