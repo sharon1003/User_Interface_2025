@@ -1,4 +1,8 @@
-import UserModel from "./user_model.js"
+import PayView from "./pay_view.js"
+
+class VipModel extends UserModel {
+
+}
 
 
 document.querySelector('.payment-submit-btn').addEventListener('click', function() {

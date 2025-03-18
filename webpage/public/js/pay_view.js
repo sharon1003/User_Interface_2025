@@ -29,7 +29,7 @@ export default class PayView {
         this.controller.clearCart();
 
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "menu.html";
         }, 1500);
     }
 
@@ -40,7 +40,7 @@ export default class PayView {
         this.controller.clearCart();
 
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "menu.html";
         }, 1500);
     }
 }
