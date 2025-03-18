@@ -1,0 +1,235 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    background-image: url('../images/BG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;    
+    background-position: center;
+    flex-direction: column;
+}
+header {
+    /* background-color: #222;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+
+.header-top {
+    flex: 2 1 800px;
+}
+
+.header-top h1 {
+    color: #FFD40D;
+    margin-left: 10px;
+    font-size: 50px;
+}
+
+.header-top-right {
+    /* flex: 2 2 200px; */
+    margin-block: 33.5px;
+    margin-top: 40px;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.lang-switch button {
+    margin-left: 0.5rem;
+    background-color: #332C06;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.lang-switch button:hover {
+    background-color: #FFD40D;
+    color: #000;
+}
+
+
+/* Billboard */
+.billboard {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    background-image: url('../images/BG.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 100%;
+    height: 700px; 
+}
+
+.billboard-text {
+    background-color: rgba(51, 44, 6, 0.6);
+    padding: 2rem;
+    border-radius: 40px;
+    border: 1px solid #FFD40D;
+}
+
+.billboard-text h1{
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.explore-btn {
+    margin-left: 0.5rem;
+    background-color: #FFD40D;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.explore-btn:hover {
+    background-color: #332C06;
+    color: #fff;
+}
+
+
+/* User choose */
+.user-roles {
+    background-color: #222;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.role-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.role-card {
+    flex: 1 1 200px;
+    border: 2px solid #FFD40D;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.role-card:hover {
+    transform: translateY(-10px);
+}
+
+
+.dropbtn {
+    background-color:  rgb(237, 233, 227);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    font-size: 20px;
+    border: #1877d6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 20px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #a3a7a3;
+}
+
+
+nav ul{
+    background-color: #1A1A1A;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav li {
+    list-style-type: none;
+    justify-content: space-around;
+    margin: 1rem;
+    /* padding: 2rem 2rem 0rem; */
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.35rem;
+    transition: all 0.2 sec;
+    padding-bottom: 0.3rem;
+}
+
+a:hover {
+    color: #FFD40D;
+    border-bottom: 2px solid  #FFD40D;
+}
+
+
+footer {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: #332C06;
+}
+
+@media screen and (max-width: 768px) {
+
+    .food-item img {
+        width: 45vw;
+        height: 45vw;
+        /* width: 70%; */
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .header-top h1 {
+        text-align: center;
+    }  
+}
+
+@media screen and (max-width:768px) {
+    .header-top h1 { 
+        text-align: center;
+    } 
+    .food-item img {
+        width: 45vw;
+        height: 45vw;
+    }
+}
+
