@@ -9,8 +9,8 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">The Bar</h1>
+        <div class="header-top">
+            <h1 data-i18n="title">The Flying Dutchman</h1>
         </div> 
         <div class="header-top-right">
             <div class="lang-switch">
@@ -23,9 +23,9 @@
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html" data-i18n="home">Home</a></li>
-            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
-            <li id="auth-link"><a href="./index.html" data-i18n="logout">Logout</a></li>
+            <li><a href="./vip-menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./vip-info.html" data-i18n="info">Info</a></li>
+            <li><a href="./index.html" data-i18n="logout" id="Logout">Logout</a></li>
         </ul>
     </nav>
 
@@ -39,9 +39,8 @@
         <div class="payment-method">
             <label for="payment-option" >Choose Payment Method:</label>
             <select name="payment-option" id="payment-option" onchange="toggleCardDetails()">
-                <option value="cash">Cash</option>
-                <option value="credit">Credit</option>
-                <option value="VIP">VIP Account</option>
+                <option value="balance">Balance</option>
+                <option value="bar">Pay at bar</option>
             </select>
         </div>
         <button class="payment-submit-btn">Pay</button>
@@ -52,6 +51,9 @@
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
     <script src="../public/js/lang.js"></script>
+    
     <script type="module" src="../public/js/pay_contorller.js"></script>
+
+    <script type="module" src="../public/js/vip_payment.js"></script>
 </body>
 </html>

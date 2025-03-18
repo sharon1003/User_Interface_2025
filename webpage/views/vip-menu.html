@@ -11,8 +11,8 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-top" onclick="location.href='index.html'">
-            <h1 class="title">The Flying Dutchman</h1>
+        <div class="header-top">
+            <h1 data-i18n="title">The Flying Dutchman</h1>
         </div> 
         <div class="header-top-right">
             <div data-i18n="vip-welcome" class="vip-welcome" id="vipWelcomeMessage"></div>
@@ -65,7 +65,9 @@
         
                 <div class="check-info">
                     <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
-                    <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
+                    <button id="code-btn" data-category="Code" data-i18n="code">Code</button>
+                    <p id="code-popup"></p>
+                    <button class="checkout-btn" onclick="location.href='./vip-payment.html'">Pay</button>
                 </div>
                     <!-- UNDO & REDO: -->
                 <div id="undo-redo-container">
@@ -80,14 +82,11 @@
     <footer>
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
-    <!--
-    <script type="module" src="../data/Beverages_eng.js"></script>
-    <script type="module" src="../data/food.js"></script>
--->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <script src="../public/js/menu.js"></script> -->
     <script type="module" src="../public/js/menu_controller.js"></script>
     <script src="../public/js/lang.js"></script>
+    <script type="module" src="../public/js/vip_controller.js"></script>
 
 </body>
 </html>
