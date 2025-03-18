@@ -24,5 +24,7 @@ export default class PayController {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const payApp = new PayController();
+    console.log("window.payController before: ", window.payController); 
+    window.payController ??= new PayController();
+    console.log("window.payController after: ", window.payController);
 });
