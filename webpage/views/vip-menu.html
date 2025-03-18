@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-top" onclick="location.href='index.html'">
+        <div class="header-top">
             <h1 class="title">The Flying Dutchman</h1>
         </div> 
         <div class="header-top-right">
@@ -26,9 +26,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="./index.html" data-i18n="home">Home</a></li>
-            <!-- <li><a href="./menu.html" data-i18n="menu">Menu</a></li> -->
-            <li id="auth-link"><a href="./login.html" data-i18n="login">Log In</a></li>
+            <!--<li><a href="../index.html" data-i18n="home">Home</a></li>-->
+            <li><a href="./vip-menu.html" data-i18n="menu">Menu</a></li>
+            <li><a href="./vip-info.html" data-i18n="info">My account</a></li>
+            <li id="auth-link"><a href="./index.html" data-i18n="logout">Logout</a></li>
         </ul>
     </nav>
 
@@ -42,6 +43,7 @@
                 <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
                 <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
                 <button class="tab-btn" data-category="Food" data-i18n="food">Food</button>
+                <button class="tab-btn" data-category="Special" data-i18n="special">Special</button>
             </div>
             <div class="filter-container">
                 <label for="allergen-filter">Filter by Allergen:</label>
@@ -72,6 +74,7 @@
                 <div id="Cocktail" class="tab-content"></div>
                 <div id="Beer" class="tab-content"></div>
                 <div id="Food" class="tab-content"></div>
+                <div id="Special" class="tab-content"></div>
             </div>
         </section>
     
@@ -102,8 +105,8 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="../public/js/menu_controller.js"></script>
-    <script type="module" src="../public/js/user_controller.js"></script>
     <script src="../public/js/lang.js"></script>
+    <script type="module" src="../public/js/vip_controller.js"></script>
 
 </body>
 </html>
