@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/menu.css">
+    <link rel="stylesheet" href="../public/css/vip_info.css">
 
 </head>
 <body>
@@ -37,7 +39,7 @@
         <section class="info-section">
             <div class="vip-data">
                 <div class="vipid" id="vipid">
-                    <h1><span id="Greeting"></span>, <span data-i18n="greetingMessege" class="greeting">welcome!</span></h1>
+                    <h1 style="font-size:36px"><span id="Greeting"></span>, <span data-i18n="greetingMessege" class="greeting">welcome!</span></h1>
                 </div>
                 <div class= "balance" id="Balance">
                     <h1 data-i18n="balance">Balance: </h1>
@@ -45,7 +47,11 @@
                 </div>
                 <div class="records" id="records">
                     <h1 data-i18n="history">My orders: </h1>
-                    <button id="show-btn" data-i18n="show">Show</button>
+
+                    <button class="show-btn" id="show-btn" data-i18n="show">
+                        <i class="material-icons" style="font-size:36px">expand_more</i>
+                    </i></button>
+
                     <span id="OrderHistory"></span>
                 </div>
             </div>
