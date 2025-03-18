@@ -10,8 +10,13 @@ export default class PayView {
         this.payButton = document.querySelector(".payment-submit-btn");
         //this.paymentMethod = (document.getElementById("PayBeBalance"))? true : false;
         console.log("balance");
+        if (this.patAtBar && this.payByBalance){
             this.patAtBar.addEventListener("click", () => this.processing());    
             this.payByBalance.addEventListener("click", () => this.processPay());
+        }
+        else {
+            this.payButton.addEventListener("click", () => this.processing());
+        }
     }
 
 
