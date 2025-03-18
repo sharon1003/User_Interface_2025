@@ -13,6 +13,7 @@ class BartenderController {
     // Init
     async init() {
         const allOrders = await loadOrders();
+        console.log(allOrders);
         this.loadOrdersFromLocalStorage(allOrders);
         this.view.renderOrderTabs(this.getActiveOrders());
         this.view.renderOrders(this.getActiveOrders());
