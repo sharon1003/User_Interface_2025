@@ -18,10 +18,15 @@ export default class ViewMenu {
             }
         });
 
+        this.attachFilterListener();
+        this.attachCheckoutListener();
+
+
         // drag & drop
         document.body.addEventListener("dragstart", this.handleDragStart);
         document.body.addEventListener("dragover", this.handleDragOver);
         document.body.addEventListener("drop", this.handleDrop);
+
     }
 
     setController(controller) {
@@ -31,14 +36,54 @@ export default class ViewMenu {
     renderCategory(category, items) {
         const container = document.getElementById(category);
         console.log(category);
-        console.log(items);
-    
-        container.innerHTML = items.map((item, index) =>
-            `<div id="${category}-${index}" class="beverage-card" draggable="true"
-                 data-name="${item.name}" data-price="${item.priceinclvat}">
-                <img src="${item.image || '../public/images/drinks/default.png'}" alt="${item.name}" draggable="true">
-                <h2>${item.name}</h2>
-                <p>${item.priceinclvat} SEK</p>
+        container.innerHTML = items.map((item, index) => {
+            let detailsHTML = ""; 
+        
+            if (item.category === "Wine") {
+                detailsHTML = `
+                    <p><strong>Year:</strong> ${item.year || "N/A"}</p>
+                    <p><strong>Producer:</strong> ${item.producer || "N/A"}</p>
+                    <p><strong>Grape:</strong> ${item.grape || "N/A"}</p>
+                    <p><strong>Alcohol:</strong> ${item.alcohol ? item.alcohol + "%" : "N/A"}</p>
+                    <p><strong>Tannins:</strong> ${item.tannins ? item.tannins + "/10" : "N/A"}</p>
+                `;
+            } else if (item.category === "Beer") {
+                detailsHTML = `
+                    <p><strong>Producer:</strong> ${item.producer || "N/A"}</p>
+                    <p><strong>Type:</strong> ${item.type || "N/A"}</p>
+                    <p><strong>Alcohol:</strong> ${item.alcohol ? item.alcohol + "%" : "N/A"}</p>
+                    <p><strong>Allergens:</strong> ${item.allergens ? item.allergens.join(", ") : "N/A"}</p>
+                `;
+            } else if (item.category === "Spirit") {
+                detailsHTML = `
+                    <p><strong>Producer:</strong> ${item.producer || "N/A"}</p>
+                    <p><strong>Alcohol:</strong> ${item.alcohol ? item.alcohol + "%" : "N/A"}</p>
+                `;
+            } else if (item.category === "Cocktail") {
+                detailsHTML = `
+                    <p><strong>Contents:</strong> ${item.contents ? item.contents.join(", ") : "N/A"}</p>
+                `;
+            } else if (item.category === "Food") {
+                detailsHTML = `
+                    <p><strong>Ingredients:</strong> ${item.ingredients ? item.ingredients.join(", ") : "N/A"}</p>
+                    <p><strong>Allergens:</strong> ${item.allergens && item.allergens.length > 0 ? item.allergens.join(", ") : "None"}</p>
+                `;
+            }
+        
+            return `
+                <div id="${category}-${index}" class="beverage-card" draggable="true"
+                     data-name="${item.name}" data-price="${item.priceinclvat}">
+                    <img src="${item.image || '../public/images/food/default.png'}" alt="${item.name}" draggable="true">
+                    <h2>${item.name}</h2>
+                    <button class="details-toggle-btn" data-name="${item.name}">
+                        Details
+                    </button>
+                    
+                    <div class="details-content" id="details-${category}-${index}" style="display: none;">
+                        ${detailsHTML}
+                    </div>
+        
+                    <p><strong>Price:</strong> ${item.priceinclvat} SEK</p>
                     <div class="quantity-selector">
                         <button class="quantity-btn decrement">-</button>
                         <span class="quantity-number">1</span>
@@ -49,10 +94,38 @@ export default class ViewMenu {
                             <i class="fas fa-cart-plus"></i> Add to Cart
                         </button>
                     </div>
-            </div>`
-        ).join('');
+                </div>`;
+        }).join('');
+        // container.innerHTML = items.map((item, index) =>
+        //     `<div id="${category}-${index}" class="beverage-card" draggable="true"
+        //          data-name="${item.name}" data-price="${item.priceinclvat}">
+        //         <img src="${item.image || '../public/images/drinks/corona.png'}" alt="${item.name}" draggable="true">
+        //         <h2>${item.name}</h2>
+        //         <button class="details-toggle-btn" data-name="${item.name}"><i class="fas fa-chevron-down details-icon"></i> Details</button> <!-- 新增展開按鈕 -->
+        //         <div class="details-content" id="details-${category}-${index}" style="display: none;">
+        //             <p><strong>Year:</strong> ${item.year || "N/A"}</p>
+        //             <p><strong>Producer:</strong> ${item.producer || "N/A"}</p>
+        //             <p><strong>Grape:</strong> ${item.grape || "N/A"}</p>
+        //             <p><strong>Size:</strong> ${item.size ? item.size + " ml" : "N/A"}</p>
+        //             <p><strong>Alcohol:</strong> ${item.alcohol ? item.alcohol + "%" : "N/A"}</p>
+        //             <p><strong>Tannins:</strong> ${item.tannins ? item.tannins + "/10" : "N/A"}</p>
+        //         </div> 
+        //         <p><strong>Price:</strong> ${item.priceinclvat} SEK</p>
+        //             <div class="quantity-selector">
+        //                 <button class="quantity-btn decrement">-</button>
+        //                 <span class="quantity-number">1</span>
+        //                 <button class="quantity-btn increment">+</button>
+        //             </div>
+        //             <div class="card-footer">
+        //                 <button class="add-to-cart-btn" data-name="${item.name}" data-price="${item.priceinclvat}">
+        //                     <i class="fas fa-cart-plus"></i> Add to Cart
+        //                 </button>
+        //             </div>
+        //     </div>`
+        // ).join('');
 
         this.attachQuantityListeners();
+        this.attachDetailsListeners(); // show more detail
     }
 
     renderCart(cart) {
@@ -116,6 +189,76 @@ export default class ViewMenu {
         });
     }
 
+    attachDetailsListeners() {
+        document.querySelectorAll(".details-toggle-btn").forEach(button => {
+            button.removeEventListener("click", this.toggleDetailsHandler);
+            button.addEventListener("click", this.toggleDetailsHandler);
+        });
+    }
+
+    attachCheckoutListener() {
+        const checkoutBtn = document.getElementById("checkout-button");
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener("click", () => {
+                console.log("Checkout");
+                this.controller.placeOrder();
+            });
+        }
+    }
+
+    attachFilterListener() {
+        const allergenFilter = document.getElementById("allergen-filter");
+        const ingredientFilter = document.getElementById("ingredient-filter");
+    
+        if (allergenFilter) {
+            allergenFilter.addEventListener("change", (event) => {
+                const selectedAllergen = event.target.value;
+                this.controller.filterByAllergen(selectedAllergen);
+            });
+        }
+
+        if (ingredientFilter) {
+            ingredientFilter.addEventListener("change", (event) => {
+                const selectedIngredient = event.target.value;
+                this.controller.filterByIngredient(selectedIngredient);
+            });
+        }
+    }
+
+    attachCheckoutListener() {
+        const checkoutBtn = document.getElementById("checkout-button");
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener("click", () => {
+                this.showOrderStatus(); // 只顯示訊息，不做其他動作
+            });
+        }
+    }
+    
+    showOrderStatus() {
+        const statusMessage = document.getElementById("order-status");
+        if (statusMessage) {
+            statusMessage.textContent = "Your order is being prepared...";
+            statusMessage.style.display = "block";
+        }
+    }
+    
+
+    toggleDetailsView(name, item) {
+        const card = document.querySelector(`[data-name="${name}"]`).closest(".beverage-card");
+        const detailsSection = card.querySelector(".details-content");
+    
+        if (detailsSection.style.display === "none") {
+            detailsSection.style.display = "block";
+        } else {
+            detailsSection.style.display = "none";
+        }
+    }
+
+
+    toggleDetailsHandler = (event) => {
+        const itemName = event.target.dataset.name;
+        this.controller.toggleDetails(itemName);
+    };
 
     // Drag
     handleDragOver = (event) => {
@@ -150,6 +293,18 @@ export default class ViewMenu {
         document.getElementById(category).style.display = 'flex';
         this.categoryButtons.forEach(btn => btn.classList.remove("active"));
         document.querySelector(`.tab-btn[data-category="${category}"]`).classList.add("active");
+   
+        const allergenFilterContainer = document.getElementById("allergen-filter-container");
+        const ingredientFilterContainer = document.getElementById("ingredient-filter-container");
 
+        if (["Beer", "Spirit", "Wine", "Cocktail"].includes(category)) {
+            allergenFilterContainer.style.display = "inline-block";
+            ingredientFilterContainer.style.display = "none";
+        } 
+        else if (category === "Food") {
+            allergenFilterContainer.style.display = "none";
+            ingredientFilterContainer.style.display = "inline-block";
+        }
+    
     }
 }

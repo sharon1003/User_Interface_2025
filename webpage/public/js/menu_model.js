@@ -38,6 +38,12 @@ export default class Model {
         let existingItem = this.orders.find(item => item.name === order.name);
         const prevOrders = JSON.stringify(this.orders);
 
+        if (!existingItem && this.orders.length >= 10) {
+          alert("It is already 10 items in the Cart");
+          return;  // Prevent adding more items
+        }
+
+
         if (existingItem) {
             existingItem.quantity += order.quantity;
         } else {
@@ -75,6 +81,16 @@ export default class Model {
     getTotalAmount() {
         console.log("model", this.orders);
         return this.orders.reduce((total, item) => total + item.priceinclvat * item.quantity, 0);
+    }
+
+    getItemByName(name) {
+        for (const category in this.categoryItems) {
+            const item = this.categoryItems[category].find(i => i.name === name);
+            if (item) {
+                return item;
+            }
+        }
+        return null;
     }
 
     clearOrders() {

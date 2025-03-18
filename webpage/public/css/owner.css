@@ -108,3 +108,35 @@
 .add-btn:hover {
   background-color: #217dbb;
 }
+
+/* Undo & Redo Button Container - Bottom Right of Page */
+.undo-redo-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-top: 40px; /* Space from previous content */
+  padding-right: 20px; /* Keep distance from right edge */
+}
+
+/* Undo and Redo Button Styles */
+.undo-btn, .redo-btn {
+  background-color: #28a745; /* Green */
+  color: white;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.undo-btn:hover, .redo-btn:hover {
+  background-color: #218838; /* Darker Green */
+  transform: scale(1.1);
+}
+
+/* Icons inside buttons */
+.undo-btn i, .redo-btn i {
+  margin-right: 5px;
+}

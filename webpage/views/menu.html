@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/menu.css">
-    
+
 </head>
 <body>
     <header class="header">
@@ -19,7 +19,7 @@
                 <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
                 <button class="lang-btn" data-lang="tw">繁中</button>  
-                <button class="lang-btn" data-lang="ch">簡中</button>  
+                <button class="lang-btn" data-lang="ch">简中</button>  
             </div>
         </div>        
     </header>
@@ -27,7 +27,7 @@
         <ul>
             <li><a href="./index.html" data-i18n="home">Home</a></li>
             <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
-            <li><a href="./login.html" data-i18n="login">Log In</a></li>
+            <li id="auth-link"><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
 
@@ -36,62 +36,65 @@
     <main>
         <section class="menu-section">
             <div class="tabs">
-
-
                 <button class="tab-btn active" data-category="Beer" data-i18n="beer">Beer</button>
                 <button class="tab-btn" data-category="Spirit" data-i18n="spirit">Spirit</button>
                 <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
                 <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
-                <button class="tab-btn" data-category="Food" data-i18n="food">Food</button>
+                <!-- <button class="tab-btn" data-category="Food" data-i18n="food">Food</button> -->
+            </div>
+            <div class="filter-container">
+                <label for="allergen-filter"><strong>Filter by Allergen:</strong></label>
+                <select id="allergen-filter">
+                    <option value="">Show All</option>
+                    <option value="barley-malt">Barley Malt</option>
+                    <option value="wheat-malt">Wheat Malt</option>
+                    <option value="oats">Oats</option>
+                    <option value="corn">Corn</option>
+                    <option value="rice">Rice</option>
+                    <option value="hops">Hops</option>
+                </select>
             </div>
             <div class="dropDown-content">
-
                 <div id="Spirit" class="tab-content active-container"></div>
                 <div id="Wine" class="tab-content"></div>
                 <div id="Cocktail" class="tab-content"></div>
                 <div id="Beer" class="tab-content"></div>
-                <div id="Food" class="tab-content"></div>
+                <!-- <div id="Food" class="tab-content"></div> -->
             </div>
         </section>
     
         <section class="cart-section">
             <div class="cart-detail">
                 <h2 id="shopping-cart-title" class="cart-title" data-i18n="shoppingCart">Shopping Cart <br> <small>Drop items here to add them to your cart</small> </h2>
-                <div id="order-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="order-box">
                     <div id="cart-list" class="cart-list"></div>
                 </div>
-
         
                 <div class="check-info">
                     <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
-                    <button class="checkout-btn" onclick="location.href='./payment.html'">
-                        <i class="fas fa-money-bill-wave"></i> Pay
-                    </button>
+                    <!-- <button class="checkout-btn" id="checkout-button">Place the Order</button> -->
+                    <p id="order-status" style="display: none; font-style: italic; color: green;"></p>
+                    <button class="checkout-btn" id="checkout-button" onclick="location.href='./payment.html'">Place the Order</button>
                 </div>
                     <!-- UNDO & REDO: -->
                 <div id="undo-redo-container">
-                    <button id="undo-button">
-                        <i class="fas fa-undo"></i> Undo
-                    </button>
-                    <button id="redo-button">
-                        <i class="fas fa-redo"></i> Redo
-                    </button>
+                    <button id="undo-button">Undo</button>
+                    <button id="redo-button">Redo</button>
                 </div>
             </div>
         </section>
     
     </main>
-    
 
     <footer>
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script src="../public/js/menu.js"></script> -->
     <script type="module" src="../public/js/menu_controller.js"></script>
+    <script type="module" src="../public/js/user_controller.js"></script>
     <script src="../public/js/lang.js"></script>
-
 
 </body>
 </html>

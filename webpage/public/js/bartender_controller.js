@@ -25,7 +25,7 @@ class Bartender_controller {
             } else if (event.target.classList.contains("reject-btn")) {
                 this.rejectOrder(orderId);
             } else if (event.target.classList.contains("checkout-btn")) {
-                this.checkoutOrder(orderId); // New function
+                this.checkoutOrder(orderId); // Goes to payment
             }
         });
     }

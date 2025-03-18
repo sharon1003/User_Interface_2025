@@ -11,8 +11,8 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-top">
-            <h1 data-i18n="title">The Flying Dutchman</h1>
+        <div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Flying Dutchman</h1>
         </div> 
         <div class="header-top-right">
             <div data-i18n="vip-welcome" class="vip-welcome" id="vipWelcomeMessage"></div>
@@ -26,10 +26,9 @@
     </header>
     <nav>
         <ul>
-            <!--<li><a href="../index.html" data-i18n="home">Home</a></li>-->
-            <li><a href="./vip-menu.html" data-i18n="menu">Menu</a></li>
-            <li><a href="./vip-info.html" data-i18n="info">My account</a></li>
-            <li id="auth-link"><a href="./index.html" data-i18n="logout">Logout</a></li>
+            <li><a href="./index.html" data-i18n="home">Home</a></li>
+            <!-- <li><a href="./menu.html" data-i18n="menu">Menu</a></li> -->
+            <li id="auth-link"><a href="./login.html" data-i18n="login">Log In</a></li>
         </ul>
     </nav>
 
@@ -43,7 +42,29 @@
                 <button class="tab-btn" data-category="Wine" data-i18n="wine">Wine</button>
                 <button class="tab-btn" data-category="Cocktail" data-i18n="cocktail">Cocktail</button>
                 <button class="tab-btn" data-category="Food" data-i18n="food">Food</button>
-                <button class="tab-btn" data-category="Special" data-i18n="special">Special</button>
+            </div>
+            <div class="filter-container">
+                <label for="allergen-filter">Filter by Allergen:</label>
+                <select id="allergen-filter">
+                    <option value="">Show All</option>
+                    <option value="barley-malt">Barley Malt</option>
+                    <option value="wheat-malt">Wheat Malt</option>
+                    <option value="oats">Oats</option>
+                    <option value="corn">Corn</option>
+                    <option value="rice">Rice</option>
+                    <option value="hops">Hops</option>
+                </select>
+            
+                <label for="ingredient-filter">Filter by Ingredient:</label>
+                <select id="ingredient-filter">
+                    <option value="">Show All</option>
+                    <option value="Beef">Beef</option>
+                    <option value="Chicken">Chicken</option>
+                    <option value="Cheese">Cheese</option>
+                    <option value="Gluten">Gluten</option>
+                    <option value="Tomato Sauce">Tomato Sauce</option>
+                    <option value="Parmesan">Parmesan</option>
+                </select>
             </div>
             <div class="dropDown-content">
                 <div id="Spirit" class="tab-content active-container"></div>
@@ -51,8 +72,6 @@
                 <div id="Cocktail" class="tab-content"></div>
                 <div id="Beer" class="tab-content"></div>
                 <div id="Food" class="tab-content"></div>
-                <div id="Special" class="tab-content"></div>
-
             </div>
         </section>
     
@@ -65,9 +84,7 @@
         
                 <div class="check-info">
                     <p class="total-price"><strong data-i18n="total">Total:</strong>SEK <span id="cart-total">0</span></p>
-                    <button id="code-btn" data-category="Code" data-i18n="code">Code</button>
-                    <p id="code-popup"></p>
-                    <button class="checkout-btn" onclick="location.href='./vip-payment.html'">Pay</button>
+                    <button class="checkout-btn" onclick="location.href='./payment.html'">Pay</button>
                 </div>
                     <!-- UNDO & REDO: -->
                 <div id="undo-redo-container">
@@ -82,11 +99,12 @@
     <footer>
         <h3>Copyright ©2025 All rights reserved</h3>
     </footer>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="../public/js/menu_controller.js"></script>
+    <script type="module" src="../public/js/user_controller.js"></script>
     <script src="../public/js/lang.js"></script>
-    <script type="module" src="../public/js/vip_controller.js"></script>
 
 </body>
 </html>
+ 
