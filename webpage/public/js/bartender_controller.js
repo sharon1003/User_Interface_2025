@@ -10,7 +10,7 @@ class BartenderController {
         this.redoStack = [];
     }
 
-    // === Initialization ===
+    // Init
     async init() {
         const allOrders = await loadOrders();
         this.loadOrdersFromLocalStorage(allOrders);
@@ -37,7 +37,7 @@ class BartenderController {
         return this.orders.filter(order => order.status === "Pending" || order.status === "Taken");
     }
 
-    // === Event Listeners ===
+    // Event listeners
     setupEventListeners() {
         this.view.orderContainer.addEventListener("click", (event) => {
             const orderId = event.target.dataset.id;
@@ -63,7 +63,7 @@ class BartenderController {
         document.getElementById("redo-btn").addEventListener("click", () => this.redo());
     }
 
-    // === Order Actions (Confirm, Reject, Pay) ===
+    // Order Actions (Confirm, reject, pay)
     confirmOrder(orderId) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order && order.status === "Pending") {
@@ -96,7 +96,7 @@ class BartenderController {
         this.view.renderOrders(this.getActiveOrders());
     }
 
-    // === Order Display Functions ===
+    // Order Display Functions
     displayAllOrders() {
         this.view.renderOrders(this.getActiveOrders());
     }
@@ -108,7 +108,7 @@ class BartenderController {
         }
     }
 
-    // === Payment Modal ===
+    // Payment Pop-up
     showPaymentModal(orderId) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order) {
@@ -117,7 +117,7 @@ class BartenderController {
     }
 }
 
-// === Initialize Controller on Page Load ===
+// Initialize Controller on Page Load
 document.addEventListener("DOMContentLoaded", () => {
     const controller = new BartenderController();
     controller.init();

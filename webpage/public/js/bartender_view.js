@@ -5,7 +5,7 @@ class BartenderView {
         this.orderTabsContainer = document.querySelector('.order-tabs');
     }
 
-    // === Render Order Tabs ===
+    //Render order tabs
     renderOrderTabs(orders) {
         this.orderTabsContainer.innerHTML = ""; // Clear existing tabs
 
@@ -34,7 +34,7 @@ class BartenderView {
         this.orderTabsContainer.appendChild(tabButton);
     }
 
-    // === Render Orders ===
+    // Render orders
     renderOrders(orders) {
         this.orderContainer.innerHTML = ""; // Clear previous content
 
@@ -120,7 +120,7 @@ class BartenderView {
         });
     }
 
-    // === Payment Modal ===
+    // Payment Pop-up
     showPaymentModal(order) {
         const modal = document.getElementById("payment-modal");
         const orderContent = document.getElementById("modal-order-content");
@@ -150,7 +150,6 @@ class BartenderView {
             <h3>#${order.orderId}</h3>
             <p>${order.date}</p>
             ${order.items.map(item => this.createOrderItemHTMLnoImg(item)).join('')}
-            
             ${this.createOrderTotalHTML(order)}
         `;
     }
