@@ -15,10 +15,10 @@
         <div class="header-top-right">
             <span class="staff-id">Staff ID : owner1 </span>
             <div class="lang-switch">
-                <button onclick="setLanguage('en')">EN</button>
-                <button onclick="setLanguage('sv')">SV</button>
-                <button onclick="setLanguage('tw')">繁中</button> 
-                <button onclick="setLanguage('zh')">简中</button>    
+                <button onclick="changeLanguage('en')">EN</button>
+                <button onclick="changeLanguage('sv')">SV</button>
+                <button onclick="changeLanguage('tw')">繁中</button> 
+                <button onclick="changeLanguage('ch')">简中</button>    
             </div>
         </div>          
     </header>
@@ -32,7 +32,7 @@
     </nav>
 
     <section class="owner-section">
-        <h2>Stock Management</h2>
+        <h2 data-i18n="manage">Stock Management</h2>
         <div class="stock-list" id="stock-list">
             <div class="stock-item">
                 <img src="../public/images/drinks/beer/asahi.png" alt="Beer" width="50">
@@ -113,5 +113,6 @@
         });
     </script>
 <script src="../public/js/owner_controller.js"></script>
+<script src="../public/js/lang.js"></script>
 </body>
 </html>
