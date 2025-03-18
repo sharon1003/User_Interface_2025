@@ -1,0 +1,51 @@
+.login-container {
+    max-width: 1000px;
+    padding: 2rem 4rem;
+    margin: 100px auto;
+    border: 1px solid #FFD40D;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(51, 44, 6, 0.6);
+}
+
+.login-container h2 {
+    font-size: 40px;
+    color: #F3274C;
+    margin-bottom: 4rem;
+}
+
+.login-container label {
+    text-align: left;
+    font-size: 25px;
+    display: block;
+    color: #fff;
+    margin: 2rem 0rem 1rem;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.login-btn, .log-out {
+    font-size: 20px;
+    margin-top: 3rem;
+    background-color: #332C06;
+    color: black;
+    padding: 0.5rem 1.5rem;
+    border: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login-btn, .log-out:hover {
+    padding: 0.5rem 5rem;
+    background-color: #F3274C;
+    color: black;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/login.css">
+</head>
+<body>
+    <header class="header">
+        <!--#1M<div class="header-top" onclick="location.href='index.html'">
+            <h1 class="title">The Flying Dutchman</h1>
+        </div>-->
+        <div class="header-top-right">
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sv">🇸🇪 SV</button>
+                <button class="lang-btn" data-lang="tw">繁中</button>  
+                <button class="lang-btn" data-lang="ch">简中</button>  
+            </div>
+        </div>          
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html" data-i18n="home">Home</a></li>
+            <li><a href="./menu.html" data-i18n="menu">Menu</a></li>
+            <li id="auth-link"><a href="./login.html" data-i18n="login">Log In</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <h2 data-i18n="login">Login</h2>
+        <form id="loginForm" action="loginForm">
+            <!-- Username -->
+            <label data-i18n="username" for="username"><b>Username</b>:</label>
+            <input type="text" id="username" placeholder="Enter username" required>
+            <!-- Passcode -->
+             <label data-i18n="password" for="password"><b>Password</b>:</label>
+             <input type="password" id="password" placeholder="Enter password" required>
+             <button data-i18n="submit" type="submit" class="login-btn"> Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+
+    <footer>
+        <h3>Copyright ©2025 All rights reserved</h3>
+    </footer>
+
+    <script type="module" src="../public/js/user_controller.js"></script>
+    <script src="../public/js/lang.js"></script>
+
+</body>
+</html>
