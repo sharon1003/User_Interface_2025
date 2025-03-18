@@ -9,6 +9,13 @@ class Bartender_controller {
 
     async init() {
         const allOrders = await loadOrders(); // Load all orders
+
+        const localOrders = JSON.parse(localStorage.getItem("orders")) || [];
+        localOrders.forEach(localOrder => {
+            if (!allOrders.some(order => order.orderId === localOrder.orderId)) {
+                allOrders.push(localOrder);
+            }
+        });
         this.orders = allOrders.filter(order => order.status === "Pending" || order.status === "Taken"); // Filter orders
         this.view.renderOrderTabs(this.orders); // Render only filtered orders
         this.view.renderOrders(this.orders);
@@ -38,6 +45,8 @@ class Bartender_controller {
             // Update UI
             this.view.renderOrderTabs(this.orders);
             this.view.renderOrders(this.orders);
+
+            this.updateLocalStorage();
         }
     }
 
@@ -52,14 +61,25 @@ class Bartender_controller {
             // Update the UI with only non-rejected orders
             this.view.renderOrderTabs(this.orders);
             this.view.renderOrders(this.orders);
+            //Update Local Storage
+            this.updateLocalStorage();
         }
+    }
+     //add orders to localstorage
+     updateLocalStorage() {
+        localStorage.setItem('orders', JSON.stringify(this.orders));
     }
 
     checkoutOrder(orderId){
-        window.location.href = "payment.html?orderId="+orderId;
+        const order = this.orders.find(order => order.orderId === orderId);
+        if (order) {
+            order.status = "Completed"; // Change status
+            this.updateLocalStorage();
+            window.location.href = "payment.html?orderId="+orderId;
+        }
     }
-}
 
+}
 // Initialize controller when page loads
 document.addEventListener("DOMContentLoaded", () => {
     const controller = new Bartender_controller();
