@@ -1,45 +1,66 @@
 [
     {
         "name": "Beef Taco",
-        "priceinclvat": 189,
+        "category": "Food",
+        "priceinclvat": 100,
         "image": "../public/images/food/beef-taco.png",
-        "contents": ["beef", "taco seasoning", "corn tortillas", "lettuce", "tomatoes", "onions", "cheese", "sour cream", "avocado", "cilantro", "lime", "salsa", "jalapeños", "garlic", "cumin", "salt", "pepper", "olive oil", "chili powder"],
-        "amount": 10
+        "ingredients": ["Beef", "Tortilla", "Lettuce", "Cheese", "Sour Cream"],
+        "allergens": ["gluten", "dairy"]
     },
     {
         "name": "Big Shared Meal",
-        "priceinclvat": 399,
+        "category": "Food",
+        "priceinclvat": 100,
         "image": "../public/images/food/big-shared-meal.png",
-        "amount": 10
+        "ingredients": ["Burger", "Fries", "Chicken Nuggets", "Soft Drink"],
+        "allergens": ["gluten", "dairy"]
     },
     {
         "name": "Burger",
+        "category": "Food",
         "priceinclvat": 100,
         "image": "../public/images/food/burger.png",
-        "amount": 10
+        "ingredients": ["Beef Patty", "Bun", "Lettuce", "Tomato", "Cheese", "Sauce"],
+        "allergens": ["gluten", "dairy"]
     },
     {
         "name": "Cheese Pizza",
+        "category": "Food",
         "priceinclvat": 100,
         "image": "../public/images/food/cheese-pizza.png",
-        "amount": 10
+        "ingredients": ["Flour", "Tomato Sauce", "Cheese", "Olive Oil"],
+        "allergens": ["gluten", "dairy"]
     },
     {
         "name": "Chicken Wrap",
+        "category": "Food",
         "priceinclvat": 100,
         "image": "../public/images/food/chicken-wrap.png",
-        "amount": 10
+        "ingredients": ["Grilled Chicken", "Tortilla", "Lettuce", "Cheese", "Yogurt Sauce"],
+        "allergens": ["gluten", "dairy"]
     },
     {
         "name": "Fried Chicken Box",
+        "category": "Food",
         "priceinclvat": 100,
         "image": "../public/images/food/fried-chicken-box.png",
-        "amount": 10
+        "ingredients": ["Chicken", "Flour", "Oil", "Spices"],
+        "allergens": ["gluten"]
+    },
+    {
+        "name": "Grilled Chicken",
+        "category": "Food",
+        "priceinclvat": 100,
+        "image": "../public/images/food/grilled-chicken.png",
+        "ingredients": ["Chicken", "Herbs", "Olive Oil", "Lemon"],
+        "allergens": []
     },
     {
         "name": "Pasta",
+        "category": "Food",
         "priceinclvat": 100,
         "image": "../public/images/food/pasta.png",
-        "amount": 10
+        "ingredients": ["Pasta", "Tomato Sauce", "Garlic", "Parmesan"],
+        "allergens": ["gluten", "dairy"]
     }
 ]

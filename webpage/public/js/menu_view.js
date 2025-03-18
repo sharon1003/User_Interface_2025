@@ -35,6 +35,7 @@ export default class ViewMenu {
 
     renderCategory(category, items) {
         const container = document.getElementById(category);
+        console.log(category);
         container.innerHTML = items.map((item, index) => {
             let detailsHTML = ""; 
         
