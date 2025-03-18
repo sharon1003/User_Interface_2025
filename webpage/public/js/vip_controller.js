@@ -1,8 +1,4 @@
-//window.codeGenerator = codeGenerator;
-import UserModel from "./user_model.js";
 document.getElementById("code-popup");
-const outlog = document.getElementById("auth-link");
-outlog.onclick = UserModel.logout;
 
 window.onclick = function(event) {
     /*if (event.target == modal) {

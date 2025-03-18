@@ -40,10 +40,12 @@
                     <h1><span id="Greeting"></span>, <span data-i18n="greetingMessege" class="greeting">welcome!</span></h1>
                 </div>
                 <div class= "balance" id="Balance">
-                    <h1>Balance: <span id="BalNum"></span> SEK</h1>
+                    <h1 data-i18n="balance">Balance: </h1>
+                    <span id="BalNum"></span> SEK
                 </div>
                 <div class="records" id="records">
-                    <h1>History Orders:</h1>
+                    <h1 data-i18n="history">My orders: </h1>
+                    <span id="OrderHistory"></span>
                 </div>
             </div>
 
@@ -57,6 +59,7 @@
     </footer>
     
     <script type="module" src="../public/js/vip_info.js"></script> <!--load the database-->
+    <script type="module" src="../public/js/user_controller.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../public/js/lang.js"></script>
 

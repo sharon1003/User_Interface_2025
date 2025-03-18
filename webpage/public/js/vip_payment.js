@@ -1,10 +1,3 @@
-import PayView from "./pay_view.js"
-
-class VipModel extends UserModel {
-
-}
-
-
 document.querySelector('.payment-submit-btn').addEventListener('click', function() {
     // Get the currently selected payment option
     const paymentMethod = document.getElementById('payment-option').value;

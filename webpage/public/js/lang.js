@@ -30,7 +30,9 @@ const translations = {
         password: "Password",
         submit: "Submit",
         vipMenu: "Welcome to the VIP special Menu",
-        greetingMessege: "welcome!"
+        greetingMessege: "welcome!",
+        history: "My orders: ",
+        balance: "Balance: "
     },
     sv: {
         special: "Särskild",
@@ -63,7 +65,9 @@ const translations = {
         password: "Lösenord",
         submit: "Skicka",
         vipMenu: "Välkommen till VIP-specialmenyn",
-        greetingMessege: "välkommen!"
+        greetingMessege: "välkommen!",
+        history: "Mina beställningar: ",
+        balance: "Kontosaldo: "
     },
     tw: {
         special: "特別菜單",
@@ -96,14 +100,16 @@ const translations = {
         password: "密碼",
         submit: "提交",
         vipMenu: "歡迎來到VIP專屬菜單",
-        greetingMessege: "歡迎！"
+        greetingMessege: "歡迎！",
+        history: "我的訂單：",
+        balance: "餘額："
     },
     ch: { 
         special: "特别菜单",
         food: "小吃",
         home: "首页",
         login: "登录",
-        logout: "退出",
+        logout: "登出",
         //title: "飞翔荷兰人",
         welcome: "欢迎来到 飞翔荷兰人",
         explore: "探索菜单",
@@ -131,7 +137,9 @@ const translations = {
         password: "密码",
         submit: "提交",
         vipMenu: "欢迎来到VIP专属菜单",
-        greetingMessege: "欢迎！"
+        greetingMessege: "欢迎！",
+        history: "我的订单：",
+        balance: "余额："
     }
 };
 
