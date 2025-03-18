@@ -117,7 +117,7 @@ class BartenderController {
     }
 }
 
-// Initialize Controller on Page Load
+// Init controller on pageload
 document.addEventListener("DOMContentLoaded", () => {
     const controller = new BartenderController();
     controller.init();
