@@ -229,7 +229,8 @@ export default class ViewMenu {
         const checkoutBtn = document.getElementById("checkout-button");
         if (checkoutBtn) {
             checkoutBtn.addEventListener("click", () => {
-                this.showOrderStatus(); // 只顯示訊息，不做其他動作
+                console.log("Checkout");
+                this.controller.placeOrder();
             });
         }
     }
@@ -297,14 +298,15 @@ export default class ViewMenu {
         const allergenFilterContainer = document.getElementById("allergen-filter-container");
         const ingredientFilterContainer = document.getElementById("ingredient-filter-container");
 
-        if (["Beer", "Spirit", "Wine", "Cocktail"].includes(category)) {
-            allergenFilterContainer.style.display = "inline-block";
-            ingredientFilterContainer.style.display = "none";
-        } 
-        else if (category === "Food") {
-            allergenFilterContainer.style.display = "none";
-            ingredientFilterContainer.style.display = "inline-block";
+        if (ingredientFilterContainer) {
+            if (["Beer", "Spirit", "Wine", "Cocktail"].includes(category)) {
+                allergenFilterContainer.style.display = "inline-block";
+                ingredientFilterContainer.style.display = "none";
+            } 
+            else if (category === "Food") {
+                allergenFilterContainer.style.display = "none";
+                ingredientFilterContainer.style.display = "inline-block";
+            }
         }
-    
     }
 }

@@ -3,9 +3,9 @@ export default class PayView {
         this.orderListContainer = document.getElementById("order-list");
         this.totalAmountDisplay = document.getElementById("total-amount");
         this.payButton = document.querySelector(".payment-submit-btn");
-        this.paymentMethod = document.getElementById("payment-option");
+        // this.paymentMethod = document.getElementById("payment-option");
 
-        this.payButton.addEventListener("click", () => this.processPay());
+        this.payButton.addEventListener("click", () => this.processing());
     }
 
     setController(controller) {
@@ -21,6 +21,16 @@ export default class PayView {
         const totalAmount = this.controller.getTotalAmount();
         console.log(totalAmount);
         this.totalAmountDisplay.textContent = `${totalAmount} kr`;
+    }
+
+    processing() {
+        console.log("Process Pay");
+        alert(`Your order is being prepared...`);
+        this.controller.clearCart();
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1500);
     }
 
     processPay() {

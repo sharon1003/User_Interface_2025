@@ -54,6 +54,16 @@ export default class Model {
         this.saveOrders();
     }
 
+    getItemByName(name) {
+        for (const category in this.categoryItems) {
+            const item = this.categoryItems[category].find(i => i.name === name);
+            if (item) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     updateOrder(name, quantityChange) {
         const prevOrders = JSON.stringify(this.orders);
         let item = this.orders.find(i => i.name === name);
@@ -81,16 +91,6 @@ export default class Model {
     getTotalAmount() {
         console.log("model", this.orders);
         return this.orders.reduce((total, item) => total + item.priceinclvat * item.quantity, 0);
-    }
-
-    getItemByName(name) {
-        for (const category in this.categoryItems) {
-            const item = this.categoryItems[category].find(i => i.name === name);
-            if (item) {
-                return item;
-            }
-        }
-        return null;
     }
 
     clearOrders() {

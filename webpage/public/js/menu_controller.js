@@ -47,6 +47,7 @@ class Controller {
     filterByAllergen(allergen) {
         console.log("Filtering by allergen:", allergen);
     
+        // 取得當前分類的飲品
         const currentCategory = document.querySelector(".tab-btn.active").dataset.category;
         let filteredItems = this.model.categoryItems[currentCategory];
     
@@ -76,18 +77,19 @@ class Controller {
             return;
         }
     
-        const orderId = Date.now().toString(); 
-        const date = new Date().toISOString().split("T")[0];
-        const vipStatus = sessionStorage.getItem("vip") || "Guest"; 
-        const status = "Pending";
+        const orderId = Date.now().toString(); // 使用當前時間作為訂單 ID
+        const date = new Date().toISOString().split("T")[0]; // 取得當前日期
+        const vipStatus = sessionStorage.getItem("vip") || "Guest"; // 確保 VIP 角色
+        const status = "Pending"; // 訂單狀態
     
+        // 建立訂單格式
         const newOrder = {
             orderId: orderId,
             date: date,
             vip: vipStatus,
             status: status,
             items: this.model.orders.map(order => ({
-                type: order.category || "food", 
+                type: order.category || "food", // 預設為 food，其他類別可自定
                 name: order.name,
                 quantity: order.quantity,
                 price: order.priceinclvat,
