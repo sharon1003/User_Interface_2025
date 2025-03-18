@@ -2,7 +2,7 @@
     {
     "orderId": "1",
     "date": "2025-03-01",
-    "vip": "Alice",
+    "vip": "vipcustomer1",
     "status": "Done",
     "items": [
         {
@@ -17,7 +17,7 @@
     {
     "orderId": "2",
     "date": "2025-03-05",
-    "vip": "Alice",
+    "vip": "vipcustomer1",
     "status": "Pending",
     "items": [
         {

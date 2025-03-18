@@ -26,9 +26,24 @@ export default class UserModel {
         return JSON.parse(localStorage.getItem("loggedInUser"));
     }
     
-    static renewCurrUserBal(amount) {
-        console.log("Renwe Balance of Current User");
-        this.users[loggedInUser].balance = amount;
+    static renewBalance(newBalance) {
+        console.log("Renew Balance of Current User to:", newBalance);
+        const user = this.getLoggedInUser();
+        
+        if (user) {
+            user.balance = newBalance;
+            this.setLoggedInUser(user);
+            
+            // Also update the user in the users array if needed for persistence
+            const userIndex = this.users.findIndex(u => u.username === user.username);
+            if (userIndex !== -1) {
+                this.users[userIndex].balance = newBalance;
+            }
+            
+            return true;
+        }
+        
+        return false;
     }
 
     // log out
