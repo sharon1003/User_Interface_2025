@@ -34,7 +34,14 @@
 
 
     <section class="order-section">
-        <h2>Waiting orders</h2>
+        <div class="order-header">
+            <h2>Waiting orders</h2>
+            <div class="undo-redo-buttons">
+                <button id="undo-btn" class="undo-btn">↩ Undo</button>
+                <button id="redo-btn" class="redo-btn">↪ Redo</button>
+            </div>
+        </div>
+        
 
         <div class="order-tabs">
         
@@ -46,8 +53,9 @@
         </div>
 
     </section>
-
+    
     <script src="../public/js/bartender_controller.js" type="module"></script>
     <script src="../public/js/lang.js"></script>
+    
 </body>
 </html>

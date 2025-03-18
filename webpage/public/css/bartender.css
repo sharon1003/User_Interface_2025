@@ -18,6 +18,35 @@ body {
   color: #f1c40f;
 }
 
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.undo-redo-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.undo-btn, .redo-btn {
+  background: #f1c40f56;
+  color: rgb(224, 222, 222);
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.undo-btn:hover, .redo-btn:hover {
+  background: #a19e92;
+}
+
 .order-section {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
@@ -40,6 +69,7 @@ body {
   font-size: 26px;
   color: #f1c40f;
 }
+
 
 /* Staff ID Styling */
 .staff-id {

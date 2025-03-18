@@ -5,6 +5,9 @@ class Bartender_controller {
     constructor() {
         this.orders = [];
         this.view = new Bartender_view(this); // Initialize OrdersView
+
+        this.undoStack = [];
+        this.redoStack = [];
     }
 
     async init() {
@@ -35,7 +38,11 @@ class Bartender_controller {
                 this.checkoutOrder(orderId); // Goes to payment
             }
         });
+        //Undo redo buttons 
+        document.getElementById("undo-btn").addEventListener("click", () => this.undo());
+        document.getElementById("redo-btn").addEventListener("click", () => this.redo());
     }
+
 
     confirmOrder(orderId) {
         const order = this.orders.find(order => order.orderId === orderId);
