@@ -293,6 +293,18 @@ export default class ViewMenu {
         document.getElementById(category).style.display = 'flex';
         this.categoryButtons.forEach(btn => btn.classList.remove("active"));
         document.querySelector(`.tab-btn[data-category="${category}"]`).classList.add("active");
+   
+        const allergenFilterContainer = document.getElementById("allergen-filter-container");
+        const ingredientFilterContainer = document.getElementById("ingredient-filter-container");
 
+        if (["Beer", "Spirit", "Wine", "Cocktail"].includes(category)) {
+            allergenFilterContainer.style.display = "inline-block";
+            ingredientFilterContainer.style.display = "none";
+        } 
+        else if (category === "Food") {
+            allergenFilterContainer.style.display = "none";
+            ingredientFilterContainer.style.display = "inline-block";
+        }
+    
     }
 }
