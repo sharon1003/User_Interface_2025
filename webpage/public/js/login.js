@@ -29,6 +29,8 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             const role = userDatabase[username].role;
             sessionStorage.setItem('username', username);
             sessionStorage.setItem('role', role);
+            localStorage.setItem('person', userDatabase[username]);
+            console.log(localStorage.getItem('person'));
 
             // redirect to role pages
             const rolePageMap = {

@@ -25,6 +25,11 @@ export default class UserModel {
         console.log("Get Logged In User");
         return JSON.parse(localStorage.getItem("loggedInUser"));
     }
+    
+    static renewCurrUserBal(amount) {
+        console.log("Renwe Balance of Current User");
+        this.users[loggedInUser].balance = amount;
+    }
 
     // log out
     static logout(){

@@ -5,6 +5,7 @@ const translations = {
         home: "Home",
         login: "Log In",
         logout: "Logout",
+        //title: "The Flying Dutchman",
         welcome: "Welcome to The Flying Dutchman",
         explore: "Explore the Menu",
         chooseRole: "Choose Your Role",
@@ -28,7 +29,8 @@ const translations = {
         username: "Username",
         password: "Password",
         submit: "Submit",
-        vipMenu: "Welcome to the VIP special Menu"
+        vipMenu: "Welcome to the VIP special Menu",
+        greetingMessege: "welcome!"
     },
     sv: {
         special: "Särskild",
@@ -36,6 +38,7 @@ const translations = {
         home: "Hem",
         login: "Logga in",
         logout: "Logga ut",
+        //title: "The Flying Dutchman",
         welcome: "Välkommen till The Flying Dutchman",
         explore: "Utforska menyn",
         chooseRole: "Välj din roll",
@@ -59,7 +62,8 @@ const translations = {
         username: "Användarnamn",
         password: "Lösenord",
         submit: "Skicka",
-        vipMenu: "Välkommen till VIP-specialmenyn"
+        vipMenu: "Välkommen till VIP-specialmenyn",
+        greetingMessege: "välkommen!"
     },
     tw: {
         special: "特別菜單",
@@ -67,6 +71,7 @@ const translations = {
         home: "首頁",
         login: "登入",
         logout: "登出",
+        //title: "飛行荷蘭人",
         welcome: "歡迎來到 飛行荷蘭人",
         explore: "探索菜單",
         chooseRole: "選擇你的角色",
@@ -90,7 +95,8 @@ const translations = {
         username: "使用者名稱",
         password: "密碼",
         submit: "提交",
-        vipMenu: "歡迎來到VIP專屬菜單"
+        vipMenu: "歡迎來到VIP專屬菜單",
+        greetingMessege: "歡迎！"
     },
     ch: { 
         special: "特别菜单",
@@ -98,6 +104,7 @@ const translations = {
         home: "首页",
         login: "登录",
         logout: "退出",
+        //title: "飞翔荷兰人",
         welcome: "欢迎来到 飞翔荷兰人",
         explore: "探索菜单",
         chooseRole: "选择你的角色",
@@ -123,7 +130,8 @@ const translations = {
         username: "用户名",
         password: "密码",
         submit: "提交",
-        vipMenu: "欢迎来到VIP专属菜单"
+        vipMenu: "欢迎来到VIP专属菜单",
+        greetingMessege: "欢迎！"
     }
 };
 
