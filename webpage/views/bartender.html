@@ -57,5 +57,26 @@
     <script src="../public/js/bartender_controller.js" type="module"></script>
     <script src="../public/js/lang.js"></script>
     
+    <!-- Payment Modal (Initially Hidden) -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <!-- Order Card (Left Side) -->
+            <div class="modal-order">
+                <div id="modal-order-content"></div> <!-- Order details will be inserted here -->
+            </div>
+
+            <!-- Payment Options (Right Side) -->
+            <div class="modal-payment">
+                <h2>Please confirm order &<br>Payment Method</h2>
+                <button id="checkout-all" class="checkout-btn">CHECK OUT ALL</button>
+                <button id="split-bills" class="checkout-btn">SPLIT BILLS</button>
+            </div>
+
+            <!-- Close Button -->
+            <span class="close-modal" id="close-modal">&times;</span>
+        </div>
+    </div>
 </body>
+
+
 </html>

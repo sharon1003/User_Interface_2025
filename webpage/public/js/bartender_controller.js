@@ -35,7 +35,14 @@ class Bartender_controller {
             } else if (event.target.classList.contains("reject-btn")) {
                 this.rejectOrder(orderId);
             } else if (event.target.classList.contains("checkout-btn")) {
-                this.checkoutOrder(orderId); // Goes to payment
+                this.showPaymentModal(orderId); // Opens payment popup
+            }
+        });
+        // Close modal event listeners
+        document.getElementById("close-modal").addEventListener("click", () => this.hidePaymentModal());
+        window.addEventListener("click", (event) => {
+            if (event.target.classList.contains("modal")) {
+                this.hidePaymentModal();
             }
         });
         //Undo redo buttons 
@@ -77,14 +84,92 @@ class Bartender_controller {
         localStorage.setItem('orders', JSON.stringify(this.orders));
     }
 
-    checkoutOrder(orderId){
+    showPaymentModal(orderId) {
+        const order = this.orders.find(order => order.orderId === orderId);
+        if (!order) return;
+    
+        const modal = document.getElementById("payment-modal");
+        const orderContent = document.getElementById("modal-order-content");
+        const paymentContent = document.querySelector(".modal-payment");
+    
+        // Insert the order details dynamically (LEFT SIDE)
+        orderContent.innerHTML = `
+            <h3>#${order.orderId}</h3>
+            <p>${order.date}</p>
+            ${order.items.map(item => `
+                <div class="order-item">
+                    <div class="order-info">
+                        <p><strong>${item.name}</strong></p>
+                        <p>Qty: ${item.quantity}</p>
+                    </div>
+                    <p class="order-price">${item.price} kr</p>
+                </div>
+            `).join('')}
+            <div class="order-total">
+                <span class="total-label"><strong>In Total:</strong></span>
+                <span class="total-qty"><strong>Qty: ${order.items.reduce((sum, item) => sum + item.quantity, 0)}</strong></span>
+                <span class="total-price">SEK ${order.items.reduce((sum, item) => sum + item.price * item.quantity, 0)}</span>
+            </div>
+        `;
+    
+        // Insert the payment options dynamically (RIGHT SIDE)
+        paymentContent.innerHTML = `
+            <h2>Please confirm order & Payment Method</h2>
+            
+            <!-- Payment Method Dropdown -->
+            <select id="payment-method" class="payment-dropdown">
+                <option value="" disabled selected>Select Payment Method</option>
+                <option value="cash">Cash</option>
+                <option value="card">Card</option>
+                <option value="mobile">Mobile Payment</option>
+            </select>
+    
+            <!-- Pay Button (Initially Disabled) -->
+            <button class="checkout-btn" id="confirm-payment" disabled>PAY</button>
+        `;
+    
+        // Display modal
+        modal.style.display = "flex";
+    
+        // Enable "PAY" button when a payment method is selected
+        document.getElementById("payment-method").addEventListener("change", () => {
+            document.getElementById("confirm-payment").disabled = false;
+        });
+    
+        // Handle "PAY" button click
+        document.getElementById("confirm-payment").addEventListener("click", () => {
+            const selectedMethod = document.getElementById("payment-method").value;
+            this.completePayment(orderId, selectedMethod);
+        });
+    }
+
+    hidePaymentModal() {
+        document.getElementById("payment-modal").style.display = "none";
+    }
+
+    completePayment(orderId, method) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order) {
-            order.status = "Completed"; // Change status
-            this.updateLocalStorage();
-            window.location.href = "payment.html?orderId="+orderId;
+            order.status = "Done";
+            this.updateLocalStorage(order.orderId);
+            this.orders = this.orders.filter(order => order.status !== "Done");
+    
+
+            this.view.renderOrderTabs(this.orders);
+            this.view.renderOrders(this.orders);
+            document.getElementById("payment-modal").style.display = "none"; // Close modal
+            alert(`Order #${orderId} paid with ${method}`);
         }
     }
+    // checkoutOrder(orderId){
+    //     const order = this.orders.find(order => order.orderId === orderId);
+    //     if (order) {
+    //         order.status = "Done"; // Change status
+    //         this.updateLocalStorage();
+    //         this.showPaymentModal(orderId);
+    //         this.updateLocalStorage();
+    //     }
+    // }
 
 }
 // Initialize controller when page loads
