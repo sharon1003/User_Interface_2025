@@ -20,34 +20,104 @@ class Controller {
         // show cart
         this.view.renderCart(this.model.orders);
         this.view.switchCategory('Beer');
+
+        // switch category
         document.querySelectorAll(".tab-btn").forEach(btn => {
             btn.addEventListener("click", () => {
                 this.view.switchCategory(btn.dataset.category);
             });
         });
 
-        document.getElementById("pay-button").addEventListener("click", () => this.handlePayment());
         document.getElementById("undo-button").addEventListener("click", () => this.undo());
         document.getElementById("redo-button").addEventListener("click", () => this.redo());
+
     }
+
+    // show detail
+    toggleDetails(name) {
+        const item = this.model.getItemByName(name);
+        if (item) {
+            console.log(item);
+            this.view.toggleDetailsView(name, item); 
+        } else {
+            console.error("Item not found:", name);
+        }
+    }
+
+    filterByAllergen(allergen) {
+        console.log("Filtering by allergen:", allergen);
+    
+        const currentCategory = document.querySelector(".tab-btn.active").dataset.category;
+        let filteredItems = this.model.categoryItems[currentCategory];
+    
+        if (allergen) {
+            filteredItems = filteredItems.filter(item => !item.allergens || !item.allergens.includes(allergen));
+        }
+    
+        this.view.renderCategory(currentCategory, filteredItems);
+    }
+
+    filterByIngredient(ingredient) {
+        console.log("Filtering by ingredient:", ingredient);
+    
+        const currentCategory = document.querySelector(".tab-btn.active").dataset.category;
+        let filteredItems = this.model.categoryItems[currentCategory];
+    
+        if (ingredient && currentCategory === "Food") {
+            filteredItems = filteredItems.filter(item => item.ingredients.includes(ingredient));
+        }
+    
+        this.view.renderCategory(currentCategory, filteredItems);
+    }
+
+    placeOrder() {
+        if (this.model.orders.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+    
+        const orderId = Date.now().toString(); 
+        const date = new Date().toISOString().split("T")[0];
+        const vipStatus = sessionStorage.getItem("vip") || "Guest"; 
+        const status = "Pending";
+    
+        const newOrder = {
+            orderId: orderId,
+            date: date,
+            vip: vipStatus,
+            status: status,
+            items: this.model.orders.map(order => ({
+                type: order.category || "food", 
+                name: order.name,
+                quantity: order.quantity,
+                price: order.priceinclvat,
+                image: order.img_path
+            }))
+        };
+    
+        console.log("Order placed:", newOrder);
+    
+        const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
+        existingOrders.push(newOrder);
+        localStorage.setItem("orders", JSON.stringify(existingOrders));
+    
+        // // 清空購物車
+        // this.model.clearOrders();
+        // console.log(newOrder);
+        // this.view.renderCart(this.model.orders);
+    
+        // alert("Order placed successfully!");
+    }
+
+    
 
     // add to cart connect view and model(dataset)
     addToCart(name, price, quantity, img_path) {
         console.log("Adding");
         this.model.saveUndoState();
         const order = {id: Date.now(), name, priceinclvat: parseFloat(price), quantity, img_path};
-
-        const initialCount = this.model.orders.length;
         this.model.addOrder(order);
-
-        // If no new item was added, assume cart limit was reached
-        if (this.model.orders.length === initialCount) {
-          alert("It is already 10 items in the Cart");
-        } else {
-          this.view.renderCart(this.model.orders);
-        }
-        // this.model.addOrder(order);
-        // this.view.renderCart(this.model.orders);
+        this.view.renderCart(this.model.orders);
     }
     // update cart
     updateCartQuantity(name, change) {
@@ -70,17 +140,6 @@ class Controller {
         console.log(this.orders);
         return this.orders.reduce((total, item) => total + item.priceinclvat * item.quantity, 0);
     }
-
-    handlePayment() {
-      if (this.model.orders.length < 5) {
-          const confirmPayment = confirm("It is less than 5 items in the Cart, do you want to continue to pay?");
-          if (!confirmPayment) {
-              return; // Stay on the cart page if the user cancels
-          }
-      }
-      window.location.href = "./payment.html"; // Redirect to payment page
-    }
-  
 
     saveOrders() {
         sessionStorage.setItem("orders", JSON.stringify(this.orders));

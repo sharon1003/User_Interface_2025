@@ -334,3 +334,88 @@ main {
     border-radius: 10px;
     max-height: 120px;
 }
+
+
+.details-content {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.1);  
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: left; 
+    font-size: 14px;  
+    line-height: 1.6; 
+}
+
+.details-content p {
+margin: 5px 0;  
+font-weight: 500;
+}
+
+.details-toggle-btn {
+    background-color: #f5f5f5;  
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.details-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.details-toggle-btn:hover {
+    background-color: #e0e0e0;
+}
+
+p.price {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.filter-container label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+#allergen-filter, #ingredient-filter {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#allergen-filter:hover, #ingredient-filter:hover {
+    background-color: #f0f0f0;
+}
+
+#allergen-filter:focus, #ingredient-filter:focus {
+    border-color: #666;
+    outline: none;
+}
+
+#allergen-filter option, #ingredient-filter option {
+    padding: 5px;
+}

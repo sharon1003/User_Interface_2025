@@ -83,6 +83,16 @@ export default class Model {
         return this.orders.reduce((total, item) => total + item.priceinclvat * item.quantity, 0);
     }
 
+    getItemByName(name) {
+        for (const category in this.categoryItems) {
+            const item = this.categoryItems[category].find(i => i.name === name);
+            if (item) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     clearOrders() {
         this.orders = [];
         sessionStorage.removeItem("orders");
