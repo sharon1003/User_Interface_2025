@@ -37,7 +37,7 @@ class BartenderView {
     // Render orders
     renderOrders(orders) {
         this.orderContainer.innerHTML = ""; // Clear previous content
-
+        // Makes a card for each order
         orders.forEach(order => {
             this.orderContainer.appendChild(this.createOrderCard(order));
         });
@@ -73,6 +73,7 @@ class BartenderView {
         `;
     }
 
+    // Generates order information without images for the payment pop-up
     createOrderItemHTMLnoImg(item) {
         return `
             <div class="order-item">
@@ -111,6 +112,7 @@ class BartenderView {
         return "";
     }
 
+    // Removes the border on the last item on the ordercard.
     removeLastItemBorder() {
         document.querySelectorAll(".order-card").forEach(card => {
             let items = card.querySelectorAll(".order-item");

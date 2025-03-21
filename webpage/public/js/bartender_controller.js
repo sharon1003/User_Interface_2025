@@ -10,7 +10,7 @@ class BartenderController {
         this.redoStack = [];
     }
 
-    // Init
+    // Init - Loads orders from orders.json and localstorage and calls the view to render them.
     async init() {
         const allOrders = await loadOrders();
         console.log(allOrders);
@@ -40,6 +40,7 @@ class BartenderController {
 
     // Event listeners
     setupEventListeners() {
+        // Confirm, reject and pay buttons
         this.view.orderContainer.addEventListener("click", (event) => {
             const orderId = event.target.dataset.id;
             if (!orderId) return;
@@ -49,10 +50,11 @@ class BartenderController {
             } else if (event.target.classList.contains("reject-btn")) {
                 this.rejectOrder(orderId);
             } else if (event.target.classList.contains("checkout-btn")) {
-                this.showPaymentModal(orderId);
+                this.showPaymentModal(orderId); // Open payment pop-up
             }
         });
 
+        // Close payment pop-up
         document.getElementById("close-modal").addEventListener("click", () => this.view.hidePaymentModal());
         window.addEventListener("click", (event) => {
             if (event.target.classList.contains("modal")) {
@@ -60,6 +62,7 @@ class BartenderController {
             }
         });
 
+        // Undo and redo buttons
         document.getElementById("undo-btn").addEventListener("click", () => this.undo());
         document.getElementById("redo-btn").addEventListener("click", () => this.redo());
     }
@@ -68,26 +71,63 @@ class BartenderController {
     confirmOrder(orderId) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order && order.status === "Pending") {
-            order.status = "Taken";
-            this.updateUI();
+            const oldStatus = "Pending";
+            const newStatus = "Taken";
+            this.do(
+                () => {
+                    this.updateOrderStatus(orderId, newStatus);
+                    this.updateUI();
+                },
+                () => {
+                    this.updateOrderStatus(orderId, oldStatus);
+                    this.updateUI();
+                },
+                () => {
+                    this.updateOrderStatus(orderId, newStatus);
+                    this.updateUI();
+                }
+            );
         }
     }
 
     rejectOrder(orderId) {
         const order = this.orders.find(order => order.orderId === orderId);
-        if (order) {
-            order.status = "Rejected";
-            this.updateUI();
+        if (order && order.status === "Pending") {
+            const oldStatus = "Pending";
+            const newStatus = "Rejected";
+            this.do(
+                () => {
+                    this.updateOrderStatus(orderId, newStatus);
+                    this.updateUI();
+                },
+                () => {
+                    this.updateOrderStatus(orderId, oldStatus);
+                    this.updateUI();
+                },
+                () => {
+                    this.updateOrderStatus(orderId, newStatus);
+                    this.updateUI();
+                }
+            );
         }
     }
 
+    updateOrderStatus(orderId, status) {
+        const order = this.orders.find(order => order.orderId === orderId);
+        if (order) {
+            order.status = status;
+        }
+    }
+
+    // Payment - can not be undone
     completePayment(orderId, method) {
         const order = this.orders.find(order => order.orderId === orderId);
         if (order) {
             order.status = "Done";
             this.updateUI();
             this.view.hidePaymentModal();
-            alert(`Order #${orderId} paid with ${method}`);
+            alert(`Order #${orderId} paid with ${method}!`);
+            this.redoStack.length = 0; // clears redo stack
         }
     }
 
@@ -116,10 +156,49 @@ class BartenderController {
             this.view.showPaymentModal(order);
         }
     }
+
+    // Undo and Redo
+
+    // Creates an action, executes it and adds it to the undoStack
+    do(execute, unexecute, reexecute) {
+        const action = new Action(execute, unexecute, reexecute);
+        action.execute();
+        this.undoStack.push(action);
+        this.redoStack.length = 0; // Clear redo stack
+    }
+
+    undo() {
+        if (this.undoStack.length > 0) {
+            const action = this.undoStack.pop();
+            action.unexecute();
+            this.redoStack.push(action);
+            this.updateUI();
+        }
+    }
+
+    redo() {
+        if (this.redoStack.length > 0) {
+            const action = this.redoStack.pop();
+            action.reexecute();
+            this.undoStack.push(action);
+            this.updateUI();
+        }
+    }
+
 }
 
-// Init controller on pageload
+// Action-object used in undo/redo stack
+class Action {
+    constructor(execute, unexecute, reexecute) {
+        this.execute = execute;
+        this.unexecute = unexecute;
+        this.reexecute = reexecute;
+    }
+}
+
+// Init controller on page-load
 document.addEventListener("DOMContentLoaded", () => {
     const controller = new BartenderController();
-    controller.init();
+    void controller.init();
 });
+
