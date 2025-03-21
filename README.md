@@ -1,8 +1,106 @@
-# User_Interface_2025
-Roaring Waves (HTML)
-Group Members
-Yu-Hua Huang
-Qida Li
-Danning Nie
-Astrid Nord Olsson
+# The Flying Dutchman -  by Roaring Waves (HTML)
+Group Members:
+Yu-Hua Huang, 
+Qida Li, 
+Danning Nie, 
+Astrid Nord Olsson, 
 Wen-Hsuan Peng
+
+## Viewing the project: 
+
+1.  **Navigate to the `views` Directory:**
+    ```bash
+    cd User_Interface_2025/webpage/views/
+    ```
+    (Adjust the path if the project is in a different location.)
+
+2.  **Open an HTML File:**
+    *   **macOS:** `open index.html` (or `open login.html`, `open menu.html`, etc.)
+    *   **Linux:** `xdg-open index.html`
+    *   **Windows:** `start index.html`
+
+    This will open the file in your default browser.
+
+## Logging in: 
+
+Go to the login.html page.
+
+**Owner:** Username: owner1, Password: 1234
+
+**Bartender:** Username: bartender1, Password: 1234
+
+**VIP Customer:*** Username: vipcustomer1, Password: 1234
+
+Click the "Login" button.
+  
+## Dependencies:
+ External Libraries:
+   - jQuery (3.6.0) - loaded via CDN
+     - URL: https://code.jquery.com/jquery-3.6.0.min.js
+     - Used in: menu.html, vip-info.html, vip-menu.html
+
+   - Font Awesome (6.2.0) - loaded via CDN
+     - URL: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css
+     - Used in: menu.html, vip-menu.html
+
+   - Google Fonts (Material Icons) - loaded via CDN
+     - URL: https://fonts.googleapis.com/icon?family=Material+Icons
+     - Used in: vip-info.html
+    
+     
+## File structure
+```bash
+.
+├── README.md
+├── User_Interface_2025.code-workspace
+└── webpage
+    ├── data 
+    │   ├── Beverages_eng.json
+    │   ├── food_menu.json
+    │   ├── orders.json
+    │   ├── user.json
+    │   └── vip_menu.json
+    ├── public
+    │   ├── css
+    │   │   ├── bartender.css
+    │   │   ├── login.css
+    │   │   ├── menu.css
+    │   │   ├── owner.css
+    │   │   ├── payment.css
+    │   │   ├── style.css (
+    │   │   ├── vip.css
+    │   │   └── vip_info.css
+    │   ├── images
+    │   │   ├── BG.jpg
+    │   │   ├── drinks (Folder)
+    │   │   ├── food  (Folder)
+    │   └── js
+    │       ├── bartender_controller.js
+    │       ├── bartender_view.js
+    │       ├── code_generator.js (generates code for VIP fridge)
+    │       ├── lang.js
+    │       ├── login.js
+    │       ├── menu_controller.js
+    │       ├── menu_model.js
+    │       ├── menu_view.js
+    │       ├── orders_model.js
+    │       ├── owner_controller.js
+    │       ├── pay_contorller.js
+    │       ├── pay_view.js
+    │       ├── payment.js
+    │       ├── user_controller.js
+    │       ├── user_model.js
+    │       ├── user_view.js
+    │       ├── vip_controller.js
+    │       └── vip_info.js
+    └── views
+        ├── bartender.html
+        ├── index.html
+        ├── login.html
+        ├── menu.html
+        ├── owner.html
+        ├── payment.html
+        ├── vip-info.html
+        ├── vip-menu.html
+        └── vip-payment.html
+```
