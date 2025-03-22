@@ -37,7 +37,7 @@ const translations = {
         balance: "Balance: "
     },
     sv: {
-        special: "Särskild",
+        special: "Special",
         food: "Mat",
         home: "Hem",
         login: "Logga in",
