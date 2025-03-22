@@ -1,10 +1,10 @@
-import { loadOrders } from './orders_model.js';
+import OrdersModel from './orders_model.js';
 import BartenderView from './bartender_view.js';
 
 class BartenderController {
     constructor() {
-        this.orders = [];
         this.view = new BartenderView(this);
+        this.model = new OrdersModel();
 
         this.undoStack = [];
         this.redoStack = [];
@@ -12,30 +12,9 @@ class BartenderController {
 
     // Init - Loads orders from orders.json and localstorage and calls the view to render them.
     async init() {
-        const allOrders = await loadOrders();
-        console.log(allOrders);
-        this.loadOrdersFromLocalStorage(allOrders);
-        this.view.renderOrderTabs(this.getActiveOrders());
-        this.view.renderOrders(this.getActiveOrders());
+        await this.model.init();
+        this.updateUI();
         this.setupEventListeners();
-    }
-
-    loadOrdersFromLocalStorage(allOrders) {
-        const localOrders = JSON.parse(localStorage.getItem("orders")) || [];
-        localOrders.forEach(localOrder => {
-            if (!allOrders.some(order => order.orderId === localOrder.orderId)) {
-                allOrders.push(localOrder);
-            }
-        });
-        this.orders = allOrders;
-    }
-
-    updateLocalStorage() {
-        localStorage.setItem('orders', JSON.stringify(this.orders));
-    }
-
-    getActiveOrders() {
-        return this.orders.filter(order => order.status === "Pending" || order.status === "Taken");
     }
 
     // Event listeners
@@ -69,21 +48,19 @@ class BartenderController {
 
     // Order Actions (Confirm, reject, pay)
     confirmOrder(orderId) {
-        const order = this.orders.find(order => order.orderId === orderId);
+        const order = this.model.getOrderById(orderId);
         if (order && order.status === "Pending") {
-            const oldStatus = "Pending";
-            const newStatus = "Taken";
             this.do(
                 () => {
-                    this.updateOrderStatus(orderId, newStatus);
+                    this.model.updateOrderStatus(orderId, "Taken");
                     this.updateUI();
                 },
                 () => {
-                    this.updateOrderStatus(orderId, oldStatus);
+                    this.model.updateOrderStatus(orderId, "Pending");
                     this.updateUI();
                 },
                 () => {
-                    this.updateOrderStatus(orderId, newStatus);
+                    this.model.updateOrderStatus(orderId, "Taken");
                     this.updateUI();
                 }
             );
@@ -91,39 +68,30 @@ class BartenderController {
     }
 
     rejectOrder(orderId) {
-        const order = this.orders.find(order => order.orderId === orderId);
+        const order = this.model.getOrderById(orderId);
         if (order && order.status === "Pending") {
-            const oldStatus = "Pending";
-            const newStatus = "Rejected";
             this.do(
                 () => {
-                    this.updateOrderStatus(orderId, newStatus);
+                    this.model.updateOrderStatus(orderId, "Rejected");
                     this.updateUI();
                 },
                 () => {
-                    this.updateOrderStatus(orderId, oldStatus);
+                    this.model.updateOrderStatus(orderId, "Pending");
                     this.updateUI();
                 },
                 () => {
-                    this.updateOrderStatus(orderId, newStatus);
+                    this.model.updateOrderStatus(orderId, "Rejected");
                     this.updateUI();
                 }
             );
         }
     }
 
-    updateOrderStatus(orderId, status) {
-        const order = this.orders.find(order => order.orderId === orderId);
-        if (order) {
-            order.status = status;
-        }
-    }
-
     // Payment - can not be undone
     completePayment(orderId, method) {
-        const order = this.orders.find(order => order.orderId === orderId);
+        const order = this.model.getOrderById(orderId);
         if (order) {
-            order.status = "Done";
+            this.model.updateOrderStatus(orderId, "Done");
             this.updateUI();
             this.view.hidePaymentModal();
             alert(`Order #${orderId} paid with ${method}!`);
@@ -132,18 +100,18 @@ class BartenderController {
     }
 
     updateUI() {
-        this.updateLocalStorage();
-        this.view.renderOrderTabs(this.getActiveOrders());
-        this.view.renderOrders(this.getActiveOrders());
+        this.model.updateLocalStorage();
+        this.view.renderOrderTabs(this.model.getActiveOrders());
+        this.view.renderOrders(this.model.getActiveOrders());
     }
 
     // Order Display Functions
     displayAllOrders() {
-        this.view.renderOrders(this.getActiveOrders());
+        this.view.renderOrders(this.model.getActiveOrders());
     }
 
     displaySingleOrder(orderId) {
-        const order = this.orders.find(order => order.orderId === orderId);
+        const order = this.model.getOrderById(orderId);
         if (order) {
             this.view.renderOrders([order]);
         }
@@ -151,13 +119,13 @@ class BartenderController {
 
     // Payment Pop-up
     showPaymentModal(orderId) {
-        const order = this.orders.find(order => order.orderId === orderId);
+        const order = this.model.getOrderById(orderId);
         if (order) {
             this.view.showPaymentModal(order);
         }
     }
 
-    // Undo and Redo
+    // Undo and Redo functions
 
     // Creates an action, executes it and adds it to the undoStack
     do(execute, unexecute, reexecute) {
