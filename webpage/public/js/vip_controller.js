@@ -1,13 +1,7 @@
-/*document.getElementById("code-popup");
-
-window.onclick = function(event) {
-    /*if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}*/
 
 const button = document.getElementById("code-btn");
 
+// Generate a 4-digit code
 function codeGenerator () {
     document.getElementById("code-btn").innerHTML = 
     "The code of fridge is " + 
@@ -17,4 +11,4 @@ function codeGenerator () {
     `<b>${Math.floor(Math.random() * 10)}</b>`;
 }
 button.onclick = codeGenerator;
-console.log("123");
+//console.log("123");

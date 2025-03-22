@@ -45,7 +45,7 @@ export default class ViewMenu {
                     <p><strong>Producer:</strong> ${item.producer || "N/A"}</p>
                     <p><strong>Grape:</strong> ${item.grape || "N/A"}</p>
                     <p><strong>Alcohol:</strong> ${item.alcohol ? item.alcohol + "%" : "N/A"}</p>
-                    <p><strong>Tannins:</strong> ${item.tannins ? item.tannins + "/10" : "N/A"}</p>
+                    <p><strong>Tannins:</strong> ${item.tannins ? item.tannins + "/12" : "N/A"}</p>
                 `;
             } else if (item.category === "Beer") {
                 detailsHTML = `

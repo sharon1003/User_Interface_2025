@@ -1,3 +1,5 @@
+// Dictionary for the entire project
+
 const translations = {
     en: {
         special: "Special",

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             console.log("click show");
             
             try {
-                // Load orders from both API and localStorage
+                // Load orders from both database and localStorage
                 const allOrders = await loadOrders() || [];
                 const localOrders = JSON.parse(localStorage.getItem("orders")) || [];
                 
