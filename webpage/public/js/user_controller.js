@@ -3,8 +3,8 @@ import UserView from './user_view.js';
 
 class UserController {
     static async login(event) {
-        event.preventDefault(); // 防止表單提交刷新頁面
-        await UserModel.loadUsers(); // 先讀取 users.json
+        event.preventDefault(); // prevent form from reloading the page
+        await UserModel.loadUsers(); // load users from users.json
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
@@ -13,9 +13,10 @@ class UserController {
 
         if (user) 
         {
-            UserModel.setLoggedInUser(user);
+            UserModel.setLoggedInUser(user); // save user session
             UserView.showMessage(`Success! Welcome ${user.role}`, "green");
 
+            // redirect based on user role
             setTimeout(() => {
                 if (user.role === "vip-customer") {
                     console.log(user.role);
@@ -35,6 +36,7 @@ class UserController {
         }
     }
 
+    // log out
     static logout() {
         UserModel.logout();
         UserView.updateAuthLink(null);
@@ -43,6 +45,7 @@ class UserController {
     }
 
     
+    // check if current user is a VIP
     static checkVIPAccess() {
         const user = UserModel.getLoggedInUser();
         if (user && user.role === "vip-customer") {
@@ -53,21 +56,15 @@ class UserController {
     }
 }
 
+// handle custom logout event
 document.addEventListener("user-logout", () => {
     UserController.logout();
 });
 
+// check VIP access on VIP menu page
 document.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes("vip_menu.html")) {
         UserController.checkVIPAccess();
-
-        // const logoutBtn = document.getElementById("logout-btn");
-        // const logoutLink = document.getElementById("logout-link");
-        // if (logoutBtn) logoutBtn.addEventListener("click", UserController.logout);
-        // if (logoutLink) logoutLink.addEventListener("click", (event) => {
-        //     event.preventDefault();
-        //     UserController.logout();
-        // });
     }
 });
 
