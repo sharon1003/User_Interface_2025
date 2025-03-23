@@ -46,8 +46,29 @@ Click the "Login" button.
    - Google Fonts (Material Icons) - loaded via CDN
      - URL: https://fonts.googleapis.com/icon?family=Material+Icons
      - Used in: vip-info.html
-    
-     
+
+## Time Report:
+ Week 1: Feb 10 – Feb 16
+    - Understand requirements
+ Week 2: Feb 17 – Feb 23
+    - Prototyping
+    - Structure system structure
+ Week 3: Feb 24 – Mar 2
+    - Prototyping
+ Week 4: Mar 3 – Mar 9
+    - 
+ Week 5: Mar 10 – Mar 16
+    - 
+ Week 6: Mar 17 – Mar 23
+    - Final report editing
+
+## Individual Contribution:
+Yu Hua Huang: Responsible for prototyping on design part of boarding page,  main page, and waiter and waitress pages and styling in both .html and .css based on prototypes. 
+Qida Li:
+Danning Nie:
+Astrid Nord Olsson:
+Wen-Hsuan Peng:
+
 ## File structure
 ```bash
 .
