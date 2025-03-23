@@ -76,7 +76,7 @@ External Libraries:
 ## Individual Contribution:
 
 - **Yu Hua Huang:** Responsible for prototyping on design part of boarding page, main page, and waiter and waitress pages, as well as styling in both `.html` and `.css` based on prototypes.
-- **Qida Li:**
+- **Qida Li:** Implemented owner page, parts of login function, first version of bartender page, undo/redo on stock management and some additional function such as the restriction of items in the shopping cart.
 - **Danning Nie:** Implemented VIP data retrieval and display, code generator, extended VIP menu and payment option, maintained dictionary and database
 - **Astrid Nord Olsson:** Implemented bartender page with MVC architecture, including order backend, payment popup, undo/redo functionality and styling based on prototype.
 - **Wen-Hsuan Peng:** Implemented menu, cart and payment MVC logic and display, multilingual UI switching, and login/logout processing.
