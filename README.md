@@ -1,27 +1,31 @@
-# The Flying Dutchman -  by Roaring Waves (HTML)
+# The Flying Dutchman - by Roaring Waves (HTML)
+
 Group Members:
-Yu-Hua Huang, 
-Qida Li, 
-Danning Nie, 
-Astrid Nord Olsson, 
+Yu-Hua Huang,
+Qida Li,
+Danning Nie,
+Astrid Nord Olsson,
 Wen-Hsuan Peng
 
-## Viewing the project: 
+## Viewing the project:
 
 1.  **Navigate to the `views` Directory:**
+
     ```bash
     cd User_Interface_2025/webpage/views/
     ```
+
     (Adjust the path if the project is in a different location.)
 
 2.  **Open an HTML File:**
-    *   **macOS:** `open index.html` (or `open login.html`, `open menu.html`, etc.)
-    *   **Linux:** `xdg-open index.html`
-    *   **Windows:** `start index.html`
+
+    - **macOS:** `open index.html` (or `open login.html`, `open menu.html`, etc.)
+    - **Linux:** `xdg-open index.html`
+    - **Windows:** `start index.html`
 
     This will open the file in your default browser.
 
-## Logging in: 
+## Logging in:
 
 Go to the login.html page.
 
@@ -29,54 +33,60 @@ Go to the login.html page.
 
 **Bartender:** Username: bartender1, Password: 1234
 
-**VIP Customer:*** Username: vipcustomer1, Password: 1234
+**VIP Customer:\*** Username: vipcustomer1, Password: 1234
 
 Click the "Login" button.
-  
+
 ## Dependencies:
- External Libraries:
-   - jQuery (3.6.0) - loaded via CDN
-     - URL: https://code.jquery.com/jquery-3.6.0.min.js
-     - Used in: menu.html, vip-info.html, vip-menu.html
 
-   - Font Awesome (6.2.0) - loaded via CDN
-     - URL: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css
-     - Used in: menu.html, vip-menu.html
+External Libraries:
 
-   - Google Fonts (Material Icons) - loaded via CDN
-     - URL: https://fonts.googleapis.com/icon?family=Material+Icons
-     - Used in: vip-info.html
+- jQuery (3.6.0) - loaded via CDN
+
+  - URL: https://code.jquery.com/jquery-3.6.0.min.js
+  - Used in: menu.html, vip-info.html, vip-menu.html
+
+- Font Awesome (6.2.0) - loaded via CDN
+
+  - URL: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css
+  - Used in: menu.html, vip-menu.html
+
+- Google Fonts (Material Icons) - loaded via CDN
+  - URL: https://fonts.googleapis.com/icon?family=Material+Icons
+  - Used in: vip-info.html
 
 ## Time Report:
-* **Week 1:** Feb 10 – Feb 16  
-  - Understand requirements  
-* **Week 2:** Feb 17 – Feb 23  
-  - Prototyping  
-  - Structure system structure  
-* **Week 3:** Feb 24 – Mar 2  
-  - Prototyping  
-* **Week 4:** Mar 3 – Mar 9  
-  - *(No entry)*  
-* **Week 5:** Mar 10 – Mar 16  
-  - *(No entry)*  
-* **Week 6:** Mar 17 – Mar 23  
-  - Final report editing  
 
+- **Week 1:** Feb 10 – Feb 16
+  - Understand requirements
+- **Week 2:** Feb 17 – Feb 23
+  - Prototyping
+  - Structure system structure
+- **Week 3:** Feb 24 – Mar 2
+  - Prototyping
+- **Week 4:** Mar 3 – Mar 9
+  - _(No entry)_
+- **Week 5:** Mar 10 – Mar 16
+  - _(No entry)_
+- **Week 6:** Mar 17 – Mar 23
+  - Final report editing
 
 ## Individual Contribution:
-* **Yu Hua Huang:** Responsible for prototyping on design part of boarding page, main page, and waiter and waitress pages, as well as styling in both `.html` and `.css` based on prototypes.  
-* **Qida Li:**  
-* **Danning Nie:**  
-* **Astrid Nord Olsson:**  
-* **Wen-Hsuan Peng:**  
+
+- **Yu Hua Huang:** Responsible for prototyping on design part of boarding page, main page, and waiter and waitress pages, as well as styling in both `.html` and `.css` based on prototypes.
+- **Qida Li:**
+- **Danning Nie:**
+- **Astrid Nord Olsson:**
+- **Wen-Hsuan Peng:** Implemented menu, cart and payment MVC logic and display, multilingual UI switching, and login/logout processing.
 
 ## File structure
+
 ```bash
 .
 ├── README.md
 ├── User_Interface_2025.code-workspace
 └── webpage
-    ├── data 
+    ├── data
     │   ├── Beverages_eng.json
     │   ├── food_menu.json
     │   ├── orders.json
