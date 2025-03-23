@@ -65,9 +65,9 @@ External Libraries:
 - **Week 3:** Feb 24 – Mar 2
   - Prototyping
 - **Week 4:** Mar 3 – Mar 9
-  - _(No entry)_
+  - Applied the MVC (Model-View-Controller) structure to organize code for clearer separation of logic, presentation, and data handling.
 - **Week 5:** Mar 10 – Mar 16
-  - _(No entry)_
+  - Coding
 - **Week 6:** Mar 17 – Mar 23
   - Final report editing
 
