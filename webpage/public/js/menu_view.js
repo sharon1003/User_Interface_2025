@@ -2,10 +2,12 @@ import Model from "./menu_model.js";
 
 export default class ViewMenu {
     constructor() {
+        // Select UI elements
         this.categoryContainers = document.querySelectorAll(".tab-content");
         this.categoryButtons = document.querySelectorAll(".tab-btn");
         this.cartContainer = document.getElementById("cart-list");
 
+        // event listener for cart and undo/redo buttons
         document.body.addEventListener("click", (event) => {
             if (event.target.classList.contains("add-to-cart-btn")) {
                 this.handleAddToCart(event);
@@ -18,8 +20,8 @@ export default class ViewMenu {
             }
         });
 
-        this.attachFilterListener();
-        this.attachCheckoutListener();
+        this.attachFilterListener(); // filter event listeners
+        this.attachCheckoutListener(); // checkout event listener
 
 
         // drag & drop
@@ -33,12 +35,14 @@ export default class ViewMenu {
         this.controller = controller;
     }
 
+    // render items under a category
     renderCategory(category, items) {
         const container = document.getElementById(category);
         console.log(category);
         container.innerHTML = items.map((item, index) => {
             let detailsHTML = ""; 
         
+            // prepare detailed info per category
             if (item.category === "Wine") {
                 detailsHTML = `
                     <p><strong>Year:</strong> ${item.year || "N/A"}</p>
@@ -70,6 +74,7 @@ export default class ViewMenu {
                 `;
             }
         
+            // create item card
             return `
                 <div id="${category}-${index}" class="beverage-card" draggable="true"
                      data-name="${item.name}" data-price="${item.priceinclvat}">
@@ -96,38 +101,12 @@ export default class ViewMenu {
                     </div>
                 </div>`;
         }).join('');
-        // container.innerHTML = items.map((item, index) =>
-        //     `<div id="${category}-${index}" class="beverage-card" draggable="true"
-        //          data-name="${item.name}" data-price="${item.priceinclvat}">
-        //         <img src="${item.image || '../public/images/drinks/corona.png'}" alt="${item.name}" draggable="true">
-        //         <h2>${item.name}</h2>
-        //         <button class="details-toggle-btn" data-name="${item.name}"><i class="fas fa-chevron-down details-icon"></i> Details</button> <!-- 新增展開按鈕 -->
-        //         <div class="details-content" id="details-${category}-${index}" style="display: none;">
-        //             <p><strong>Year:</strong> ${item.year || "N/A"}</p>
-        //             <p><strong>Producer:</strong> ${item.producer || "N/A"}</p>
-        //             <p><strong>Grape:</strong> ${item.grape || "N/A"}</p>
-        //             <p><strong>Size:</strong> ${item.size ? item.size + " ml" : "N/A"}</p>
-        //             <p><strong>Alcohol:</strong> ${item.alcohol ? item.alcohol + "%" : "N/A"}</p>
-        //             <p><strong>Tannins:</strong> ${item.tannins ? item.tannins + "/10" : "N/A"}</p>
-        //         </div> 
-        //         <p><strong>Price:</strong> ${item.priceinclvat} SEK</p>
-        //             <div class="quantity-selector">
-        //                 <button class="quantity-btn decrement">-</button>
-        //                 <span class="quantity-number">1</span>
-        //                 <button class="quantity-btn increment">+</button>
-        //             </div>
-        //             <div class="card-footer">
-        //                 <button class="add-to-cart-btn" data-name="${item.name}" data-price="${item.priceinclvat}">
-        //                     <i class="fas fa-cart-plus"></i> Add to Cart
-        //                 </button>
-        //             </div>
-        //     </div>`
-        // ).join('');
 
-        this.attachQuantityListeners();
+        this.attachQuantityListeners(); // quantity +/- buttons
         this.attachDetailsListeners(); // show more detail
     }
 
+    // render shopping cart
     renderCart(cart) {
         let total = 0;
         this.cartContainer.innerHTML = cart.slice().reverse().map(item => {
@@ -144,9 +123,10 @@ export default class ViewMenu {
                         </div>
                     </div>`;
         }).join('');
-        this.updateCartTotal(total); //Cause data-i18n will effect the appear
+        this.updateCartTotal(total); // update total cost
     }
 
+    // update cart total amount from 
     updateCartTotal(total) {
         const totalElement = document.getElementById("cart-total");
         if (totalElement) {
@@ -154,6 +134,7 @@ export default class ViewMenu {
         }
     }
 
+    // handle "add to cart button"
     handleAddToCart = (event) => {
         const card = event.target.closest(".beverage-card");
         const quantity = parseInt(card.querySelector(".quantity-number").textContent, 10);
@@ -163,6 +144,7 @@ export default class ViewMenu {
         this.controller.addToCart(name, price, quantity, img_path);
     };
 
+    // handle quantity change in cart or card
     handleQuantityChange = (event) => {
         const btn = event.target;
         const name = btn.dataset.name;
@@ -172,6 +154,7 @@ export default class ViewMenu {
         this.controller.updateCartQuantity(name, change);
     }
 
+    // quantity +/- for item cards
     attachQuantityListeners() {
         document.querySelectorAll(".beverage-card").forEach(card => {
             let quantity = 1;
@@ -189,6 +172,7 @@ export default class ViewMenu {
         });
     }
 
+    // listener for toggling detail view
     attachDetailsListeners() {
         document.querySelectorAll(".details-toggle-btn").forEach(button => {
             button.removeEventListener("click", this.toggleDetailsHandler);
@@ -196,6 +180,7 @@ export default class ViewMenu {
         });
     }
 
+    // checkout button listener
     attachCheckoutListener() {
         const checkoutBtn = document.getElementById("checkout-button");
         if (checkoutBtn) {
@@ -206,6 +191,7 @@ export default class ViewMenu {
         }
     }
 
+    // allergen and ingredient filters
     attachFilterListener() {
         const allergenFilter = document.getElementById("allergen-filter");
         const ingredientFilter = document.getElementById("ingredient-filter");
@@ -225,6 +211,7 @@ export default class ViewMenu {
         }
     }
 
+    
     attachCheckoutListener() {
         const checkoutBtn = document.getElementById("checkout-button");
         if (checkoutBtn) {
@@ -235,6 +222,7 @@ export default class ViewMenu {
         }
     }
     
+    // show order in progress msg
     showOrderStatus() {
         const statusMessage = document.getElementById("order-status");
         if (statusMessage) {
@@ -243,7 +231,7 @@ export default class ViewMenu {
         }
     }
     
-
+    // toggle detailed info view
     toggleDetailsView(name, item) {
         const card = document.querySelector(`[data-name="${name}"]`).closest(".beverage-card");
         const detailsSection = card.querySelector(".details-content");
@@ -255,7 +243,7 @@ export default class ViewMenu {
         }
     }
 
-
+    // call controller to toggle detail state
     toggleDetailsHandler = (event) => {
         const itemName = event.target.dataset.name;
         this.controller.toggleDetails(itemName);
@@ -288,7 +276,8 @@ export default class ViewMenu {
             this.controller.addToCart(data.name, data.price, data.quantity, data.img_path);
         }
     }
-
+    
+    // Switch to another menu category tab
     switchCategory(category) {
         this.categoryContainers.forEach(c => c.style.display = 'none');
         document.getElementById(category).style.display = 'flex';

@@ -9,11 +9,11 @@ export default class Model {
             Special: []
         };
         this.orders = JSON.parse(sessionStorage.getItem("orders")) || [];
-        // this.stock
         this.undoStack = [];
         this.redoStack = [];
     }
 
+    // load all menu data from ../data/Beverages_eng.json
     async loadData() {
         try {
             const [drinksData, foods, vip_menu] = await Promise.all([
@@ -33,7 +33,7 @@ export default class Model {
         }
     }
 
-    // Add order
+    // Add new order or update quantity
     addOrder(order) {
         let existingItem = this.orders.find(item => item.name === order.name);
         const prevOrders = JSON.stringify(this.orders);
@@ -54,6 +54,7 @@ export default class Model {
         this.saveOrders();
     }
 
+    // get item details by name
     getItemByName(name) {
         for (const category in this.categoryItems) {
             const item = this.categoryItems[category].find(i => i.name === name);
@@ -64,6 +65,7 @@ export default class Model {
         return null;
     }
 
+    // update order quantity or remove if <= 0
     updateOrder(name, quantityChange) {
         const prevOrders = JSON.stringify(this.orders);
         let item = this.orders.find(i => i.name === name);
@@ -80,6 +82,7 @@ export default class Model {
         }
     }
 
+    // remove order by name
     removeOrder(name) {
         const prevOrders = JSON.stringify(this.orders);
         this.orders = this.orders.filter(item => item.name !== name);
@@ -88,15 +91,18 @@ export default class Model {
         this.saveOrders();
     }
 
+    // calculate total amount
     getTotalAmount() {
         console.log("model", this.orders);
         return this.orders.reduce((total, item) => total + item.priceinclvat * item.quantity, 0);
     }
 
+    // clear all orders
     clearOrders() {
         this.orders = [];
         sessionStorage.removeItem("orders");
     }
+
     // save order to sessionStorage
     saveOrders() {
         sessionStorage.setItem("orders", JSON.stringify(this.orders));
@@ -111,6 +117,7 @@ export default class Model {
             this.saveOrders();
         }
     }
+
     // redo
     redo() {
         if (this.redoStack.length > 0) {
@@ -121,6 +128,7 @@ export default class Model {
         }
     }
 
+    // save current state to undo stack 
     saveUndoState() {
         this.undoStack.push(JSON.stringify(this.orders));
         this.redoStack = [];

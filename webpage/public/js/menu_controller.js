@@ -102,13 +102,6 @@ class Controller {
         const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
         existingOrders.push(newOrder);
         localStorage.setItem("orders", JSON.stringify(existingOrders));
-    
-        // // 清空購物車
-        // this.model.clearOrders();
-        // console.log(newOrder);
-        // this.view.renderCart(this.model.orders);
-    
-        // alert("Order placed successfully!");
     }
 
     
@@ -143,6 +136,7 @@ class Controller {
         return this.orders.reduce((total, item) => total + item.priceinclvat * item.quantity, 0);
     }
 
+    
     saveOrders() {
         sessionStorage.setItem("orders", JSON.stringify(this.orders));
     }
