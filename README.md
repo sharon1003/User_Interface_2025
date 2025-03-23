@@ -61,9 +61,10 @@ External Libraries:
   - Understand requirements
 - **Week 2:** Feb 17 – Feb 23
   - Prototyping
-  - Structure system structure
+  - Structure system
 - **Week 3:** Feb 24 – Mar 2
   - Prototyping
+  - Coding
 - **Week 4:** Mar 3 – Mar 9
   - Applied the MVC (Model-View-Controller) structure to organize code for clearer separation of logic, presentation, and data handling.
 - **Week 5:** Mar 10 – Mar 16
